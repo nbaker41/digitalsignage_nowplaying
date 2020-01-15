@@ -1,7 +1,12 @@
-var app = angular.module('myApp', []);
-myApp.controller('AppCtrl',
-  ['$scope',
-  function($scope) {
-      
-}]); //Controller
+(function(){
 
+     let app = angular.module("app", [
+
+     ]);
+
+     app.controller("appCtrl", function($scope){
+          let app = this;
+          app.example = "Hello from AJS";
+     });
+
+})();
