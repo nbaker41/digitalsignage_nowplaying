@@ -1,0 +1,25 @@
+@mixin breakpoint($screenMinWidth) {
+     // vertical 
+          @if $screenMinWidth == v {
+               @media (max-width:1900px) { @content; }
+          }
+     // horizontal
+          @if $screenMinWidth == h {
+               @media (min-width:1900px) { @content; }
+          }
+     }
+     
+     @include breakpoint(v) {
+          body:before {
+               content: "v";
+          }
+     }
+     @include breakpoint(h) {
+          body:before {
+               content: "h";
+          }
+     }
+
+     body:before{
+          display: none;
+     }

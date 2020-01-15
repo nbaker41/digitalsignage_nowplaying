@@ -1,11 +1,10 @@
-body, #flex-container{
+body{
 
      margin: 0;
      padding: 0;
      box-sizing: border-box;
 
-     display: flex;
-     flex-direction: column;
+     @include flex(column);
      height: 100vh;
 
      #head{
@@ -14,15 +13,13 @@ body, #flex-container{
      }
      
      #main{
-          background: blue;
-          flex: 1;
-          display: flex;
-          flex-direction: row;
-          justify-content: flex-end;
-          
+          background: gray;
+          @include flex(row);
+          flex: 1;          
           
           #leftsection{
                background: yellow;
+               flex: .25;
           }
           #slideshow{
                background: orange;
@@ -43,4 +40,9 @@ body, #flex-container{
           height: 75px;
      }
 
+     @include breakpoint(v){
+          #main{
+               @include flex(column)
+          }
+     }
 }
