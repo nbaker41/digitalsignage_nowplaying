@@ -1,1 +1,1 @@
-{"version":3,"sourceRoot":"","sources":["visuals/colors.scss"],"names":[],"mappings":"AAAA;EACK","file":"main.css"}
+{"version":3,"sourceRoot":"","sources":["styles/structure.scss"],"names":[],"mappings":"AAAA;EAEK;EACA;EACA;EAEA;EACA;EACA;;AAEA;EACK;EACA;;AAGL;EACK;EACA;EACA;EACA;EACA;;AAGA;EACK;;AAEL;EACK;EACA;;AAEL;EACK;EACA;;AAEL;EACK;EACA;;AAIV;EACK;EACA","file":"main.css"}

@@ -1,5 +1,40 @@
-body {
+body, #flex-container {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+body #head, #flex-container #head {
+  background: green;
+  height: 140px;
+}
+body #main, #flex-container #main {
+  background: blue;
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+body #main #leftsection, #flex-container #main #leftsection {
+  background: yellow;
+}
+body #main #slideshow, #flex-container #main #slideshow {
+  background: orange;
+  flex: 0.75;
+}
+body #main #list, #flex-container #main #list {
   background: red;
+  flex: 0.75;
+}
+body #main #events, #flex-container #main #events {
+  background: darkred;
+  flex: 0.25;
+}
+body #ticker, #flex-container #ticker {
+  background: purple;
+  height: 75px;
 }
 
 /*# sourceMappingURL=main.css.map */
