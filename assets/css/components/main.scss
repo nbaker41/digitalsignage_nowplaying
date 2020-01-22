@@ -1,0 +1,31 @@
+#main {
+     background: gray;
+     @include flex(row);
+     flex: 1;
+
+     #list {
+          background: red;
+          flex: .75;
+     }
+
+}
+
+
+@include breakpoint(v) {
+     #main {
+          @include flex(column)
+     }
+}
+
+//content feeds
+#content {
+     clear: both;
+     height: 100%;
+     width: 100%;
+     position: absolute;
+     background: black;
+     padding-top: 7px;
+     padding-bottom: 5px;
+     overflow: hidden;
+
+}

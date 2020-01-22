@@ -1,6 +1,3 @@
-
-
-
 (function() {
 	
 	function Slideshow( element ) {

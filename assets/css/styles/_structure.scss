@@ -1,47 +1,10 @@
-body{
-
+html, body{
      margin: 0;
      padding: 0;
      box-sizing: border-box;
      @include flex(column);
      height: 100vh;
-
-     #head{
-          background: green;
-          height: 140px;
-     }
-     
-     #main{
-          background: gray;
-          @include flex(row);
-          flex: 1;          
-          
-          #leftsection{
-               background: yellow;
-               flex: .25;
-          }
-          #slideshow{
-               background: orange;
-               flex: .75;
-          }
-          #list{
-               background: red;
-               flex: .75;
-          }
-          #events{
-               background: darkred;
-               flex: .25;
-          }
-     }
-     
-     #ticker{
-          background: purple;
-          height: 75px;
-     }
-
-     @include breakpoint(v){
-          #main{
-               @include flex(column)
-          }
-     }
+     width: 100vw;
+     font-family:'Roboto', sans-serif;
+     overflow-x:hidden; 
 }

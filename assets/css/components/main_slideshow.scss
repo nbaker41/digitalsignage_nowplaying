@@ -1,0 +1,24 @@
+#slideshow {
+     background: orange;
+     flex: .75;
+}
+ 
+.slider-wrapper {
+	width: 100%;
+	height: 730px;
+	position: relative;
+}
+
+.slide {
+	float: left;
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	opacity: 0;
+    transition: opacity 3s linear;
+    background: url('../images/bluebg2.png');
+}
+
+.slider-wrapper > .slide:first-child {
+	opacity: 1;
+}

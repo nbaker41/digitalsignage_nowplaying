@@ -3,36 +3,47 @@
      lang="en"
      ng-app="app"
      ng-controller="appCtrl as app">
+
 <head>
-     <meta charset="UTF-8">
-     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     <title>Digital Signage</title>
+	<base href="/">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+     <title>Digital Signage — Now Playing</title>
+     <!-- JQUERY -->
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> 
 <!-- AJS -->
      <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.9/angular.min.js"></script>
-<!-- Modules -->
+     <!-- Modules -->
+          <script src="assets/js/ajs modules/ui.router.js"></script>
 <!-- CSS -->
      <link rel="stylesheet" href="assets/css/main.css">
 </head>
+
 <body>
 
-
-     <article id="head">
-          {{app.currentTime | date: "shortTime"}}
-     </article>
+     <header></header>
      
      <article id="main">
           <section id="leftsection" ng-hide="true">Left Section</section>
-          <section id="slideshow">Slideshow</section>
+          <slideshow id="slideshow" ng-hide="false"></slideshow>
           <section id="list" ng-hide="true">List</section>
-          <section id="events">Events</section>
+          <events id="events"></events>
      </article>
      
      <article id="ticker">
-          Bottom
      </article>
      
-
 </body>
+
 <!-- APP -->
      <script src="app.js"></script>
+     <script src="components/ticker/breaking-news-ticker.min.js"></script>
+     <!-- SERVICES -->
+     <!-- COMPONENTS -->
+          <script src="components/header/header.js"></script>
+          <!-- MAIN -->
+               <script src="components/main/slideshow/slideshow.js"></script>
+               <script src="components/main/events/events.js"></script>
+     <!-- ROUTES -->
 </html>
