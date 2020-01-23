@@ -17,6 +17,23 @@
           events.text = "Top Section";
           console.log(events);
 
+     // ng switch
+          events.items = [0, 1];
+          var counter = 0;
+          events.selection = events.items[counter];  
+          function resetSwitch(){
+               counter = 0;
+               events.selection = events.items[counter]
+          } 
+          setInterval(function(){
+               var total = events.items.length - 1;
+               counter++;
+               events.selection = events.items[counter];   
+               if(counter > total){
+                    resetSwitch();
+               }
+          }, 5000);
+
      // nicks work
           var slidesInSlideshow = 4;
           var slidesTimeIntervalInMs = 6000; 

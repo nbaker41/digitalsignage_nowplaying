@@ -349,4 +349,26 @@ div.accent {
   font-size: 2rem;
 }
 
+.animate-switch-container {
+  overflow: hidden;
+}
+.animate-switch-container .animate-switch {
+  padding: 10px;
+}
+.animate-switch-container .animate-switch.ng-animate {
+  transition: all cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.5s;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: red;
+}
+.animate-switch-container .animate-switch.ng-leave.ng-leave-active, .animate-switch-container .animate-switch.ng-enter {
+  top: -50px;
+}
+.animate-switch-container .animate-switch.ng-leave, .animate-switch-container .animate-switch.ng-enter.ng-enter-active {
+  top: 0;
+}
+
 /*# sourceMappingURL=main.css.map */
