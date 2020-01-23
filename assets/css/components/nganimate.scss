@@ -1,28 +1,29 @@
 .animate-switch-container {
-     // position: relative;
-     // background: white;
-     // border: 1px solid black;
-     // height: 40px;
      overflow: hidden;
+     width: 100%;
+     height: 100%;
+     position: relative;
      .animate-switch {
-          padding: 10px;
-          // background: red;
           &.ng-animate {
-               transition: all cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.5s;
+               transition: left 0.75s;
                position: absolute;
-               top: 0;
-               left: 0;
-               right: 0;
-               bottom: 0;
-               background: red;
           }
-          &.ng-leave.ng-leave-active,
+          &.ng-leave.ng-leave-active{
+               z-index: 0;
+               right: 100vw;
+          }
           &.ng-enter {
-               top: -50px;
+               z-index: 1;
+               left: -100vw;
           }
-          &.ng-leave,
+
+          &.ng-leave{
+               left: 0;
+               z-index: 0;
+          }
           &.ng-enter.ng-enter-active {
-               top: 0;
+               z-index: 1;
+               left: 0;
           }
      }
 }

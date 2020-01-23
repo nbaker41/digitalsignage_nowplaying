@@ -16,6 +16,20 @@
 
           console.log(slideshow);
 
+     // ng switch
+          slideshow.items = [0, 1, 2];
+          var counter = 0;
+          slideshow.selection = slideshow.items[counter];  
+          setInterval(function(){
+               counter++;
+               if(counter > slideshow.items.length - 1){
+                    counter = 0;
+                    slideshow.selection = slideshow.items[counter]
+               } else {
+                    slideshow.selection = slideshow.items[counter];   
+               }
+          }, 5000);
+
      // nicks work
           function Slideshow( element ) {
                this.el = document.querySelector( element );

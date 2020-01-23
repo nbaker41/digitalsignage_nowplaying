@@ -7,7 +7,7 @@
      //routes
      //components
           "header",
-          //ticker,
+          "ticker",
           //main,
                //leftsection,
                "slideshow",

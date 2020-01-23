@@ -263,29 +263,15 @@ div.accent {
   margin-left: -100%;
 }
 
-#slideshow {
-  background: orange;
+slideshow {
   flex: 0.75;
 }
-
-.slider-wrapper {
-  width: 100%;
-  height: 730px;
-  position: relative;
-}
-
-.slide {
-  float: left;
-  position: absolute;
+slideshow .slide {
   width: 100%;
   height: 100%;
-  opacity: 0;
-  transition: opacity 3s linear;
-  background: url("../images/bluebg2.png");
-}
-
-.slider-wrapper > .slide:first-child {
-  opacity: 1;
+  background-repeat: no-repeat !important;
+  background-size: cover !important;
+  background-position: center !important;
 }
 
 #leftsection {
@@ -303,7 +289,7 @@ div.accent {
   margin-bottom: 10px;
 }
 
-#ticker {
+ticker {
   background: purple;
   height: 75px;
 }
@@ -351,24 +337,29 @@ div.accent {
 
 .animate-switch-container {
   overflow: hidden;
-}
-.animate-switch-container .animate-switch {
-  padding: 10px;
+  width: 100%;
+  height: 100%;
+  position: relative;
 }
 .animate-switch-container .animate-switch.ng-animate {
-  transition: all cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.5s;
+  transition: left 0.75s;
   position: absolute;
-  top: 0;
+}
+.animate-switch-container .animate-switch.ng-leave.ng-leave-active {
+  z-index: 0;
+  right: 100vw;
+}
+.animate-switch-container .animate-switch.ng-enter {
+  z-index: 1;
+  left: -100vw;
+}
+.animate-switch-container .animate-switch.ng-leave {
   left: 0;
-  right: 0;
-  bottom: 0;
-  background: red;
+  z-index: 0;
 }
-.animate-switch-container .animate-switch.ng-leave.ng-leave-active, .animate-switch-container .animate-switch.ng-enter {
-  top: -50px;
-}
-.animate-switch-container .animate-switch.ng-leave, .animate-switch-container .animate-switch.ng-enter.ng-enter-active {
-  top: 0;
+.animate-switch-container .animate-switch.ng-enter.ng-enter-active {
+  z-index: 1;
+  left: 0;
 }
 
 /*# sourceMappingURL=main.css.map */

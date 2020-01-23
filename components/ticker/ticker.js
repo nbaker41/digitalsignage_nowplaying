@@ -1,21 +1,21 @@
 (function(){
 
-     let top = angular.module("top", [
+     let ticker = angular.module("ticker", [
      ]);
 
-	top.component("top", {
-		controller: "topCtrl",
-		controllerAs: "top",
-		templateUrl: "components/top/top.html"
+	ticker.component("ticker", {
+		controller: "tickerCtrl",
+		controllerAs: "ticker",
+		templateUrl: "components/ticker/ticker.html"
 	});
 
-     top.controller(
-     "topCtrl", function($scope){
+     ticker.controller(
+     "tickerCtrl", function($scope){
      this.app = $scope.$parent.app;
-     let top = this;
+     let ticker = this;
 
-          top.text = "Top Section";
-          console.log(top);
+          ticker.text = "Ticker Section";
+          console.log(ticker);
 
           $(document).ready(function(){
                $('#newsTicker2').breakingNews({
