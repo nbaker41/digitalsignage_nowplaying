@@ -17,8 +17,8 @@
           ticker.text = "Ticker Section";
           console.log(ticker);
 
-          $(document).ready(function(){
-               $('#newsTicker2').breakingNews({
+          // $(document).ready(function(){
+               $("ticker > div").breakingNews({
                     source: {
                          type:'rss',
                          usingApi:'rss2json',
@@ -32,7 +32,7 @@
                          errorMsg: 'RSS Feed not loaded. Please try again.'
                     }
                });
-          });
+          // });
      
 
      });
