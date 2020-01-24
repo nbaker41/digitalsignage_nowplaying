@@ -23,13 +23,26 @@
 
 <body>
 
-     <header></header>
+     <header>
+     </header>
      
      <article id="main">
-          <section id="leftsection" ng-hide="true">Left Section</section>
-          <slideshow id="slideshow" ng-hide="false"></slideshow>
-          <section id="list" ng-hide="true">List</section>
-          <events id="events"></events>
+          <section 
+               id="leftsection" 
+               ng-hide="true">
+          </section>
+          <slideshow 
+               id="slideshow" 
+               ng-hide="true">
+          </slideshow>
+          <list 
+               id="list" 
+               ng-hide="false">
+          </list>
+          <events 
+               id="events"
+               ng-hide="false">
+          </events>
      </article>
      
      <ticker id="ticker">
@@ -46,6 +59,7 @@
           <!-- MAIN -->
                <script src="components/main/slideshow/slideshow.js"></script>
                <script src="components/main/events/events.js"></script>
+               <script src="components/main/list/list.js"></script>
           <script src="components/ticker/ticker.js"></script>
      <!-- ROUTES -->
 </html>

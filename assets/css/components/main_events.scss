@@ -2,7 +2,11 @@
 
 #events {
     background: darkred;
-    flex: .35;
+    flex: .25;
+    @include breakpoint(v){
+        flex: .35;
+        background: blue;
+    }
 }
 
 

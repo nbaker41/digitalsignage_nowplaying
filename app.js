@@ -11,7 +11,7 @@
           //main,
                //leftsection,
                "slideshow",
-               //list,
+               "list",
                "events"
      //services
           //wp,

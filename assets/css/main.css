@@ -162,7 +162,13 @@ div.accent {
 
 #events {
   background: darkred;
-  flex: 0.35;
+  flex: 0.25;
+}
+@media (max-width: 1900px) {
+  #events {
+    flex: 0.35;
+    background: blue;
+  }
 }
 
 .evtslide {
