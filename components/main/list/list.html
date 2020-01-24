@@ -1,3 +1,10 @@
+<div id="search">
+     <input 
+          type="text"
+          placeholder="Search Directory"
+          ng-model="list.searchObject">
+</div>
+
 <table>
      <thead>
           <tr>
@@ -9,7 +16,7 @@
      </thead>
      <tbody>
           <tr
-               ng-repeat="x in list.tabledata">
+               ng-repeat="x in list.tabledata | filter:list.searchObject">
                <td>{{x.firstname}}</td>
                <td>{{x.lastname}}</td>
                <td>{{x.floor}}</td>
