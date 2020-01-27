@@ -1,0 +1,34 @@
+.btn {
+     background-color: gray;
+     display: inline-block;
+     width: 25px;
+     height: 25px;
+     line-height: 25px;
+     text-align: center;
+     margin-left: 5px;
+     border-radius: 3px;
+     border: solid 1px black;
+}
+
+.btn:hover {
+     background-color: aliceblue;
+}
+
+.keyboard-container {
+     display: inline-block;
+     text-align: center;
+     background: rgb(77, 77, 77);
+}
+
+.keyboard-container ul {
+     padding-left: 0;
+     margin-top: 5px;
+     margin-bottom: 5px;
+}
+
+.container {
+     background-color: #F8F8F8;
+     display: inline-block;
+     padding: 15px;
+     text-align: center;
+}

@@ -1,10 +1,21 @@
 <div id="search">
      <input 
           type="text"
+          my-text=""
           placeholder="Search Directory"
           ng-model="list.searchObject">
 
-     
+     <div ng-controller="keyboardCtrl as keyboard">
+          <div class="keyboard-container">
+               <ul ng-repeat="row in keyboard.layout" style="list-style-type: none;">
+                    <li ng-repeat="element in row.row" class="btn" ng-click="keyboard.keyPressed(element.value, element.action)">
+                         {{element.value}}
+                    </li>
+               </ul>
+          </div>
+     </div>
+   
+
 </div>
 
 <table>
