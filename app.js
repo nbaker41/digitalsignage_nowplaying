@@ -8,6 +8,7 @@
      //components
           "header",
           "ticker",
+          "keyboard",
           //main,
                //leftsection,
                "slideshow",
