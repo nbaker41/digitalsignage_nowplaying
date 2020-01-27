@@ -18,14 +18,10 @@
 
      // });
 
-     keyboard.controller('keyboardCtrl', ['$scope', '$rootScope', '$http', function ($scope, $rootScope, $http) {
-          this.app = $scope.$parent.app;
-          let keyboard = this;
-
-          // $http.get('keyboard.json').success(function (data) {
-          //      keyboard.layout = data;
-          //      console.log(keyboard.layout);
-          // });
+     keyboard.controller(
+     'keyboardCtrl', ['$scope', '$rootScope', '$http', function ($scope, $rootScope, $http) {
+     this.app = $scope.$parent;
+     let keyboard = this;
 
           $http({
                method: 'GET',
@@ -37,10 +33,13 @@
                console.log("error loading data");
           });
 
-
           keyboard.keyPressed = function (value, action) {
                keyboard.someInput = value;
                $rootScope.$broadcast('keyPressed', keyboard.someInput, action);
+               // keyboard.app.list.searchObject = 
+               console.log($rootScope.keyboardSearchObject);
+               keyboard.app.list.searchObject = $rootScope.keyboardSearchObject;
+               console.log(keyboard.app.list);
           }
      }]);
 
@@ -85,6 +84,8 @@
                               domElement.value += val;
                               domElement.focus();
                          }
+                         // console.log(domElement.value);
+                         $rootScope.keyboardSearchObject = domElement.value;
                     });
                }
           }

@@ -295,39 +295,29 @@ ticker > div div.bn-news ul li a {
   font-size: 22px;
 }
 
-.btn {
-  background-color: gray;
-  display: inline-block;
-  width: 25px;
-  height: 25px;
-  line-height: 25px;
-  text-align: center;
-  margin-left: 5px;
-  border-radius: 3px;
-  border: solid 1px black;
-}
-
-.btn:hover {
-  background-color: aliceblue;
-}
-
 .keyboard-container {
   display: inline-block;
   text-align: center;
   background: #4d4d4d;
 }
-
 .keyboard-container ul {
   padding-left: 0;
   margin-top: 5px;
   margin-bottom: 5px;
 }
-
-.container {
-  background-color: #F8F8F8;
+.keyboard-container ul li.btn {
+  background-color: gray;
   display: inline-block;
-  padding: 15px;
+  width: 90px;
+  height: 45px;
+  line-height: 45px;
   text-align: center;
+  margin-left: 5px;
+  border-radius: 3px;
+  border: solid 1px black;
+}
+.keyboard-container ul li.btn:hover {
+  background-color: aliceblue;
 }
 
 .animate-switch-container {
