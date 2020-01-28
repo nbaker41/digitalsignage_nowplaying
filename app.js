@@ -40,8 +40,8 @@
                     name: "First Floor - Front Desk",
                     sections: {
                          leftsection: false,
-                         slideshow: false,
-                         list: true,
+                         slideshow: true,
+                         list: false,
                          events: true
                     }
                }

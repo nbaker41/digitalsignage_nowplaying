@@ -14,9 +14,6 @@
      this.app = $scope.$parent.app;
      let header = this;
 
-          header.text = "Top Section";
-          console.log(header);
-
      });
 
 })();
