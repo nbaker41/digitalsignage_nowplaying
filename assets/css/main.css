@@ -267,7 +267,7 @@ slideshow .slide {
   background-position: center !important;
 }
 
-#leftsection {
+leftsection {
   background: yellow;
   flex: 0.25;
 }

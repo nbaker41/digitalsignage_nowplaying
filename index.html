@@ -27,10 +27,9 @@
      </header>
      
      <article id="main">
-          <section 
-               id="leftsection" 
+          <leftsection 
                ng-if="app.info.player.sections.leftsection">
-          </section>
+          </leftsection>
           <slideshow 
                ng-if="app.info.player.sections.slideshow">
           </slideshow>
@@ -55,6 +54,7 @@
           <script src="components/header/header.js"></script>
           <script src="components/keyboard/keyboard.js"></script>
           <!-- MAIN -->
+               <script src="components/main/leftsection/leftsection.js"></script>
                <script src="components/main/slideshow/slideshow.js"></script>
                <script src="components/main/events/events.js"></script>
                <script src="components/main/list/list.js"></script>
