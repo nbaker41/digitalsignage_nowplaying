@@ -9,7 +9,7 @@
           "header",
           "ticker",
           "keyboard",
-          //main,
+          //main
                "leftsection",
                "slideshow",
                "list",
@@ -26,9 +26,18 @@
      });
 
      app.controller(
-     "appCtrl", function($scope){
+     "appCtrl", function($scope, $transitions){
      let app = this;
 
+     
+	// transitions
+          $transitions.onSuccess({}, function($transition){
+               app.state = {};
+               app.state.from = $transition.$from().name;
+               app.state.to = $transition.$to().name;
+               app.state.params = $transition.params().name;
+          });
+          
      // gather info about this player based on url parameters...
           app.info = {
                client: {
@@ -44,8 +53,8 @@
                     name: "First Floor - Front Desk",
                     sections: {
                          leftsection: false,
-                         slideshow: true,
-                         list: false,
+                         slideshow: false,
+                         list: true,
                          events: true
                     }
                }

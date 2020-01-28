@@ -23,6 +23,7 @@
      this.app = $scope.$parent;
      let keyboard = this;
 
+     // populate the keyboard template with character data from external json file.
           $http({
                method: 'GET',
                url: 'components/keyboard/keyboard.json'
@@ -32,7 +33,7 @@
           }, function (error) {
                console.log("error loading data");
           });
-
+     
           keyboard.keyPressed = function (value, action) {
                keyboard.someInput = value;
                $rootScope.$broadcast('keyPressed', keyboard.someInput, action);
@@ -42,6 +43,13 @@
                console.log(keyboard.app.list);
           }
      }]);
+
+
+	keyboard.component("keyboard", {
+		controller: "keyboardCtrl",
+		controllerAs: "keyboard",
+		templateUrl: "components/keyboard/keyboard.html"
+	});
 
 
      keyboard.directive('myText', ['$rootScope', function ($rootScope) {
