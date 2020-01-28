@@ -29,16 +29,16 @@
      <article id="main">
           <section 
                id="leftsection" 
-               ng-hide="true">
+               ng-if="app.info.player.sections.leftsection">
           </section>
           <slideshow 
-               ng-hide="true">
+               ng-if="app.info.player.sections.slideshow">
           </slideshow>
           <list 
-               ng-hide="false">
+               ng-if="app.info.player.sections.list">
           </list>
           <events 
-               ng-hide="false">
+               ng-if="app.info.player.sections.events">
           </events>
      </article>
      

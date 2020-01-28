@@ -29,7 +29,23 @@
      "appCtrl", function($scope){
      let app = this;
 
-          app.example = "Hello from AJS";
+     // gather info about this player based on url parameters...
+          app.info = {
+               client: {
+                    id: 02938,
+                    name: "Office of Undergraduate Admissions"
+               },
+               player: {
+                    id: 2883,
+                    name: "First Floor - Front Desk",
+                    sections: {
+                         leftsection: false,
+                         slideshow: false,
+                         list: true,
+                         events: true
+                    }
+               }
+          };
 
      // handle the clock
           app.tick = setInterval(function(){
