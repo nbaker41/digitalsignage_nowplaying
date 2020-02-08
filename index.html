@@ -10,6 +10,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
      <title>Now Playing</title>
+<!--------------------------------------------------------------------------------------------------->
 <!-- JQUERY -->
      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> 
 <!-- AJS -->
@@ -19,45 +20,47 @@
           <script src="assets/js/ajs modules/angular-animate.min.js"></script>
 <!-- CSS -->
      <link rel="stylesheet" href="assets/css/main.css">
+<!--------------------------------------------------------------------------------------------------->
 </head>
 
-<body>
+<body class="{{app.pageClass}}">
 
-     <header>
-     </header>
-     
-     <article id="main">
-          <leftsection 
-               ng-if="app.info.player.sections.leftsection">
-          </leftsection>
-          <slideshow 
-               ng-if="app.info.player.sections.slideshow">
-          </slideshow>
-          <list 
-               ng-if="app.info.player.sections.list">
-          </list>
-          <events 
-               ng-if="app.info.player.sections.events">
-          </events>
-     </article>
-     
-     <ticker>
-     </ticker>
+     <div
+          ui-sref="customer({customer: 'admissions', screen: 44})">
+          Hellooooo
+     </div>
+
+     <ui-view>
+          <!-- routes/customer/customer.html -->
+     </ui-view>
+
+     <div
+          ng-if="app.wrongdirectory">
+          <h1>This directory does not belong to a specific program.</h1>
+          <a href="http://digitalsignage.gatech.edu">Return home</a>
+     </div>
      
 </body>
 
+<!--------------------------------------------------------------------------------------------------->
 <!-- APP -->
      <script src="app.js"></script>
      <script src="components/ticker/breaking-news-ticker.min.js"></script>
-     <!-- SERVICES -->
+     <!-- ROUTES -->
+          <script src="routes/home/home.js"></script>
+          <script src="routes/customer/customer.js"></script>
      <!-- COMPONENTS -->
           <script src="components/header/header.js"></script>
+          <script src="components/ticker/ticker.js"></script>
           <script src="components/keyboard/keyboard.js"></script>
           <!-- MAIN -->
                <script src="components/main/leftsection/leftsection.js"></script>
                <script src="components/main/slideshow/slideshow.js"></script>
                <script src="components/main/events/events.js"></script>
                <script src="components/main/list/list.js"></script>
-          <script src="components/ticker/ticker.js"></script>
-     <!-- ROUTES -->
+     <!-- SERVICES -->
+     <!-- DIRECTIVES -->
+          <script src="directives/draggable.js"></script>
+<!--------------------------------------------------------------------------------------------------->
+
 </html>

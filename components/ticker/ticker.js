@@ -15,7 +15,6 @@
      let ticker = this;
 
           ticker.text = "Ticker Section";
-          console.log(ticker);
 
           // $(document).ready(function(){
                $("ticker > div").breakingNews({
@@ -28,7 +27,8 @@
                          showingField:'title',
                          linkEnabled: true,
                          target:'_blank', 
-                         seperator: '<span class="bn-seperator" style="background-image:url(images/cnn-logo.png);"></span>',
+                         // seperator: '<span class="bn-seperator" style="background-image:url(images/cnn-logo.png);"></span>',
+                         seperator: '<span></span>',
                          errorMsg: 'RSS Feed not loaded. Please try again.'
                     }
                });

@@ -2,9 +2,20 @@ html, body{
      margin: 0;
      padding: 0;
      box-sizing: border-box;
-     @include flex(column);
      height: 100vh;
-     width: 100vw;
-     font-family:'Roboto', sans-serif;
      overflow-x:hidden; 
+}
+
+body{
+     ui-view{
+          height: auto;
+          background: red;
+     }
+     &:not(.home){
+          ui-view{
+               display: block;
+               @include flex(column);
+               height: 100%;
+          }
+     }
 }
