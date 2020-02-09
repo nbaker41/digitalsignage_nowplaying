@@ -30,28 +30,21 @@
      });
 
      app.controller(
-     "appCtrl", function($scope, $transitions, $stateParams){
+     "appCtrl", function($scope, $transitions){
      let app = this;
 
      // transitions
-          app.wrongdirectory = false;
 		$transitions.onSuccess({}, function($transition){
-			app.route = {};
-			app.route.from = $transition.$from().name;
-			app.route.to = $transition.$to().name;
-			app.route.params = $transition.params().name;
-			app.pageClass = app.route.to;
-               console.log(app.route);
-               if(app.route.params == undefined){
-                    app.function();
-               }else{
-                    // do something
+          // construct a route object
+			app.route = {
+                    from: $transition.$from().name,
+                    to: $transition.$to().name,
+                    params: {
+                         customer: $transition.params().customer,
+                         screen: $transition.params().screen,
+                    }
                };
-               console.log(app.wrongdirectory);
           });
-          app.function = function(){
-               app.wrongdirectory = true;
-          }
 
      // gather info about this player based on url parameters...
           app.info = {
@@ -73,7 +66,9 @@
                          events: true
                     }
                }
-          };
+          };          
+
+          app.siteData = JSON.stringify(siteData, null, 4);
 
      // handle the clock
           app.tick = setInterval(function(){

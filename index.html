@@ -11,6 +11,7 @@
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
      <title>Now Playing</title>
 <!--------------------------------------------------------------------------------------------------->
+<script src="database/data.js"></script> 
 <!-- JQUERY -->
      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> 
 <!-- AJS -->
@@ -23,7 +24,7 @@
 <!--------------------------------------------------------------------------------------------------->
 </head>
 
-<body class="{{app.pageClass}}">
+<body class="{{app.route.to}}">
 
      <div
           ui-sref="customer({customer: 'admissions', screen: 44})">
@@ -34,10 +35,15 @@
           <!-- routes/customer/customer.html -->
      </ui-view>
 
-     <div
-          ng-if="app.wrongdirectory">
-          <h1>This directory does not belong to a specific program.</h1>
+     <div ng-if="app.route.params.customer == undefined">
+          <h1>This directory does not belong to a specific program or screen.</h1>
           <a href="http://digitalsignage.gatech.edu">Return home</a>
+          <hr>
+          <pre>
+               <!-- <code> -->
+                    {{app.siteData}}
+               <!-- </code> -->
+          </pre>
      </div>
      
 </body>
