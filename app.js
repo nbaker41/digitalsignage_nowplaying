@@ -33,6 +33,10 @@
      "appCtrl", function($scope, $transitions){
      let app = this;
 
+     // need to see if sql's datetime format is the same as this
+          app.dateTimeExample = "2020-02-11T13:57:01.395Z";
+
+
      // transitions
 		$transitions.onSuccess({}, function($transition){
           // construct a route object
