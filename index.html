@@ -11,7 +11,7 @@
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
      <title>Now Playing</title>
 <!--------------------------------------------------------------------------------------------------->
-<script src="database/data.js"></script> 
+<script src="database/___sample-data.js"></script> 
 <!-- JQUERY -->
      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> 
 <!-- AJS -->
@@ -26,10 +26,18 @@
 
 <body class="{{app.route.to}}">
 
-     <div
+     <button
+          ui-sref="customer({customer: 'admissions'})">
+          /admissions
+     </button>
+     <button
           ui-sref="customer({customer: 'admissions', screen: 44})">
-          {{app.dateTimeExample}}
-     </div>
+          /admissions/44
+     </button>
+     <button
+          ui-sref="customer({customer: 'crc', screen: 2})">
+          /crc/2
+     </button>
 
      <ui-view>
           <!-- routes/customer/customer.html -->

@@ -36,7 +36,6 @@
      // need to see if sql's datetime format is the same as this
           app.dateTimeExample = "2020-02-11T13:57:01.395Z";
 
-
      // transitions
 		$transitions.onSuccess({}, function($transition){
           // construct a route object
@@ -52,24 +51,9 @@
 
      // gather info about this player based on url parameters...
           app.info = {
-               client: {
-                    id: 02938,
-                    name: {
-                         short: "admissions",
-                         official: "Office of Undergraduate Admissions"
-                    }
-               },
-               player: {
-                    id: 2883,
-                    floor: 3,
-                    name: "First Floor - Front Desk",
-                    sections: {
-                         leftsection: false,
-                         slideshow: true,
-                         list: false,
-                         events: true
-                    }
-               }
+               client: [
+                    // array of objects.. select one.
+               ]
           };          
 
           app.siteData = JSON.stringify(siteData, null, 4);

@@ -52,13 +52,11 @@ INSERT into `users` (username) VALUES ("lamar_jackson");
 INSERT into `users` (username) VALUES ("andy_reid");
 INSERT into `users` (username) VALUES ("randy_moss");
 
-
 -- four groups create profiles...
 INSERT into `groups` (name) VALUES ("fans");
 INSERT into `groups` (name) VALUES ("players");
 INSERT into `groups` (name) VALUES ("coaches");
 INSERT into `groups` (name) VALUES ("journalists");
-
 
 -- Cecil joins the fans group.
 INSERT into `group_user` (user_id, group_id) VALUES (1, 1);
@@ -93,11 +91,24 @@ WHERE `user_id` = 2
   AND `group_id` = 2;
 
 
+
+-- Add new data after having deleted some ---------------------------------------------------------------------------------------------------
+
+
+-- Add Rodney Harrison, add to fans, journalists
+INSERT into `users` (username) VALUES ("rodney_harrison");
+-- Rodney Harrison joins players, fans and journalists groups.
+INSERT into `group_user` (user_id, group_id) VALUES (5, 4);
+INSERT into `group_user` (user_id, group_id) VALUES (5, 2);
+INSERT into `group_user` (user_id, group_id) VALUES (5, 1);
+
+
+
 -- Select ---------------------------------------------------------------------------------------------------
 
 
 -- Find all accounts
--- SELECT * FROM group_user;
+SELECT * FROM group_user;
 
 
 -- join of three tables
@@ -108,5 +119,3 @@ ON group_user.user_id = users.user_id
 JOIN groups
 ON group_user.group_id = groups.group_id
 WHERE group_user.group_id = 1;
-
-
