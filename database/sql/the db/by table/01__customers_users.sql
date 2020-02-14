@@ -1,6 +1,11 @@
+-- drop tables if exist ---------------------------------------------------------------------------------------------------
+
 drop table if exists customers;
 drop table if exists users;
 drop table if exists customers_users;
+
+
+-- create tables ---------------------------------------------------------------------------------------------------
 
 CREATE TABLE `customers` (
   `customer_id` int UNSIGNED NOT NULL PRIMARY KEY AUTO_INCREMENT UNIQUE,
@@ -32,11 +37,25 @@ CREATE TABLE `customers_users` (
   `login_count` int NOT NULL DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
+
+-- foreign keys ---------------------------------------------------------------------------------------------------
+
 ALTER TABLE `customers_users`
-  ADD CONSTRAINT `customers_users_ibfk_1` FOREIGN KEY (`customer_id`) REFERENCES `customers` (`customer_id`);
+  ADD CONSTRAINT `customers_users_ibfk_1` 
+    FOREIGN KEY (`customer_id`) 
+    REFERENCES `customers` (`customer_id`)
+    ON DELETE SET NULL
+    ON UPDATE CASCADE;
 ALTER TABLE `customers_users`
-  ADD CONSTRAINT `customers_users_ibfk_2` FOREIGN KEY (`user_id`) REFERENCES `users` (`user_id`);
+  ADD CONSTRAINT `customers_users_ibfk_2` 
+    FOREIGN KEY (`user_id`) 
+    REFERENCES `users` (`user_id`)
+    ON DELETE SET NULL
+    ON UPDATE CASCADE;
 COMMIT;
+
+
+-- insert ---------------------------------------------------------------------------------------------------
 
 insert into customers
      (name_short, name_long)
@@ -59,6 +78,9 @@ values
 -- nick
      (1, 2, 0),
      (2, 2, 1);
+
+
+-- select ---------------------------------------------------------------------------------------------------
 
 -- show all accounts - user, company, and admin status
 SELECT customers.customer_id, customers.name_short, users.user_id, users.name_first, users.name_last, users.ddst_admin, customers_users.admin
