@@ -86,6 +86,15 @@ CREATE TABLE `buildings` (
   `image` varchar(300) NULL -- added
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
+CREATE TABLE `floors` (
+  `floor_id` int UNSIGNED NOT NULL PRIMARY KEY AUTO_INCREMENT UNIQUE,
+  `building_id` int NOT NULL,
+  `name` varchar(100) NOT NULL,
+  `order` int NOT NULL,
+  `notes` mediumtext NULL,
+  `floorplan` varchar(300) NULL,
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
 
 
 
