@@ -23,3 +23,17 @@ drop table if exists customers_departments;
 drop table if exists buildings;
 drop table if exists floors;
 drop table if exists customers_buildings;
+
+
+
+-- Players ---------------------------------------------------------------------------------------------------
+
+
+drop table if exists players;
+
+
+
+-- Playlists ---------------------------------------------------------------------------------------------------
+
+
+drop table if exists playlists;

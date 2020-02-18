@@ -88,21 +88,40 @@ CREATE TABLE `buildings` (
 
 CREATE TABLE `floors` (
   `floor_id` int UNSIGNED NOT NULL PRIMARY KEY AUTO_INCREMENT UNIQUE,
-  `building_id` int NOT NULL,
+  `building_id` int UNSIGNED,
   `name` varchar(100) NOT NULL,
   `order` int NOT NULL,
   `notes` mediumtext NULL,
-  `floorplan` varchar(300) NULL,
+  `floorplan` varchar(300) NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+-- join customers, buildings
+CREATE TABLE `customers_buildings` (
+  `customer_id` int UNSIGNED,
+  `building_id` int UNSIGNED,
+  `created` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 
 
+-- Players ---------------------------------------------------------------------------------------------------
 
 
------------------------------------------------------------------------------------------
--- 100 character example
--- abcdefghijabcdefghijabcdefghijabcdefghijabcdeffghi
--- ghijabcdefghijabcdefghijabcdefghijabcdefghijabcdej
+CREATE TABLE `players` (
+  `player_id` int UNSIGNED NOT NULL PRIMARY KEY AUTO_INCREMENT UNIQUE,
+  `customer_id` int UNSIGNED,
+  `floor_id` int UNSIGNED,
+  `name_short` varchar(50) NOT NULL,
+  `name_long` varchar(300) NOT NULL,
+  `touch_enabled` bit(1) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+
+
+-- Playlists ---------------------------------------------------------------------------------------------------
+
+
+drop table if exists playlists;
 
 
 

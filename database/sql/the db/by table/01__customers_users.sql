@@ -61,7 +61,7 @@ insert into customers
      (name_short, name_long)
 values 
      ("admissions", "The Office of Admissions"),
-     ("crc", "Campus Recreation Center");
+     ("arch", "The School of Architecture");
 
 insert into users
      (name_first, name_last, gt_name, gt_id, avatar, contact_phone, contact_email, ddst_admin)
