@@ -121,7 +121,29 @@ CREATE TABLE `players` (
 -- Playlists ---------------------------------------------------------------------------------------------------
 
 
-drop table if exists playlists;
+CREATE TABLE `playlists` (
+  `playlist_id` int UNSIGNED NOT NULL PRIMARY KEY AUTO_INCREMENT UNIQUE,
+  `customer_id` int UNSIGNED,
+  `user_id` int UNSIGNED,
+  `created` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `name` varchar(50) NOT NULL,
+  `type` varchar(100) NOT NULL,
+  `description` mediumtext NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+-- join players, playlists
+CREATE TABLE `players_playlists` (
+  `player_id` int UNSIGNED,
+  `playlist_id` int UNSIGNED,
+  `user_id` int UNSIGNED,
+  `created` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `order` int NOT NULL DEFAULT 0
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 
+
+-- Media & Directories ---------------------------------------------------------------------------------------------------
+
+
+CREATE
 

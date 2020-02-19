@@ -57,6 +57,26 @@ GROUP BY floors.floor_id;
 -- Buildings & Floors ---------------------------------------------------------------------------------------------------
 
 
+
+
+-- show all 
+
+
+-- show all players by floor/building
+
+SELECT
+     floors.floor_id as ``,
+     floors.name as `floor`,
+     players.player_id as ``,
+     players.name_short `player`,
+     players.name_long as `player name`,
+     buildings.name_long as `building`
+FROM floors
+LEFT JOIN players
+ON floors.floor_id = players.floor_id
+JOIN buildings
+ON floors.building_id = buildings.building_id;
+
 -- show all customer-player-building-floor relationships by player
 SELECT 
      players.player_id,
@@ -80,4 +100,31 @@ GROUP BY players.player_id;
 -- Playlists ---------------------------------------------------------------------------------------------------
 
 
-drop table if exists playlists;
+-- SELECT
+--      players.player_id as ``,
+--      players.name_long as `player`,
+--      playlists.playlist_id as ``,
+--      playlists.playlist_id `playlist`
+-- FROM playlists
+-- JOIN players_playlists
+-- ON playlists.playlist_id = players_playlists.playlist_id
+-- JOIN players
+-- ON players_playlists.playlist_id = players.player_id
+SELECT
+     players.player_id as ``,
+     players.name_short as `player`,
+     playlists.playlist_id as ``,
+     playlists.name `playlist`,
+     playlists.type `type`
+FROM playlists
+LEFT JOIN players_playlists
+ON playlists.playlist_id = players_playlists.playlist_id
+LEFT JOIN players
+ON players_playlists.playlist_id = players.player_id;
+
+
+
+-- Media & Directories ---------------------------------------------------------------------------------------------------
+
+
+CREATE

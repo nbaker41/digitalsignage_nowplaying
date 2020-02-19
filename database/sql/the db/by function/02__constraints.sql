@@ -94,7 +94,43 @@ ALTER TABLE `players`
 -- Playlists ---------------------------------------------------------------------------------------------------
 
 
-drop table if exists playlists;
+ALTER TABLE `playlists`
+  ADD CONSTRAINT `playlists_ibfk_1` 
+  FOREIGN KEY (`customer_id`) 
+  REFERENCES `customers` (`customer_id`)
+  ON DELETE SET NULL
+  ON UPDATE CASCADE;
+ALTER TABLE `playlists`
+  ADD CONSTRAINT `playlists_ibfk_2` 
+  FOREIGN KEY (`user_id`) 
+  REFERENCES `users` (`user_id`)
+  ON DELETE SET NULL
+  ON UPDATE CASCADE;
 
+ALTER TABLE `players_playlists`
+  ADD CONSTRAINT `players_playlists_ibfk_1` 
+  FOREIGN KEY (`player_id`) 
+  REFERENCES `players` (`player_id`)
+  ON DELETE SET NULL
+  ON UPDATE CASCADE;
+ALTER TABLE `players_playlists`
+  ADD CONSTRAINT `players_playlists_ibfk_2` 
+  FOREIGN KEY (`playlist_id`) 
+  REFERENCES `playlists` (`playlist_id`)
+  ON DELETE SET NULL
+  ON UPDATE CASCADE;
+ALTER TABLE `players_playlists`
+  ADD CONSTRAINT `players_playlists_ibfk_3` 
+  FOREIGN KEY (`user_id`) 
+  REFERENCES `users` (`user_id`)
+  ON DELETE SET NULL
+  ON UPDATE CASCADE;
+
+
+
+-- Media & Directories ---------------------------------------------------------------------------------------------------
+
+
+CREATE
 
 

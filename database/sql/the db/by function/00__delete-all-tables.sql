@@ -37,3 +37,14 @@ drop table if exists players;
 
 
 drop table if exists playlists;
+drop table if exists players_playlists;
+
+
+
+-- Media & Directories ---------------------------------------------------------------------------------------------------
+
+
+drop table if exists media;
+drop table if exists directories;
+drop table if exists playlists_media;
+drop table if exists playlists_directories;
