@@ -120,9 +120,149 @@ ALTER TABLE `playlists_directories`
 
 -- insert ---------------------------------------------------------------------------------------------------
 
-insert into customers
+-- create 5 players across four floors and two buildings
+insert into media
+     (
+          `customer_id`, 
+          `user_id`, 
+          `file_name`, 
+          `file_type`, 
+          `file_size`,
+          `title`,
+          `description`,
+          `dimensions_width`,
+          `dimensions_height`
+     )
+values
+     -- arch media.
+     (
+          2,
+          2,
+          "campus.png",
+          "image/png",
+          354678,
+          "Picture of Gatech campus",
+          "This is the default picture used on our signage.",
+          1267,
+          987
+     ),
+     (
+          2,
+          2,
+          "building.jpg",
+          "image/jpg",
+          78884744,
+          "Building",
+          null,
+          1107,
+          687
+     ),
+     (
+          2,
+          2,
+          "welcome.png",
+          "image/png",
+          9844477,
+          "Welcome Image",
+          "Standard greeting image for the school",
+          1280,
+          900
+     ),
+     -- admissions media.
+     (
+          1,
+          1,
+          "welcome-image.png",
+          "image/png",
+          77336633,
+          "Admissions - hello",
+          null,
+          1367,
+          1087
+     ),
+     (
+          1,
+          2,
+          "reminder.jpeg",
+          "image/jpeg",
+          633366,
+          "Registration-reminder",
+          "Reminder to register!",
+          1367,
+          1087
+     );
+
+insert into directories
+     (
+          `customer_id`, 
+          `user_id`, 
+          `title`,
+          `file_contents`, 
+          `description`
+     )
+values
+     -- admissions directories.
+     (
+          1,
+          1,
+          "Staff",
+          "",
+          "Directory of our staff"
+     ),
+     (
+          1,
+          2,
+          "Deadlines",
+          "",
+          "Calendar of our deadlines"
+     );
+
+-- match playlists to media.
+insert into playlists_media
+     (`playlist_id`, `media_id`, `user_id`, `order`)
+values 
+     -- -> playlist 1 (2 files)
+     (1, 4, 1, 0),
+     (1, 5, 1, 1),
+     -- -> playlist 3 (1 file)
+     (3, 1, 2, 0),
+     -- -> playlist 4 (3 files)
+     (4, 1, 2, 0),
+     (4, 2, 2, 1),
+     (4, 3, 2, 2);
+
+-- match playlists to directories.
+insert into playlists_directories
+     (`playlist_id`, `directory_id`, `user_id`, `order`)
+values 
+     -- -> playlist 2 (2 directories)
+     (2, 1, 1, 0),
+     (2, 2, 2, 1),
+     -- -> playlist 5 (1 directory)
+     (5, 1, 1, 0);
+
 
 
 -- select ---------------------------------------------------------------------------------------------------
 
--- show all accounts - user, company, and admin status
+SELECT
+     media.media_id,
+     media.file_name,
+     playlists.playlist_id,
+     playlists.name
+FROM media
+LEFT JOIN playlists_media
+ON media.media_id = playlists_media.media_id
+JOIN playlists
+ON playlists_media.playlist_id = playlists.playlist_id;
+
+SELECT
+     directories.directory_id,
+     directories.title,
+     playlists.playlist_id,
+     playlists.name
+FROM directories
+LEFT JOIN playlists_directories
+ON directories.directory_id = playlists_directories.directory_id
+JOIN playlists
+ON playlists_directories.playlist_id = playlists.playlist_id;
