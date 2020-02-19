@@ -113,7 +113,7 @@ SELECT
      playlists.name `playlist`,
      playlists.type `type`
 FROM playlists
-LEFT JOIN players_playlists
+JOIN players_playlists
 ON playlists.playlist_id = players_playlists.playlist_id
-LEFT JOIN players
+JOIN players
 ON players_playlists.playlist_id = players.player_id;
