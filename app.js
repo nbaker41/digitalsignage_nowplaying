@@ -29,6 +29,31 @@
           $urlRouterProvider.otherwise("/");
      });
 
+     app.run(function(){
+          app.stuff = "hey";
+          alert(app.stuff);
+	// pull images from sql database via php file and http request...
+          // upload.read = function(){
+		// set up http request
+			var request = $http({
+				method: 'GET',
+				url: 'get_customers.php',
+			});
+		// submit http request
+			request.then(function(response){
+				if(response.data[0] == "<"){
+					console.log(response);
+				}else{
+					upload.pics = response.data;
+					console.log(response);
+				}
+				// upload.errormessage = $sce.trustAsHtml(upload.pics);
+			}, function(error){
+				alert(error.data);
+			});
+		// }
+     });
+
      app.controller(
      "appCtrl", function($scope, $transitions){
      let app = this;
@@ -50,12 +75,25 @@
           });
 
      // gather info about this player based on url parameters...
-          app.info = {
-               client: [
-                    // array of objects.. select one.
-               ]
+          app.data = {
+               allCustomers: [
+               ],
+               thisCustomer: {
+                    schools: [
+                    ],
+                    departments: [
+                    ]
+               },
+               thisPlayer: {
+                    playlists:[
+                    ],
+                    thisBuilding: {
+                    }
+               }
           };          
 
+
+     // app.sitedata
           app.siteData = JSON.stringify(siteData, null, 4);
 
      // handle the clock

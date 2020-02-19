@@ -3,8 +3,8 @@
      class DB_Connection{
      // define db parameters
           // private $DB_NAME = "digitalsignage_files";
-          private $DB_NAME = "digitalsign_platform";
-          private $USERNAME = "ddst_user";
+          private $DB_NAME = "crdunsto_ddst_files";
+          private $USERNAME = "crdunsto_ddst";
           private $PASSWORD = "digital!!";
      // the work computer didn't allow wampserver to
      // use the default port... thus, I use port 81,
@@ -23,12 +23,23 @@
           public function __construct(){
                $this->db = new DB_Connection();
           }
-     // on page load, retrieve all customers..
-          public function getCustomers(){
+     // insert into images.
+          public function save($image){
           // create connection to a db.
                $conn = $this->db->connect();
           // write SQL query
-               $query = "SELECT * FROM customers";
+               $query = "INSERT INTO example (image_name) VALUES ('$image')";
+               $result = $conn->query($query) or die($conn->error.__LINE__);
+          // close connection
+               $conn->close();
+               return $result;
+          }
+     // retrieve from db.
+          public function get(){
+          // create connection to a db.
+               $conn = $this->db->connect();
+          // write SQL query
+               $query = "SELECT * FROM example";
                $result = $conn->query($query) or die($conn->error.__LINE__);
           // create array container
                $data = array();
