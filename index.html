@@ -26,7 +26,8 @@
 
 <body class="{{app.route.to}}">
 
-     <div>
+     <div
+          ng-if="app.route.params.customer == undefined">
           <button
                ui-sref="customer({customer: 'admissions'})">
                /admissions
@@ -36,7 +37,7 @@
                /admissions/44
           </button>
           <button
-               ui-sref="customer({customer: 'crc', screen: 2})">
+               ui-sref="customer({customer: 'arch', screen: 2})">
                /arch/2
           </button>
      </div>
