@@ -29,7 +29,7 @@
           $urlRouterProvider.otherwise("/");
      });
 
-     app.run(function(){
+     app.run(function($http){
           app.stuff = "hey";
           alert(app.stuff);
 	// pull images from sql database via php file and http request...
@@ -37,14 +37,13 @@
 		// set up http request
 			var request = $http({
 				method: 'GET',
-				url: 'get_customers.php',
+				url: './get_customers.php',
 			});
 		// submit http request
 			request.then(function(response){
 				if(response.data[0] == "<"){
 					console.log(response);
 				}else{
-					upload.pics = response.data;
 					console.log(response);
 				}
 				// upload.errormessage = $sce.trustAsHtml(upload.pics);
