@@ -1,15 +1,17 @@
 <?php
 
      class DB_Connection{
-     // define db parameters
-          // private $DB_NAME = "digitalsignage_files";
+     // define db parameters -- plesk server
+          // private $DB_NAME = "digitalsign_platform";
+          // private $USERNAME = "ddst_user";
+          // private $PASSWORD = "digital!!";
+          // private $SERVER_NAME = "localhost";
+     // define db parameters -- wampserver
           private $DB_NAME = "digitalsign_platform";
-          private $USERNAME = "ddst_user";
-          private $PASSWORD = "digital!!";
-     // the work computer didn't allow wampserver to
-     // use the default port... thus, I use port 81,
-     // giving us the ":8081" suffix.
-          private $SERVER_NAME = "localhost";
+          private $USERNAME = "root";
+          private $PASSWORD = "";
+          // mysql runs on port 3306.
+          private $SERVER_NAME = "localhost:3306";
      // create connection based on above.
           public function connect(){
                $conn = new mysqli($this->SERVER_NAME, $this->USERNAME, $this->PASSWORD, $this->DB_NAME);
