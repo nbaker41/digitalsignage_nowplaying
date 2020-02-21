@@ -17,6 +17,7 @@
                "list",
                "events",
      //services
+          "dataservice",
           //wp,
           //web scraper,
           //weather,
@@ -44,10 +45,9 @@
                     to: $transition.$to().name,
                     params: {
                          customer: $transition.params().customer,
-                         screen: $transition.params().screen,
+                         player: $transition.params().player,
                     }
                };
-               // console.log(app.rosute);
           });
 
      // handle the clock

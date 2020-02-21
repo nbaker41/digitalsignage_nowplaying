@@ -1,23 +1,49 @@
-@mixin breakpoint($screenMinWidth) {
-     @if $screenMinWidth == v {
-          @media (max-width:1900px) { @content; }
-     }
-     @if $screenMinWidth == h {
+@mixin breakpoint($screenWidth) {
+// mobile 
+     @if ($screenWidth == xs or $screenWidth == v) {
+          @media (max-width:400px) { @content; }
+     }	// 320, 360
+// tablet
+     @if ($screenWidth == sm or $screenWidth == v) {
+          @media (min-width:400px) { @content; }
+     }	// 414, 768
+// desktop
+     @if ($screenWidth == md or $screenWidth == v) {
+          @media (min-width:1000px) { @content; }
+     }	// 1024, 1080, 1280 
+     @if ($screenWidth == lg or $screenWidth == v) {
+          @media (min-width:1360px) { @content; }
+     }	// 1366, 1440, 1536, 1600
+     @if ($screenWidth == xl or $screenWidth == h) {
           @media (min-width:1900px) { @content; }
-     }
+     }	// 1920
 }
 
-@include breakpoint(v) {
+@include breakpoint(xs) {
      body:before {
-          content: "v";
+          content: "xs";
      }
 }
-@include breakpoint(h) {
+@include breakpoint(sm) {
      body:before {
-          content: "h";
+          content: "sm";
      }
 }
-
+@include breakpoint(md) {
+     body:before {
+          content: "md";
+     }
+}
+@include breakpoint(lg) {
+     body:before {
+          content: "lg";
+     }
+}
+@include breakpoint(xl) {
+     body:before {
+          content: "xl";
+     }
+}
 
 body:before{
      display: none;

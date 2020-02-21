@@ -107,16 +107,16 @@
           <img src="components/header/img/gt-logo.svg" alt="Georgia Tech Logo" width="210px">
           <div>
                <h1 class="title">
-                    {{header.app.info.client.name.official | uppercase}}
+                    {{header.app.currentCustomer.name_long | uppercase}}
                </h1>
           </div>
-          <div class="current">
+          <!-- <div class="current">
                <div class="date">
                     <span id="weekday">{{header.app.currentTime | date : "EEEE" : "-0500"}}</span><br>
                     <span id="time">{{header.app.currentTime | date : "shortTime" : "-0500"}}</span><br>
                     <span id="month">{{header.app.currentTime | date : "longDate" : "-0500"}}</span>
                </div>
-          </div>
+          </div> -->
      </div>
 </div>
 
