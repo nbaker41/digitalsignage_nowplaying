@@ -13,9 +13,14 @@
 		controllerAs: "customer"
 	})});
 
-	customer.controller("customerCtrl", function($scope, $http, $rootScope, $data){
+	customer.controller("customerCtrl", function($scope, $state, $rootScope, $data, $stateParams){
 	var customer = this;
 	customer.app = $scope.$parent.app;
+
+	// what happens if you specify a customer but no player?
+		if ($stateParams.player == undefined){
+			alert("You are in " + $stateParams.customer + " but you have not specified a player.");
+		}
 
 	// find the customer based on the url params and data.allcustomers...
 		$data.getCustomers(function(x){
@@ -23,11 +28,17 @@
 		});
 		function findThisCustomer(){
 			var allC = $rootScope.data.allCustomers;
+		// cycle through all customers to see if one shortname matches the stateparams.customer...
 			for (var i = 0; i < allC.length; i++){
-				if (allC[i].name_short == customer.app.route.params.customer){
+				if (allC[i].name_short == $stateParams.customer){
 					$rootScope.data.thisCustomer = allC[i];
 					customer.app.currentCustomer = allC[i];
 				}
+			}
+			console.log($rootScope.data.thisCustomer);
+		// if no shortname exists that matches url, do something...
+			if ($rootScope.data.thisCustomer == undefined){
+				$state.go("home");
 			}
 		}
 

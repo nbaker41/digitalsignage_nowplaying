@@ -64,12 +64,7 @@
      // construct app.data -- put this on rootscope?
           $rootScope.data = {
                allCustomers: [],
-               thisCustomer: {
-                    schools: [
-                    ],
-                    departments: [
-                    ]
-               },
+               thisCustomer: null,
                thisPlayer: {
                     playlists:[
                     ],
