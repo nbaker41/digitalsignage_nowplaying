@@ -65,12 +65,7 @@
           $rootScope.data = {
                allCustomers: [],
                thisCustomer: null,
-               thisPlayer: {
-                    playlists:[
-                    ],
-                    thisBuilding: {
-                    }
-               }
+               thisPlayer: null
           };          
 
 

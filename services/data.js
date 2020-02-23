@@ -49,7 +49,6 @@
                }, function(error){
                     $rootScope.errormessage = $sce.trustAsHtml(error.data);
                });
-               console.log($rootScope);
           };
 
 	});
