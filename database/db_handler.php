@@ -10,8 +10,7 @@
           private $DB_NAME = "digitalsign_platform";
           private $USERNAME = "root";
           private $PASSWORD = "";
-          // mysql runs on port 3306.
-          private $SERVER_NAME = "localhost:3306";
+          private $SERVER_NAME = "localhost:3306"; // mysql runs on port 3306.
      // create connection based on above.
           public function connect(){
                $conn = new mysqli($this->SERVER_NAME, $this->USERNAME, $this->PASSWORD, $this->DB_NAME);
@@ -31,6 +30,45 @@
                $conn = $this->db->connect();
           // write SQL query
                $query = "SELECT * FROM customers";
+               $result = $conn->query($query) or die($conn->error.__LINE__);
+          // create array container
+               $data = array();
+          // fill array with result data
+               if($result->num_rows > 0){
+                    while($row = $result->fetch_assoc()){
+                         $data[] = $row;
+                    }
+               }
+          // close connection
+               $conn->close();
+               return $data;
+          }
+
+     // search players by customer..
+          public function getPlayers(){
+          // create connection to a db.
+               $conn = $this->db->connect();
+          // write SQL query
+               $query = "
+               
+                    SELECT 
+                         players.player_id,
+                         players.name_long,
+                         floors.floor_id,
+                         floors.name,
+                         buildings.building_id,
+                         buildings.name_long,
+                         customers.name_short
+                    FROM floors
+                    JOIN players
+                    ON floors.floor_id = players.floor_id
+                    JOIN buildings
+                    ON floors.building_id = buildings.building_id
+                    JOIN customers
+                    ON players.customer_id = customers.customer_id
+                    GROUP BY players.player_id;
+               
+               ";
                $result = $conn->query($query) or die($conn->error.__LINE__);
           // create array container
                $data = array();

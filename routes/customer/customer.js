@@ -35,11 +35,19 @@
 					customer.app.currentCustomer = allC[i];
 				}
 			}
+			$data.getPlayers(function(){
+				findAllPlayers();
+			});
 			console.log($rootScope.data.thisCustomer);
 		// if no shortname exists that matches url, do something...
 			if ($rootScope.data.thisCustomer == undefined){
 				$state.go("home");
 			}
+		}
+	// find all players
+		function findAllPlayers(){
+			console.log($rootScope);
+			alert("hello");
 		}
 
 	});
