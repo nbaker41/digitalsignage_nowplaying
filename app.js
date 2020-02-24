@@ -1,13 +1,13 @@
 (function(){
 
-     let app = angular.module("app", [
-     // modules
+     let nowPlaying = angular.module("now-playing", [
+     // Google modules
           "ui.router",
           "ngAnimate",
-     //routes
+     // routes
           "home",
           "screen",
-     //components
+     // components
           "header",
           "ticker",
           "keyboard",
@@ -16,30 +16,29 @@
                "slideshow",
                "list",
                "events",
-     //services
+     // services
           "data_get",
           //wp,
           //web scraper,
           //weather,
-     //directives
+     // directives
           "draggableModule"
      ]);
 
-	app.config(function($locationProvider, $urlRouterProvider){
+	nowPlaying.config(function($locationProvider, $urlRouterProvider){
           $locationProvider.html5Mode(true);
           $urlRouterProvider.otherwise("/");
      });
 
-     app.run(function(){
+     nowPlaying.run(function(){
      });
 
-     app.controller(
+     nowPlaying.controller(
      "appCtrl", function($scope, $transitions, $http, $sce, $rootScope){
      let app = this;
 
      // transitions
           $transitions.onSuccess({}, function($transition){
-          // construct a route object
 			app.route = {
                     from: $transition.$from().name,
                     to: $transition.$to().name,
@@ -50,30 +49,25 @@
                };
           });
 
-     // handle the clock
+     // clock
           app.tick = setInterval(function(){
                app.currentTime = new Date();
                $scope.$apply();
           }, 1000);
 
 
-
-
 // ----------  DATA  ------------------------------------------------------------------------------------------------------------------
 
-     // construct app.data -- put this on rootscope?
+     // construct $rootScope.data
           $rootScope.data = {
                allCustomers: null,
                thisCustomer: null,
+               allPlayers: null,
                thisPlayer: null
           };          
 
-     // make app.data == $rootScope.data...
-          // app.siteData = JSON.stringify(siteData, null, 4);
-          app.data = JSON.stringify(app.data, null, 4);
-
-     // need to see if sql's datetime format is the same as this
-          // app.dateTimeExample = "2020-02-11T13:57:01.395Z";
+     // stringify 
+          // app.data = JSON.stringify(app.data, null, 4);
 
      });
 
