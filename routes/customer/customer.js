@@ -41,8 +41,8 @@
 			if ($rootScope.data.thisCustomer == undefined){
 				$state.go("home");
 			}
-			$data.getPlayers({customer_id: 3}, function(){
-				alert("customer_id");
+		// search for the players by customer...
+			$data.getPlayers({customer_id: $rootScope.data.thisCustomer.customer_id}, function(){
 				findThisPlayer();
 			});
 		}
@@ -50,15 +50,14 @@
 	// thisPlayer
 		function findThisPlayer(){
 			var allP = $rootScope.data.allPlayers;
-			console.log($rootScope.data.allPlayers);
-		// cycle through all customers to see if one shortname matches the stateparams.customer...
+		// cycle through all players to see if one id matches stateparams.player...
 			for (var i = 0; i < allP.length; i++){
 				if (allP[i].player_id == $stateParams.player){
 					$rootScope.data.thisPlayer = allP[i];
 					customer.app.currentPlayer = allP[i];
 				}
 			}
-		// what happens if no player matches the extension...
+		// what happens if no match...
 			if ($rootScope.data.thisPlayer == null){
 				alert("player does not exist in customer " + $rootScope.data.thisCustomer.name_short);
 			}

@@ -53,7 +53,8 @@
                     SELECT
                          *
                     FROM players
-                    WHERE customer_id = ".$customer_id;
+                    WHERE customer_id = 
+               ".$customer_id;
                $result = $conn->query($query) or die($conn->error.__LINE__);
           // create array container
                $data = array();
