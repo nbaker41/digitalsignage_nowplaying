@@ -25,7 +25,7 @@
 		$get.customers(function(){
 			findThisCustomer();
 			screen.app.data = $rootScope.data;
-			console.log(screen.app.data);
+			// console.log(screen.app.data);
 		});
 	// thisCustomer
 		function findThisCustomer(){
@@ -40,7 +40,7 @@
 			if ($rootScope.data.thisCustomer == undefined){
 				$state.go("home");
 			}
-		// search for the players by customer...
+		// get player...
 			$get.players({customer_id: $rootScope.data.thisCustomer.customer_id}, function(){
 				findThisPlayer();
 			});
@@ -59,6 +59,10 @@
 				alert("player does not exist in customer " + $rootScope.data.thisCustomer.name_short);
 				$state.go();
 			}
+		// get playlists...
+			$get.playlists({player_id: $rootScope.data.thisPlayer.player_id}, function(){
+				findPlaylists();
+			});
 		}
 
 	});

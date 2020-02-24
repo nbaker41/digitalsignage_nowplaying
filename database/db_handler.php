@@ -24,7 +24,8 @@
           public function __construct(){
                $this->db = new DB_Connection();
           }
-     // on page load, retrieve all customers..
+
+     // all customers..
           public function getCustomers(){
           // create connection to a db.
                $conn = $this->db->connect();
@@ -44,7 +45,7 @@
                return $data;
           }
 
-     // search players by customer..
+     // players by customer..
           public function getPlayers($customer_id){
           // create connection to a db.
                $conn = $this->db->connect();
@@ -68,6 +69,38 @@
                $conn->close();
                return $data;
           }
+
+     // playlists by player..
+          public function getPlaylists($player_id){
+          // create connection to a db.
+               $conn = $this->db->connect();
+          // write SQL query
+               $query = "               
+                    SELECT
+                         players_playlists.player_id,
+                         players_playlists.playlist_id,
+                         players_playlists.order,
+                         playlists.name,
+                         playlists.type
+                    FROM players_playlists
+                    JOIN playlists
+                    ON playlists.playlist_id = players_playlists.playlist_id
+                    WHERE players_playlists.player_id = 
+               ".$player_id." ORDER BY players_playlists.order ASC;";
+               $result = $conn->query($query) or die($conn->error.__LINE__);
+          // create array container
+               $data = array();
+          // fill array with result data
+               if($result->num_rows > 0){
+                    while($row = $result->fetch_assoc()){
+                         $data[] = $row;
+                    }
+               }
+          // close connection
+               $conn->close();
+               return $data;
+          }
+
      };
 
 ?>

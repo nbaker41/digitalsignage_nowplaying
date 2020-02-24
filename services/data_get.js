@@ -32,7 +32,6 @@
                     function(response){
                          $rootScope.data.allCustomers = response;
                          if (typeof callback === "function") {
-                              // console.log(response);
                               callback(response);
                          };
                     }
@@ -46,7 +45,19 @@
                     function(response){
                          $rootScope.data.allPlayers = response;
                          if (typeof callback === "function") {
-                              // console.log(response);
+                              callback(response);
+                         };
+                    }
+               );
+          }
+
+          get.playlists = function(params, callback){
+               get.request(
+                    '../routes/screen/get_playlists.php',
+                    params,
+                    function(response){
+                         $rootScope.data.allPlaylists = response;
+                         if (typeof callback === "function") {
                               callback(response);
                          };
                     }
