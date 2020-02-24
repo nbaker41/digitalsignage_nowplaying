@@ -14,7 +14,7 @@
           //main
                "leftsection",
                "slideshow",
-               "list",
+               "directory",
                "events",
      // services
           "data_get",

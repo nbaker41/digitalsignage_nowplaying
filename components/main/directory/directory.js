@@ -1,18 +1,17 @@
 (function(){
 
-     let list = angular.module("list", [
-     ]);
+     let directory = angular.module("directory", []);
 
-	list.component("list", {
-		controller: "listCtrl",
-		controllerAs: "list",
-		templateUrl: "components/main/list/list.html"
+	directory.component("directory", {
+		controller: "directoryCtrl",
+		controllerAs: "directory",
+		templateUrl: "components/main/directory/directory.html"
 	});
 
-     list.controller(
-     "listCtrl", function($scope){
+     directory.controller(
+     "directoryCtrl", function($scope){
      this.app = $scope.$parent.app;
-     let list = this;
+     let directory = this;
 
           var data = [
                {firstname: "Cecil", lastname: "Dunston", floor: 3, room: 312},
@@ -23,7 +22,7 @@
                {firstname: "Mance", lastname: "Ellenburg", floor: 2, room: 200}
           ];
 
-          list.tabledata = data;
+          directory.tabledata = data;
 
      });
 

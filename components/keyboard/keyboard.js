@@ -13,7 +13,6 @@
                     url: 'components/keyboard/keyboard.json'
                }).then(function (response) {
                     keyboard.layout = response.data;
-                    console.log(keyboard.layout);
                }, function (error) {
                     console.log("error loading data");
                });
@@ -22,10 +21,8 @@
                keyboard.keyPressed = function (value, action) {
                     keyboard.someInput = value;
                     $rootScope.$broadcast('keyPressed', keyboard.someInput, action);
-               // keyboard.app.list.searchObject = 
-                    console.log($rootScope.keyboardSearchObject);
-                    keyboard.app.list.searchObject = $rootScope.keyboardSearchObject;
-                    console.log(keyboard.app.list);
+               // keyboard.app.directory.searchObject = 
+                    keyboard.app.directory.keyboardSearchObject = $rootScope.keyboardSearchObject;
                }
 
           // make the keyboard draggable

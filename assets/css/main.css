@@ -234,14 +234,14 @@ events {
   padding-top: 7px;
 }
 
-list {
+directory {
   background: black;
   flex: 0.75;
 }
-list #search {
+directory #search {
   padding: 24px 50px;
 }
-list #search input {
+directory #search input {
   margin: 0;
   padding: 0;
   width: 100%;
@@ -253,17 +253,17 @@ list #search input {
   font-size: 36px;
   padding-left: 42px;
 }
-list #search input::placeholder {
+directory #search input::placeholder {
   color: white;
 }
-list table {
+directory table {
   color: white;
   width: 100%;
 }
-list table tr {
+directory table tr {
   height: 75px;
 }
-list table tbody tr:nth-of-type(odd) {
+directory table tbody tr:nth-of-type(odd) {
   background: #1f1f1f;
 }
 

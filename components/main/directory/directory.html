@@ -1,16 +1,15 @@
 <div id="search">
      <input 
+          id="dir-input"
           type="text"
           my-text=""
-          placeholder="Search Directory"
-          ng-model="list.searchObject">
-
+          placeholder="Search Directory">
      <keyboard></keyboard>
-
+     <button ng-click="directory.searchObject = 'cecil'">cecil</button>
 </div>
 
 
-<div id="mydiv" draggable class="other">
+<div id="mydiv" draggable class="other" ng-hide="true">
      <div id="mydivheader">Click to move</div>
      <p>Move</p>
      <p>this</p>
@@ -35,7 +34,7 @@
      </thead>
      <tbody>
           <tr
-               ng-repeat="x in list.tabledata | filter:list.searchObject">
+               ng-repeat="x in directory.tabledata | filter:directory.keyboardSearchObject">
                <td>{{x.firstname}}</td>
                <td>{{x.lastname}}</td>
                <td>{{x.floor}}</td>

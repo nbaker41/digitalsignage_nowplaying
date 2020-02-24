@@ -27,6 +27,7 @@
 			screen.app.data = $rootScope.data;
 			// console.log(screen.app.data);
 		});
+		
 	// thisCustomer
 		function findThisCustomer(){
 			var allC = $rootScope.data.allCustomers;
@@ -45,6 +46,7 @@
 				findThisPlayer();
 			});
 		}
+		
 	// thisPlayer
 		function findThisPlayer(){
 			var allP = $rootScope.data.allPlayers;
@@ -61,7 +63,7 @@
 			}
 		// get playlists...
 			$get.playlists({player_id: $rootScope.data.thisPlayer.player_id}, function(){
-				findPlaylists();
+				
 			});
 		}
 

@@ -5,7 +5,8 @@
 
 @import//     styles
 
-     'styles/breakpoints()',
+     'styles/__old_breakpoints()',
+     // 'styles/breakpoints()',
      'styles/flex()',
      'styles/structure';
 
@@ -14,7 +15,7 @@
      'components/header',
      'components/main',
           'components/main_events',
-          'components/main_list',
+          'components/main_directory',
           'components/main_slideshow',
           'components/main_leftsection',
      'components/ticker',
