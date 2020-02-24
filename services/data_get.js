@@ -1,7 +1,6 @@
 (function () {
 
-	let data = angular.module(
-	'data_get', []);
+	let data = angular.module('data_get', []);
 
 	data.service(
 	'$get', function ($http, $rootScope, $sce) {
@@ -23,6 +22,7 @@
                }, function(error){
                     $rootScope.errormessage = $sce.trustAsHtml(error.data);
                });
+               // trigger a way to push errormessage into view via app object...
           }
 
           get.customers = function(callback){
@@ -32,7 +32,7 @@
                     function(response){
                          $rootScope.data.allCustomers = response;
                          if (typeof callback === "function") {
-                              console.log(response);
+                              // console.log(response);
                               callback(response);
                          };
                     }
@@ -46,7 +46,7 @@
                     function(response){
                          $rootScope.data.allPlayers = response;
                          if (typeof callback === "function") {
-                              console.log(response);
+                              // console.log(response);
                               callback(response);
                          };
                     }

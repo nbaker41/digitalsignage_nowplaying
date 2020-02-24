@@ -56,14 +56,20 @@
           }, 1000);
 
 
-// ----------  DATA  ------------------------------------------------------------------------------------------------------------------
+// ----------  DATA  -------------------------------------------------------------------------
 
      // construct $rootScope.data
           $rootScope.data = {
+          // customers
                allCustomers: null,
                thisCustomer: null,
+          // players
                allPlayers: null,
-               thisPlayer: null
+               thisPlayer: null,
+          // playlists
+               allPlaylists: null
+          // buildings/floors?
+          // schools/depts?
           };          
 
      // stringify 
