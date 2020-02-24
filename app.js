@@ -63,18 +63,14 @@
 
      // construct app.data -- put this on rootscope?
           $rootScope.data = {
-               allCustomers: [],
+               allCustomers: null,
                thisCustomer: null,
                thisPlayer: null
           };          
 
-
      // make app.data == $rootScope.data...
           // app.siteData = JSON.stringify(siteData, null, 4);
           app.data = JSON.stringify(app.data, null, 4);
-
-
-
 
      // need to see if sql's datetime format is the same as this
           // app.dateTimeExample = "2020-02-11T13:57:01.395Z";

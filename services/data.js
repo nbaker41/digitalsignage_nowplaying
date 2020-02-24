@@ -29,14 +29,16 @@
                });
           };
 
-		data.getPlayers = function (callback) {
+		data.getPlayers = function (params, callback) {
           // pull all customers
                $http({
                     method: 'GET',
                     url: '../routes/customer/get_players.php',
+                    params: params
                }).then(function(response){
                     if(response.data[0] == "<"){
                          $rootScope.errormessage = $sce.trustAsHtml(response.data);
+                         alert($rootScope.errormessage);
                     }else{
                          $rootScope.data.allPlayers = response.data;
                          if (typeof callback === "function") {
@@ -48,6 +50,7 @@
                     }
                }, function(error){
                     $rootScope.errormessage = $sce.trustAsHtml(error.data);
+                    alert($rootScope.errormessage);
                });
           };
 

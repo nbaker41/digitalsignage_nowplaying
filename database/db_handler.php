@@ -45,30 +45,15 @@
           }
 
      // search players by customer..
-          public function getPlayers(){
+          public function getPlayers($customer_id){
           // create connection to a db.
                $conn = $this->db->connect();
           // write SQL query
-               $query = "
-               
-                    SELECT 
-                         players.player_id,
-                         players.name_long,
-                         floors.floor_id,
-                         floors.name,
-                         buildings.building_id,
-                         buildings.name_long,
-                         customers.name_short
-                    FROM floors
-                    JOIN players
-                    ON floors.floor_id = players.floor_id
-                    JOIN buildings
-                    ON floors.building_id = buildings.building_id
-                    JOIN customers
-                    ON players.customer_id = customers.customer_id
-                    GROUP BY players.player_id;
-               
-               ";
+               $query = "               
+                    SELECT
+                         *
+                    FROM players
+                    WHERE customer_id = ".$customer_id;
                $result = $conn->query($query) or die($conn->error.__LINE__);
           // create array container
                $data = array();
