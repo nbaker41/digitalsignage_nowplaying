@@ -1,32 +1,32 @@
 (function(){
 
-	let customer = angular.module(
-	"customer", [
-	]);
+	let screen = angular.module("screen", []);
 
-	customer.config(function($stateProvider){
+	screen.config(function($stateProvider){
 	$stateProvider.state(
-	'customer', {
+	'screen', {
 		url: '/:customer/:player',
-		templateUrl: 'routes/customer/customer.html',
-		controller: "customerCtrl",
-		controllerAs: "customer"
+		templateUrl: 'routes/screen/screen.html',
+		controller: "screenCtrl",
+		controllerAs: "screen"
 	})});
 
-	customer.controller("customerCtrl", function($scope, $state, $rootScope, $data, $stateParams){
-	var customer = this;
-	customer.app = $scope.$parent.app;
+	screen.controller("screenCtrl", function($scope, $state, $rootScope, $get, $stateParams){
+	var screen = this;
+	screen.app = $scope.$parent.app;
 
 	// what happens if you specify a customer but no player?
 		if ($stateParams.player == undefined){
 			alert("You are in " + $stateParams.customer + " but you have not specified a player.");
 		}
 
+	// Find customer and player.
 	// Execute chained list of queries starting with customers...
-		$data.getCustomers(function(){
+		$get.customers(function(){
 			findThisCustomer();
+			screen.app.data = $rootScope.data;
+			console.log(screen.app.data);
 		});
-
 	// thisCustomer
 		function findThisCustomer(){
 			var allC = $rootScope.data.allCustomers;
@@ -34,7 +34,6 @@
 			for (var i = 0; i < allC.length; i++){
 				if (allC[i].name_short == $stateParams.customer){
 					$rootScope.data.thisCustomer = allC[i];
-					customer.app.currentCustomer = allC[i];
 				}
 			}
 		// if no shortname exists that matches url, do something...
@@ -42,11 +41,10 @@
 				$state.go("home");
 			}
 		// search for the players by customer...
-			$data.getPlayers({customer_id: $rootScope.data.thisCustomer.customer_id}, function(){
+			$get.players({customer_id: $rootScope.data.thisCustomer.customer_id}, function(){
 				findThisPlayer();
 			});
 		}
-
 	// thisPlayer
 		function findThisPlayer(){
 			var allP = $rootScope.data.allPlayers;
@@ -54,12 +52,12 @@
 			for (var i = 0; i < allP.length; i++){
 				if (allP[i].player_id == $stateParams.player){
 					$rootScope.data.thisPlayer = allP[i];
-					customer.app.currentPlayer = allP[i];
 				}
 			}
 		// what happens if no match...
 			if ($rootScope.data.thisPlayer == null){
 				alert("player does not exist in customer " + $rootScope.data.thisCustomer.name_short);
+				$state.go();
 			}
 		}
 

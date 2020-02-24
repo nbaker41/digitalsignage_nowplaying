@@ -29,20 +29,20 @@
      <div
           ng-if="app.route.params.customer == undefined">
           <button
-               ui-sref="customer({customer: 'admissions'})">
+               ui-sref="screen({customer: 'admissions'})">
                /admissions
           </button>
           <button
-               ui-sref="customer({customer: 'admissions', player: 44})">
-               /admissions/44
+               ui-sref="screen({customer: 'admissions', player: 44})">
+               /admissions/44 (player does not exist)
           </button>
           <button
-               ui-sref="customer({customer: 'arch', player: 2})">
+               ui-sref="screen({customer: 'arch', player: 2})">
                /arch/2
           </button>
           <button
-               ui-sref="customer({customer: 'crc', player: 6})">
-               /crc/6
+               ui-sref="screen({customer: 'crc', player: 6})">
+               /crc/6 (customer does not exist)
           </button>
      </div>
 
@@ -81,7 +81,7 @@
      <script src="components/ticker/breaking-news-ticker.min.js"></script>
      <!-- ROUTES -->
           <script src="routes/home/home.js"></script>
-          <script src="routes/customer/customer.js"></script>
+          <script src="routes/screen/screen.js"></script>
      <!-- COMPONENTS -->
           <script src="components/header/header.js"></script>
           <script src="components/ticker/ticker.js"></script>
@@ -92,7 +92,7 @@
                <script src="components/main/events/events.js"></script>
                <script src="components/main/list/list.js"></script>
      <!-- SERVICES -->
-          <script src="services/data.js"></script>
+          <script src="services/data_get.js"></script>
      <!-- DIRECTIVES -->
           <script src="directives/draggable.js"></script>
 <!--------------------------------------------------------------------------------------------------->

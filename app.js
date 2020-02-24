@@ -6,7 +6,7 @@
           "ngAnimate",
      //routes
           "home",
-          "customer",
+          "screen",
      //components
           "header",
           "ticker",
@@ -17,7 +17,7 @@
                "list",
                "events",
      //services
-          "dataservice",
+          "data_get",
           //wp,
           //web scraper,
           //weather,
