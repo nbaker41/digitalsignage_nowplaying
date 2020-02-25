@@ -71,17 +71,18 @@
 	// fill playlists 
 		function fillPlaylists(){
 		// media
-			var P = $rootScope.data.allPlaylists.mediaPlaylists;
-			for (var i = 0; i < P.length; i++){
-				var thisP = P[i];
+			var M = $rootScope.data.allPlaylists.mediaPlaylists;
+			for (var i = 0; i < M.length; i++){
+				let thisM = M[i];
+				console.log(thisM);
 				$get.playlistItems(
 					{
-						playlist_id: thisP.playlist_id,
-						playlist_type: thisP.type,
+						playlist_id: thisM.playlist_id,
+						playlist_type: thisM.type,
 					},
 					function(response){
 						for (var i = 0; i < response.length; i++){
-							thisP.items.push(response[i])
+							thisM.items.push(response[i])
 						}
 					}
 				);
@@ -89,7 +90,8 @@
 		// directories
 			var D = $rootScope.data.allPlaylists.directoryPlaylists;
 			for (var i = 0; i < D.length; i++){
-				var thisD = D[i];
+				let thisD = D[i];
+				// console.log(thisD);
 				$get.playlistItems(
 					{
 						playlist_id: thisD.playlist_id,
@@ -97,12 +99,17 @@
 					},
 					function(response){
 						for (var i = 0; i < response.length; i++){
+							console.log(
+								thisD,
+								response[i].title,
+								response[i].playlist_id
+							);
 							thisD.items.push(response[i])
 						}
 					}
 				);
 			}
-			console.log($rootScope.data.allPlaylists);
+			// console.log($rootScope.data.allPlaylists);
 		}
 
 

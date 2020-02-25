@@ -18,7 +18,7 @@
      
      // get all media items for the first media playlist...
           slideshow.items = slideshow.app.data.allPlaylists.mediaPlaylists[1].items;
-          console.log(slideshow.app.data.allPlaylists);
+          // console.log(slideshow.app.data.allPlaylists);
 
      // find file path...
           var root = "../../..";
