@@ -237,6 +237,7 @@ events {
 directory {
   background: black;
   flex: 0.75;
+  color: white;
 }
 directory #search {
   padding: 24px 50px;

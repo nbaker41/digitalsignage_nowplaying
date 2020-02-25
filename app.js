@@ -30,7 +30,7 @@
           $urlRouterProvider.otherwise("/");
      });
 
-     nowPlaying.run(function(){
+     nowPlaying.run(function($get, $rootScope, $stateParams, $state){
      });
 
      nowPlaying.controller(
@@ -67,13 +67,16 @@
                allPlayers: null,
                thisPlayer: null,
           // playlists
-               allPlaylists: null
+               allPlaylists: {
+                    media: [],
+                    directories: []
+               }
           // buildings/floors?
           // schools/depts?
           };          
 
      // stringify 
-          // app.data = JSON.stringify(app.data, null, 4);
+          app.data = JSON.stringify($rootScope.data, null, 4);
 
      });
 

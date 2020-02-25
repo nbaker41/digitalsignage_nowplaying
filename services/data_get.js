@@ -56,7 +56,15 @@
                     '../routes/screen/get_playlists.php',
                     params,
                     function(response){
-                         $rootScope.data.allPlaylists = response;
+                    // sort by type.
+                         for (var i = 0; i < response.length; i++){
+                              if (response[i].type == "media"){
+                                   $rootScope.data.allPlaylists.media.push(response[i]);
+                              } else if (response[i].type == "directory"){
+                                   $rootScope.data.allPlaylists.directories.push(response[i]);
+                              } else {
+                              }
+                         }          
                          if (typeof callback === "function") {
                               callback(response);
                          };

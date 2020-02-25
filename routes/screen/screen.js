@@ -17,7 +17,8 @@
 
 	// what happens if you specify a customer but no player?
 		if ($stateParams.player == undefined){
-			alert("You are in " + $stateParams.customer + " but you have not specified a player.");
+			$rootScope.errormessage = "You are in " + $stateParams.customer + " but you have not specified a player.";
+			alert($rootScope.errormessage);
 		}
 
 	// Find customer and player.
@@ -63,9 +64,20 @@
 			}
 		// get playlists...
 			$get.playlists({player_id: $rootScope.data.thisPlayer.player_id}, function(){
-				
+				// sortPlaylists();
 			});
 		}
+
+	// sort playlists 
+		// function sortPlaylists(){
+		// 	var allPl = $rootScope.data.allPlaylists;
+		// 	for (var i = 0; i < allPl.length; i++){
+		// 		if (allPl[i].type == "media"){
+
+		// 		}
+		// 	}
+		// }
+
 
 	});
 
