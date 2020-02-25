@@ -26,24 +26,32 @@
 
 <body class="{{app.route.to}}">
 
-     <div
-          ng-if="app.route.params.customer == undefined">
+     <div>
+          <h2>Admissions</h2>
           <button
-               ui-sref="screen({customer: 'admissions'})">
+               ui-sref="screen({customer: 'admissions', player: null})">
                /admissions
           </button>
           <button
                ui-sref="screen({customer: 'admissions', player: 1})">
-               /admissions/1 (has both media and dir playlists)
+               /admissions/1 (1 media 1 dir)
+          </button>
+          <button
+               ui-sref="screen({customer: 'admissions', player: 3})">
+               /admissions/3 (0 media 1 dir)
           </button>
           <button
                ui-sref="screen({customer: 'admissions', player: 44})">
                /admissions/44 (player does not exist)
           </button>
+          <hr>
+          <h2>Architecture</h2>
           <button
                ui-sref="screen({customer: 'arch', player: 2})">
-               /arch/2
+               /arch/2 (2 media, 0 dir)
           </button>
+          <hr>
+          <h2>No Customer</h2>
           <button
                ui-sref="screen({customer: 'crc', player: 6})">
                /crc/6 (customer does not exist)
@@ -65,7 +73,7 @@
           <hr>
           <h1>$rootScope.Data</h1>
           <pre>
-               {{app.data}}
+               {{app.dataObject}}
           </pre>
      </div>
      

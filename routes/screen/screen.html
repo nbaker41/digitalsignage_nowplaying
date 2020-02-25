@@ -1,17 +1,17 @@
-<header></header>
+<!-- <header></header> -->
 
 <article id="main">
      <leftsection 
           ng-if="screen.app.info.player.sections.leftsection">
      </leftsection>
      <slideshow 
-          ng-if="screen.app.info.player.sections.slideshow">
+          ng-if="screen.app.data.allPlaylists.mediaPlaylists.length > 0">
      </slideshow>
      <directory 
-          ng-if="screen.app">
+          ng-if="screen.app.data.allPlaylists.directoryPlaylists.length > 0">
      </directory>
      <events 
-          ng-if="screen.app">
+          ng-if="screen.app.data">
      </events>
 </article>
 

@@ -31,11 +31,29 @@
      });
 
      nowPlaying.run(function($get, $rootScope, $stateParams, $state){
+          // $rootScope.data = {
+          //      // customers
+          //           allCustomers: null,
+          //           thisCustomer: null,
+          //      // players
+          //           allPlayers: null,
+          //           thisPlayer: null,
+          //      // playlists
+          //           allPlaylists: {
+          //                mediaPlaylists: [],
+          //                directoryPlaylists: []
+          //           }
+          //      // buildings/floors?
+          //      // schools/depts?
+          // };   
      });
 
      nowPlaying.controller(
      "appCtrl", function($scope, $transitions, $http, $sce, $rootScope){
      let app = this;
+
+     // clear the app.data on reload/transition...
+          app.data = $rootScope.data;
 
      // transitions
           $transitions.onSuccess({}, function($transition){
@@ -47,7 +65,24 @@
                          player: $transition.params().player,
                     }
                };
+               $rootScope.data = {
+                    // customers
+                         allCustomers: null,
+                         thisCustomer: null,
+                    // players
+                         allPlayers: null,
+                         thisPlayer: null,
+                    // playlists
+                         allPlaylists: {
+                              mediaPlaylists: [],
+                              directoryPlaylists: []
+                         }
+                    // buildings/floors?
+                    // schools/depts?
+               };   
+               app.data = $rootScope.data;
           });
+          console.log(app.data);
 
      // clock
           app.tick = setInterval(function(){
@@ -59,24 +94,24 @@
 // ----------  DATA  -------------------------------------------------------------------------
 
      // construct $rootScope.data
-          $rootScope.data = {
-          // customers
-               allCustomers: null,
-               thisCustomer: null,
-          // players
-               allPlayers: null,
-               thisPlayer: null,
-          // playlists
-               allPlaylists: {
-                    mediaPlaylists: [],
-                    directoryPlaylists: []
-               }
-          // buildings/floors?
-          // schools/depts?
-          };          
+          // $rootScope.data = {
+          // // customers
+          //      allCustomers: null,
+          //      thisCustomer: null,
+          // // players
+          //      allPlayers: null,
+          //      thisPlayer: null,
+          // // playlists
+          //      allPlaylists: {
+          //           mediaPlaylists: [],
+          //           directoryPlaylists: []
+          //      }
+          // // buildings/floors?
+          // // schools/depts?
+          // };          
 
      // stringify 
-          app.data = JSON.stringify($rootScope.data, null, 4);
+          app.dataObject = JSON.stringify(app.data, null, 4);
 
      });
 
