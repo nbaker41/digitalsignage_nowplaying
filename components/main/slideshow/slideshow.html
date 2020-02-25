@@ -1,20 +1,6 @@
-<div 
-     class="slider animate-switch-container"
-     ng-switch
-     on="slideshow.selection">
+<div class="slider animate-switch-container">
      <div 
-          ng-switch-when="0"
           class="slide animate-switch"
-          style="background-image: url('../../components/main/slideshow/img/01.jpeg')">
-     </div>
-     <div 
-          ng-switch-when="1"
-          class="slide animate-switch"
-          style="background-image: url('../../components/main/slideshow/img/02.jpeg')">
-     </div>
-     <div 
-          ng-switch-when="2"
-          class="slide animate-switch"
-          style="background-image: url('../../components/main/slideshow/img/03.jpeg')">
+          style="background-image: url('{{slideshow.commonPath + '/' + slideshow.currentItem.file_name}}')">
      </div>
 </div>

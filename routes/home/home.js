@@ -8,7 +8,16 @@
 	$stateProvider.state(
 	'home', {
 		url: '/',
-		controllerAs: "home"
+		controller: "homeCtrl",
+		controllerAs: "home",
+		templateUrl: "routes/home/home.html"
 	})});	
+
+	home.controller("homeCtrl", function($scope, $rootScope){
+	var home = this;
+	home.app = $scope.$parent.app
+
+
+	});
 
 })();
