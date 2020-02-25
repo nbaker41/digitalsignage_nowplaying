@@ -5,7 +5,7 @@
 	directory.component("directory", {
 		controller: "directoryCtrl",
 		controllerAs: "directory",
-		templateUrl: "components/main/directory/directory.html"
+		templateUrl: "components/main/playlists/directory/directory.html"
 	});
 
      directory.controller(

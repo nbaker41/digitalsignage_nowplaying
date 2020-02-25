@@ -74,7 +74,6 @@
 			var M = $rootScope.data.allPlaylists.mediaPlaylists;
 			for (var i = 0; i < M.length; i++){
 				let thisM = M[i];
-				console.log(thisM);
 				$get.playlistItems(
 					{
 						playlist_id: thisM.playlist_id,
@@ -91,7 +90,6 @@
 			var D = $rootScope.data.allPlaylists.directoryPlaylists;
 			for (var i = 0; i < D.length; i++){
 				let thisD = D[i];
-				// console.log(thisD);
 				$get.playlistItems(
 					{
 						playlist_id: thisD.playlist_id,
@@ -99,11 +97,6 @@
 					},
 					function(response){
 						for (var i = 0; i < response.length; i++){
-							console.log(
-								thisD,
-								response[i].title,
-								response[i].playlist_id
-							);
 							thisD.items.push(response[i])
 						}
 					}

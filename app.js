@@ -13,9 +13,10 @@
           "keyboard",
           //main
                "leftsection",
-               "slideshow",
-               "directory",
                "events",
+               "playlists",
+                    "slideshow",
+                    "directory",
      // services
           "data_get",
           //wp,

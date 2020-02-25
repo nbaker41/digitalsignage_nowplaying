@@ -25,7 +25,8 @@
 
 <body class="{{app.route.to}}">
 
-     <div>
+     <div
+          ng-if="app.route.to == 'home'">
           <h2>Admissions</h2>
           <button
                ui-sref="screen({customer: 'admissions', player: null})">
@@ -81,9 +82,11 @@
           <script src="components/keyboard/keyboard.js"></script>
           <!-- MAIN -->
                <script src="components/main/leftsection/leftsection.js"></script>
-               <script src="components/main/slideshow/slideshow.js"></script>
                <script src="components/main/events/events.js"></script>
-               <script src="components/main/directory/directory.js"></script>
+               <!-- PLAYLISTS -->
+                    <script src="components/main/playlists/playlists.js"></script>
+                    <script src="components/main/playlists/directory/directory.js"></script>
+                    <script src="components/main/playlists/slideshow/slideshow.js"></script>
      <!-- SERVICES -->
           <script src="services/data_get.js"></script>
      <!-- DIRECTIVES -->

@@ -6,19 +6,17 @@
 	slideshow.component("slideshow", {
 		controller: "slideshowCtrl",
 		controllerAs: "slideshow",
-		templateUrl: "components/main/slideshow/slideshow.html"
+		templateUrl: "components/main/playlists/slideshow/slideshow.html"
 	});
 
      slideshow.controller(
      "slideshowCtrl", function($scope, $rootScope){
-     this.app = $scope.$parent.app;
+     this.app = $scope.$parent.playlists.app;
      let slideshow = this;
-
-     
      
      // get all media items for the first media playlist...
-          slideshow.items = slideshow.app.data.allPlaylists.mediaPlaylists[1].items;
-          // console.log(slideshow.app.data.allPlaylists);
+          slideshow.items = slideshow.app.data.allPlaylists.mediaPlaylists[0].items;
+          // console.log($scope.$parent);
 
      // find file path...
           var root = "../../..";
