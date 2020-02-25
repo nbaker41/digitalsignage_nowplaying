@@ -64,19 +64,46 @@
 			}
 		// get playlists...
 			$get.playlists({player_id: $rootScope.data.thisPlayer.player_id}, function(){
-				// sortPlaylists();
+				fillPlaylists();
 			});
 		}
 
-	// sort playlists 
-		// function sortPlaylists(){
-		// 	var allPl = $rootScope.data.allPlaylists;
-		// 	for (var i = 0; i < allPl.length; i++){
-		// 		if (allPl[i].type == "media"){
-
-		// 		}
-		// 	}
-		// }
+	// fill playlists 
+		function fillPlaylists(){
+		// media
+			var P = $rootScope.data.allPlaylists.mediaPlaylists;
+			for (var i = 0; i < P.length; i++){
+				var thisP = P[i];
+				$get.playlistItems(
+					{
+						playlist_id: thisP.playlist_id,
+						playlist_type: thisP.type,
+					},
+					function(response){
+						for (var i = 0; i < response.length; i++){
+							thisP.items.push(response[i])
+						}
+					}
+				);
+			}
+		// directories
+			var D = $rootScope.data.allPlaylists.directoryPlaylists;
+			for (var i = 0; i < D.length; i++){
+				var thisD = D[i];
+				$get.playlistItems(
+					{
+						playlist_id: thisD.playlist_id,
+						playlist_type: thisD.type,
+					},
+					function(response){
+						for (var i = 0; i < response.length; i++){
+							thisD.items.push(response[i])
+						}
+					}
+				);
+			}
+			console.log($rootScope.data.allPlaylists);
+		}
 
 
 	});

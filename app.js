@@ -68,8 +68,8 @@
                thisPlayer: null,
           // playlists
                allPlaylists: {
-                    media: [],
-                    directories: []
+                    mediaPlaylists: [],
+                    directoryPlaylists: []
                }
           // buildings/floors?
           // schools/depts?

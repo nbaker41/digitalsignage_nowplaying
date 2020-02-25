@@ -59,9 +59,11 @@
                     // sort by type.
                          for (var i = 0; i < response.length; i++){
                               if (response[i].type == "media"){
-                                   $rootScope.data.allPlaylists.media.push(response[i]);
+                                   response[i].items = [];
+                                   $rootScope.data.allPlaylists.mediaPlaylists.push(response[i]);
                               } else if (response[i].type == "directory"){
-                                   $rootScope.data.allPlaylists.directories.push(response[i]);
+                                   response[i].items = [];
+                                   $rootScope.data.allPlaylists.directoryPlaylists.push(response[i]);
                               } else {
                               }
                          }          
@@ -70,6 +72,19 @@
                          };
                     }
                );
+          }
+
+          get.playlistItems = function(params, callback){
+               get.request(
+                    "../routes/screen/get_playlist-items.php",
+                    params,
+                    function(response){
+                         if (typeof callback === "function") {
+                              callback(response);
+                         };
+                    }
+
+               )
           }
 
 	});
