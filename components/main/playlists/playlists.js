@@ -9,12 +9,12 @@
 	});
 
      playlists.controller(
-     "playlistsCtrl", function($scope){
+     "playlistsCtrl", function($scope, $rootScope){
      this.app = $scope.$parent.app;
      let playlists = this;
 
-          playlists.stuff = "hello pl";
-          console.log(playlists.stuff);
+          playlists.app.data = $rootScope.data;
+          console.log(playlists.app.data);
           
      });
 
