@@ -1,0 +1,12 @@
+body{
+	ui-view{
+	     height: 100vh;
+	}
+	&:not(.home){
+	     ui-view{
+		display: block;
+		@include flex(column);
+		height: 100%;
+	     }
+	}
+     }

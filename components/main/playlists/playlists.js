@@ -18,11 +18,15 @@
 		console.log(playlists.app.data);
 
 	// ng-switch on  #playlists-container
-		playlists.switchObject = "media";
+		playlists.current = "media";
 
 	// switch  playlists
-		playlists.switchPlaylists = function(switchObject){
-			playlists.switchObject = "directory";
+		playlists.switchPlaylists = function(){
+			if(playlists.current == "media"){
+				playlists.current = "directory";
+			} else{
+				playlists.current = "media";
+			}
 		}
 
 	});

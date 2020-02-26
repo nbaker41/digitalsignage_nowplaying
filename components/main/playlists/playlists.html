@@ -1,13 +1,13 @@
 <button 
 	id="playlist-switch"
 	ng-if="playlists.app.data.allPlaylists.mediaPlaylists.length > 0 && playlists.app.data.allPlaylists.directoryPlaylists.length > 0"
-	ng-click="playlists.switchPlaylists(playlists.switchObject)">
-	Switch playlists
+	ng-click="playlists.switchPlaylists()">
+	Switch
 </button>
 
 <div id="playlists-container">
 	<slideshow 
-		ng-if="playlists.app.data.allPlaylists.mediaPlaylists.length > 0">
+		ng-if="playlists.app.data.allPlaylists.mediaPlaylists.length > 0 && playlists.current == 'media'">
 	</slideshow>
 	<directory 
 		ng-if="playlists.app.data.allPlaylists.directoryPlaylists.length > 0">

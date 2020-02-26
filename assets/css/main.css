@@ -26,8 +26,7 @@ html, body {
 }
 
 body ui-view {
-  height: auto;
-  background: red;
+  height: 100vh;
 }
 body:not(.home) ui-view {
   display: block;
@@ -142,17 +141,18 @@ div.accent {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   flex: 1;
+  height: calc(100vh - 215px);
 }
-@media (max-width: 1900px) {
+@media (min-width: 1900px) {
   #main {
     display: -webkit-box;
     display: -moz-box;
     display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
   }
 }
 
@@ -247,11 +247,13 @@ playlists {
   display: flex;
   flex-direction: row;
   flex: 0.65;
-  background: purple;
+  height: 100%;
   position: relative;
 }
 playlists button#playlist-switch {
-  background: white;
+  background: #b3a369;
+  border: 0px;
+  border-radius: 50%;
   font-size: 20px;
   font-weight: bold;
   width: 100px;
@@ -262,15 +264,16 @@ playlists button#playlist-switch {
   z-index: 1;
 }
 playlists #playlists-container {
-  background: green;
   width: 100%;
   height: 100%;
   z-index: 0;
+  overflow: hidden;
 }
 playlists #playlists-container > * {
   display: block;
   width: 100%;
   height: 100%;
+  overflow-y: scroll;
 }
 @media (min-width: 1900px) {
   playlists {
@@ -279,7 +282,7 @@ playlists #playlists-container > * {
 }
 
 slideshow {
-  background: blue;
+  background: #2e2e2e;
 }
 slideshow .slide {
   width: 100%;
@@ -325,6 +328,11 @@ directory table tbody tr:nth-of-type(odd) {
 ticker {
   background: #b3a369;
   height: 75px;
+  display: block;
+}
+ticker > div {
+  background: green;
+  height: 100%;
 }
 ticker > div div.bn-news ul {
   display: -webkit-box;
@@ -333,16 +341,19 @@ ticker > div div.bn-news ul {
   display: -ms-flexbox;
   display: flex;
   flex-direction: row;
+  background: blue;
 }
 ticker > div div.bn-news ul li {
+  display: none !important;
   list-style: none;
-  padding-right: 40px;
+  height: 100%;
 }
 ticker > div div.bn-news ul li a {
   text-decoration: none;
   font-weight: bold;
   color: black;
   font-size: 22px;
+  width: unset;
 }
 
 .keyboard-container {

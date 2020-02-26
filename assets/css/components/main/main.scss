@@ -1,8 +1,9 @@
 #main {
-     @include flex(row);
+     @include flex(column);
      flex: 1;
-     @include breakpoint(v) {
-          @include flex(column)
+     height: calc(100vh - 215px);
+     @include breakpoint(h) {
+	@include flex(row);
      }
 }
 

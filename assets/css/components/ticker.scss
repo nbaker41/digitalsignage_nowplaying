@@ -1,30 +1,33 @@
 //footer and news ticker
 ticker {
-     background: #b3a369;
-     // background: cyan;
-     height: 75px;
-     > div{
-          // background: blue;
-          // > div{
-          //      background: purple;
-          // }
-          // .bn-news{
-               // @include flex(row);
-          // }
-          div.bn-news{
-               ul{
-                    @include flex(row);
-                    li{
-                         list-style: none;
-                         padding-right: 40px;
-                         a{
-                              text-decoration: none;
-                              font-weight: bold;
-                              color: black;
-                              font-size: 22px;
-                         }
-                    }
-               }
-          }
-     }
+	background: #b3a369;
+	height: 75px;
+	display: block;
+
+	>div {
+		background: green;
+		height: 100%;
+		div.bn-news {
+			ul {
+				@include flex(row);
+				// height: 100%;
+				background: blue;
+				
+				li {
+					display: none!important;
+					list-style: none;
+					//      padding-right: 40px;
+					height: 100%;
+
+					a {
+						text-decoration: none;
+						font-weight: bold;
+						color: black;
+						font-size: 22px;
+						width: unset;
+					}
+				}
+			}
+		}
+	}
 }
