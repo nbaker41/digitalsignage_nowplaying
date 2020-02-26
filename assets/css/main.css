@@ -234,6 +234,11 @@ events {
   padding-top: 7px;
 }
 
+leftsection {
+  background: yellow;
+  flex: 0.25;
+}
+
 playlists {
   display: -webkit-box;
   display: -moz-box;
@@ -253,6 +258,18 @@ playlists #playlists-container {
     background: purple;
     flex: 0.75;
   }
+}
+
+slideshow {
+  display: block;
+  flex: 1;
+}
+slideshow .slide {
+  width: 100%;
+  height: 100%;
+  background-repeat: no-repeat !important;
+  background-size: cover !important;
+  background-position: center !important;
 }
 
 directory {
@@ -287,23 +304,6 @@ directory table tr {
 }
 directory table tbody tr:nth-of-type(odd) {
   background: #1f1f1f;
-}
-
-slideshow {
-  display: block;
-  flex: 1;
-}
-slideshow .slide {
-  width: 100%;
-  height: 100%;
-  background-repeat: no-repeat !important;
-  background-size: cover !important;
-  background-position: center !important;
-}
-
-leftsection {
-  background: yellow;
-  flex: 0.25;
 }
 
 ticker {
