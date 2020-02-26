@@ -1,9 +1,7 @@
-<div
-     id="playlists-container">
-     <slideshow
-          ng-if="playlists.app.data.allPlaylists.mediaPlaylists.length > 0">
-     </slideshow>
-     <directory 
-          ng-if="playlists.app.data.allPlaylists.directoryPlaylists.length > 0">
-     </directory>
+<!-- div#playlists-container is an ng-switch -->
+<div id="playlists-container">
+	<slideshow ng-if="playlists.app.data.allPlaylists.mediaPlaylists.length > 0">
+	</slideshow>
+	<directory ng-if="playlists.app.data.allPlaylists.directoryPlaylists.length > 0">
+	</directory>
 </div>

@@ -1,24 +1,24 @@
-@import//     visuals
+@import //     visuals
 
-     'visuals/colors',
-     'visuals/typography';
+'visuals/colors',
+'visuals/typography';
 
-@import//     styles
+@import //     styles
 
-     'styles/__old_breakpoints()',
-     // 'styles/breakpoints()',
-     'styles/flex()',
-     'styles/structure';
+'styles/__old_breakpoints()',
+// 'styles/breakpoints()',
+'styles/flex()',
+'styles/structure';
 
-@import//     components
+@import //     components
 
-     'components/header',
-          'components/main/main',
-          'components/main/events',
-          'components/main/leftsection',
-               'components/main/playlists/playlists',
-               'components/main/playlists/slideshow',
-               'components/main/playlists/directory',
-     'components/ticker',
-     'components/keyboard',
-     'components/nganimate';
+'components/header',
+	'components/main/main',
+	'components/main/events',
+	'components/main/leftsection',
+		'components/main/playlists/playlists',
+		'components/main/playlists/slideshow',
+		'components/main/playlists/directory',
+'components/ticker',
+'components/keyboard',
+'components/nganimate';

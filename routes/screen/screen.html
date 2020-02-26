@@ -1,15 +1,13 @@
 <header></header>
 
 <article id="main">
-     <leftsection 
-          ng-if="screen.app.info.player.sections.leftsection">
-     </leftsection>
-     <playlists>
-          <!-- Include media, directory, or both. -->
-     </playlists>
-     <events 
-          ng-if="screen.app.data">
-     </events>
+	<leftsection ng-if="screen.app.info.player.sections.leftsection">
+	</leftsection>
+	<playlists>
+		<!-- Include media, directory, or both. -->
+	</playlists>
+	<events ng-if="screen.app.data">
+	</events>
 </article>
 
 <ticker></ticker>

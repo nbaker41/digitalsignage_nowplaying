@@ -1,7 +1,6 @@
 (function(){
 
-     let playlists = angular.module("playlists", [
-     ]);
+     let playlists = angular.module("playlists", []);
 
 	playlists.component("playlists", {
 		controller: "playlistsCtrl",
@@ -10,13 +9,12 @@
 	});
 
      playlists.controller(
-     "playlistsCtrl", function($scope, $rootScope){
+     "playlistsCtrl", function($scope){
      this.app = $scope.$parent.app;
      let playlists = this;
 
           playlists.stuff = "hello pl";
           console.log(playlists.stuff);
-
           
      });
 

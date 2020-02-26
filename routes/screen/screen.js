@@ -70,6 +70,7 @@
 
 	// fill playlists 
 		function fillPlaylists(){
+		// combine both of these for loops into one function
 		// media
 			var M = $rootScope.data.allPlaylists.mediaPlaylists;
 			for (var i = 0; i < M.length; i++){

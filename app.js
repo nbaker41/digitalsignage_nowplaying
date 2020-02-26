@@ -32,21 +32,6 @@
      });
 
      nowPlaying.run(function($get, $rootScope, $stateParams, $state){
-          // $rootScope.data = {
-          //      // customers
-          //           allCustomers: null,
-          //           thisCustomer: null,
-          //      // players
-          //           allPlayers: null,
-          //           thisPlayer: null,
-          //      // playlists
-          //           allPlaylists: {
-          //                mediaPlaylists: [],
-          //                directoryPlaylists: []
-          //           }
-          //      // buildings/floors?
-          //      // schools/depts?
-          // };   
      });
 
      nowPlaying.controller(
@@ -88,9 +73,6 @@
                app.currentTime = new Date();
                $scope.$apply();
           }, 1000);
-
-
-// ----------  DATA  -------------------------------------------------------------------------
 
      });
 
