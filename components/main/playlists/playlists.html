@@ -1,7 +1,45 @@
-<!-- div#playlists-container is an ng-switch -->
-<div id="playlists-container">
-	<slideshow ng-if="playlists.app.data.allPlaylists.mediaPlaylists.length > 0">
+<button id="playlist-switch" ng-click="playlists.switchPlaylists(playlists.switchObject)">
+	Switch playlists
+</button>
+
+<!-- <div 
+	id="playlists-container"
+	class="slider animate-switch-container"
+	ng-switch="playlists.switchObject">
+	<div 
+		class="slide animate-switch"
+		ng-switch-when="media">
+		<h1>Media</h1>
+		<p>media playlists.</p>
+	</div>
+	<div 
+		class="slide animate-switch"
+		ng-switch-when="directory">
+		<h1>Directory</h1>
+		<p>directory playlists.</p>
+	</div>
+</div> -->
+<div 
+	id="playlists-container"
+	class="slider animate-switch-container"
+	ng-switch="playlists.switchObject">
+	<slideshow 
+		ng-if="playlists.app.data.allPlaylists.mediaPlaylists.length > 0"
+		class="slide animate-switch"
+		ng-switch-when="media">
 	</slideshow>
-	<directory ng-if="playlists.app.data.allPlaylists.directoryPlaylists.length > 0">
+	<directory 
+		ng-if="playlists.app.data.allPlaylists.directoryPlaylists.length > 0"
+		class="slide animate-switch"
+		ng-switch-when="directory">
 	</directory>
 </div>
+
+<!-- <div id="playlists-container">
+	<slideshow
+		ng-if="playlists.app.data.allPlaylists.mediaPlaylists.length > 0">
+	</slideshow>
+	<directory
+		ng-if="playlists.app.data.allPlaylists.directoryPlaylists.length > 0">
+	</directory>
+</div> -->
