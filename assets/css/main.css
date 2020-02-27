@@ -331,7 +331,6 @@ ticker {
   display: block;
 }
 ticker > div {
-  background: green;
   height: 100%;
 }
 ticker > div div.bn-news ul {
@@ -341,10 +340,8 @@ ticker > div div.bn-news ul {
   display: -ms-flexbox;
   display: flex;
   flex-direction: row;
-  background: blue;
 }
 ticker > div div.bn-news ul li {
-  display: none !important;
   list-style: none;
   height: 100%;
 }

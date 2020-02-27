@@ -5,16 +5,16 @@ ticker {
 	display: block;
 
 	>div {
-		background: green;
+		// background: green;
 		height: 100%;
 		div.bn-news {
 			ul {
 				@include flex(row);
 				// height: 100%;
-				background: blue;
+				// background: blue;
 				
 				li {
-					display: none!important;
+					// display: none!important;
 					list-style: none;
 					//      padding-right: 40px;
 					height: 100%;
