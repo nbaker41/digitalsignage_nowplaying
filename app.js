@@ -7,6 +7,7 @@
      // routes
           "home",
           "screen",
+          "csvtest", // test
      // components
           "header",
           "ticker",

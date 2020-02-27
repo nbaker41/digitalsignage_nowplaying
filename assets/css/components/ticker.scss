@@ -3,7 +3,6 @@ ticker {
 	background: #b3a369;
 	height: 75px;
 	display: block;
-
 	>div {
 		// background: green;
 		height: 100%;
@@ -12,13 +11,11 @@ ticker {
 				@include flex(row);
 				// height: 100%;
 				// background: blue;
-				
 				li {
 					// display: none!important;
 					list-style: none;
 					//      padding-right: 40px;
 					height: 100%;
-
 					a {
 						text-decoration: none;
 						font-weight: bold;

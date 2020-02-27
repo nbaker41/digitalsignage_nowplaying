@@ -25,6 +25,8 @@
 
 <body class="{{app.route.to}}">
 
+	<button ng-if="app.route.to == 'home'" ui-sref="csvtest">CSV TEST</button>
+
      <div
           ng-if="app.route.to == 'home'">
           <h2>Admissions</h2>
@@ -76,6 +78,7 @@
      <!-- ROUTES -->
           <script src="routes/home/home.js"></script>
           <script src="routes/screen/screen.js"></script>
+          <script src="routes/csvtest/csv.js"></script>
      <!-- COMPONENTS -->
           <script src="components/header/header.js"></script>
           <script src="components/ticker/ticker.js"></script>
