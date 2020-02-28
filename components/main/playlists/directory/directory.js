@@ -21,15 +21,17 @@
 		var counter = 0;
 		directory.currentItem = directory.items[counter];
 		setInterval(function () {
-			counter++;
-			if (counter > directory.items.length - 1) {
-				counter = 0;
+			// counter++;
+			// if (counter > directory.items.length - 1) {
+			// 	counter = 0;
+			// 	directory.currentItem = directory.items[counter];
+			// } else {
 				directory.currentItem = directory.items[counter];
-			} else {
-				directory.currentItem = directory.items[counter];
-			}
+				directory.table = JSON.parse(directory.currentItem.file_contents);
+				
+			// }
 			$scope.$apply();
-			console.log(directory.currentItem);
+			// console.log(directory.currentItem);
 		}, 5000);
 
 

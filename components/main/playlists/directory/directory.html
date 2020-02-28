@@ -8,9 +8,6 @@
      <keyboard></keyboard>
 </div>
 
-<p>Current Directory...</p>
-<h2>{{directory.currentItem}}</h2>
-
 <div id="mydiv" draggable class="other" ng-hide="true">
      <div id="mydivheader">Click to move</div>
      <p>Move</p>
@@ -25,6 +22,24 @@
      <p>DIV</p>
 </div> -->
 
+<table>
+	<thead>
+		<tr>
+			<th ng-repeat="(key, value) in directory.table.info.headers">
+				{{value}}
+			</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr ng-repeat="(k, v) in directory.table.data">
+			<td ng-repeat="(x, y) in directory.table.data[k]">
+				{{directory.table.data[k][x]}}
+			</td>
+		</tr>
+	</tbody>
+</table>
+
+<!-- Old Table
 <table>
      <thead>
           <tr>
@@ -43,4 +58,4 @@
                <td>{{x.room}}</td>
           </tr>
      </tbody>
-</table>
+</table> -->
