@@ -9,70 +9,71 @@
 	});
 
 	directory.controller(
-		"directoryCtrl",
-		function ($scope, $state, $rootScope, $get, $stateParams) {
-			this.app = $scope.$parent.app;
-			let directory = this;
+	"directoryCtrl",
+	function ($scope, $state, $rootScope, $get, $stateParams) {
+	this.app = $scope.$parent.playlists.app;
+	let directory = this;
 
-			directory.stuff = "$rootScope.data.allPlayers";
+	// get all directory items for the first directory playlist...
+		directory.items = directory.app.data.allPlaylists.directoryPlaylists[0].items;
 
-			// $scope.$on('$viewContentLoaded', function(){
-			// });
-			// directory.app.data = $rootScope.data;
+	//  select this playlist's items...
+		var counter = 0;
+		directory.currentItem = directory.items[counter];
+		setInterval(function () {
+			counter++;
+			if (counter > directory.items.length - 1) {
+				counter = 0;
+				directory.currentItem = directory.items[counter];
+			} else {
+				directory.currentItem = directory.items[counter];
+			}
+			$scope.$apply();
+			console.log(directory.currentItem);
+		}, 5000);
 
-			// alert(directory.app.data.allPlaylists);
 
-			// directory.playlists = [];
+	// placeholder data...
+		var data = [{
+				firstname: "Cecil",
+				lastname: "Dunston",
+				floor: 3,
+				room: 312
+			},
+			{
+				firstname: "Nick",
+				lastname: "Baker",
+				floor: 4,
+				room: 400
+			},
+			{
+				firstname: "Mariabelen",
+				lastname: "Romero",
+				floor: 3,
+				room: 326
+			},
+			{
+				firstname: "Byron",
+				lastname: "Stokes",
+				floor: 1,
+				room: 105
+			},
+			{
+				firstname: "David",
+				lastname: "Strube",
+				floor: 1,
+				room: 111
+			},
+			{
+				firstname: "Mance",
+				lastname: "Ellenburg",
+				floor: 2,
+				room: 200
+			}
+		];
 
-			// var ap = directory.app.data.allPlaylists;
-			// for(var i = 0; i < ap.length; i++){
-			//      if (ap[i].type == "directory"){
-			//           directory.playlists.push(ap[i]);
-			//      }
-			// }
+		directory.tabledata = data;
 
-			// console.log(directory.playlists);
-
-			var data = [{
-					firstname: "Cecil",
-					lastname: "Dunston",
-					floor: 3,
-					room: 312
-				},
-				{
-					firstname: "Nick",
-					lastname: "Backer",
-					floor: 4,
-					room: 400
-				},
-				{
-					firstname: "Mariabelen",
-					lastname: "Romero",
-					floor: 3,
-					room: 326
-				},
-				{
-					firstname: "Byron",
-					lastname: "Stokes",
-					floor: 1,
-					room: 105
-				},
-				{
-					firstname: "David",
-					lastname: "Strube",
-					floor: 1,
-					room: 111
-				},
-				{
-					firstname: "Mance",
-					lastname: "Ellenburg",
-					floor: 2,
-					room: 200
-				}
-			];
-
-			directory.tabledata = data;
-
-		});
+	});
 
 })();

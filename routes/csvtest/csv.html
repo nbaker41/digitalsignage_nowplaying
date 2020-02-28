@@ -3,14 +3,13 @@ CSV STUFF
 <form novalidate>
 	<textarea type="text" ng-model="csv.text"></textarea>
 	<button ng-click="csv.makeTable(csv.text)">Submit</button>
-	<button ng-click="alert('hello world')">Submit2</button>
 </form>
 
 <table>
 	<thead>
 		<tr>
 			<th ng-repeat="(key, value) in csv.object.info.headers">
-				{{key + " " + value}}
+				{{value}}
 			</th>
 		</tr>
 	</thead>
@@ -22,12 +21,3 @@ CSV STUFF
 		</tr>
 	</tbody>
 </table>
-
-<!-- <div ng-repeat="(key, value) in csv.object.data">
-	<h1>{{key}} {{value.firstname}}</h1>
-	<div ng-repeat="(k, v) in value">
-		{{k + ",       " + v}}
-		<br>
-		{{value[k]}}
-	</div>
-</div> -->

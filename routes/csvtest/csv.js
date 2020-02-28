@@ -16,7 +16,7 @@
 	csv.app = $scope.$parent.app;
 
 
-		csv.object = {
+		csv.oldobject = {
 			info: {
 				headers: [
 					"firstname",
@@ -27,8 +27,14 @@
 			},
 			data: [
 				{
+					firstname: "Dan",
+					lastname: "Marino",
+					floor: 3,
+					room: 300
+				},
+				{
 					firstname: "Cecil",
-					// lastname: "Dunston",
+					lastname: "Dunston",
 					floor: 3,
 					room: 312
 				},
@@ -41,11 +47,14 @@
 				{
 					firstname: "Mariabelen",
 					lastname: "Romero",
+					floor: null,
+					room: null
 				},
 				{
 					firstname: "Byron",
 					lastname: "Stokes",
-					floor: 1
+					floor: 1,
+					room: null
 				},
 				{
 					firstname: "David",
@@ -58,6 +67,33 @@
 					lastname: "Ellenburg",
 					floor: 2,
 					room: 200
+				}
+			]
+		}
+
+		csv.object = {
+			info: {
+				headers: [
+					"Deadline",
+					"Begin Date",
+					"End Date"
+				]
+			},
+			data: [
+				{
+					deadline: "Registration Deadline",
+					begin: null,
+					end: "April 24"
+				},
+				{
+					deadline: "Turn in Paperwork",
+					begin: "April 1",
+					end: "May 24"
+				},
+				{
+					deadline: "Class Add Deadline - Summer",
+					begin: null,
+					end: "July 5"
 				}
 			]
 		}

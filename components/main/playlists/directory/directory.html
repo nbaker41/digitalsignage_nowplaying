@@ -4,10 +4,12 @@
           id="dir-input"
           type="text"
           my-text=""
-          placeholder="Search Directory">
+          placeholder="{{directory.currentItem.title}}">
      <keyboard></keyboard>
 </div>
 
+<p>Current Directory...</p>
+<h2>{{directory.currentItem}}</h2>
 
 <div id="mydiv" draggable class="other" ng-hide="true">
      <div id="mydivheader">Click to move</div>
