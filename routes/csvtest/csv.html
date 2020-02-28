@@ -6,11 +6,28 @@ CSV STUFF
 	<button ng-click="alert('hello world')">Submit2</button>
 </form>
 
-<div
-	ng-click="csv.ex.fun()">
-	{{csv.ex.text}}
-</div>
+<table>
+	<thead>
+		<tr>
+			<th ng-repeat="(key, value) in csv.object.info.headers">
+				{{key + " " + value}}
+			</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr ng-repeat="(k, v) in csv.object.data">
+			<td ng-repeat="(x, y) in csv.object.data[k]">
+				{{csv.object.data[k][x]}}
+			</td>
+		</tr>
+	</tbody>
+</table>
 
-<div id="tablestuff">
-
-</div>
+<!-- <div ng-repeat="(key, value) in csv.object.data">
+	<h1>{{key}} {{value.firstname}}</h1>
+	<div ng-repeat="(k, v) in value">
+		{{k + ",       " + v}}
+		<br>
+		{{value[k]}}
+	</div>
+</div> -->
