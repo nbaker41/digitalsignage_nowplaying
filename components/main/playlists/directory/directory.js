@@ -36,45 +36,22 @@
 
 
 	// placeholder data...
-		var data = [{
-				firstname: "Cecil",
-				lastname: "Dunston",
-				floor: 3,
-				room: 312
-			},
-			{
-				firstname: "Nick",
-				lastname: "Baker",
-				floor: 4,
-				room: 400
-			},
-			{
-				firstname: "Mariabelen",
-				lastname: "Romero",
-				floor: 3,
-				room: 326
-			},
-			{
-				firstname: "Byron",
-				lastname: "Stokes",
-				floor: 1,
-				room: 105
-			},
-			{
-				firstname: "David",
-				lastname: "Strube",
-				floor: 1,
-				room: 111
-			},
-			{
-				firstname: "Mance",
-				lastname: "Ellenburg",
-				floor: 2,
-				room: 200
-			}
+		var data = [
+			["Dan", "Marino", 3, 300],
+			["Cecil", "Dunston", 3, 312],
+			["Nick", "Baker", 4, 400],
+			["Mariabelen", "Romero", null, null],
+			["Byron", "Stokes", 1, null],
+			["David", "Strube", 1, 111],
+			["Mance", "Ellenburg", 2, 200]
+		];
+		var data2 = [
+			["Registration Deadline", null, "April 24"],
+			["Turn in Paperwork", "April 1", "May 24"],
+			["Class Add Deadline - Summer", null, "July 5"]
 		];
 
-		directory.tabledata = data;
+		directory.tabledata = data2;
 
 	});
 

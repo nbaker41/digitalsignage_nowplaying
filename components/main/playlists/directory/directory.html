@@ -31,10 +31,14 @@
 		</tr>
 	</thead>
 	<tbody>
-		<tr ng-repeat="(k, v) in directory.table.data">
-			<td ng-repeat="(x, y) in directory.table.data[k]">
-				{{directory.table.data[k][x]}}
-			</td>
+		<tr ng-repeat="(k, v) in directory.tabledata | filter:directory.keyboardSearchObject">
+			<td ng-if="v[0]">{{v[0]}}</td>
+			<td ng-if="v[1]">{{v[1]}}</td>
+			<td ng-if="v[2]">{{v[2]}}</td>
+			<td ng-if="v[3]">{{v[3]}}</td>
+			<td ng-if="v[4]">{{v[4]}}</td>
+			<td ng-if="v[5]">{{v[5]}}</td>
+			<td ng-if="v[6]">{{v[6]}}</td>
 		</tr>
 	</tbody>
 </table>

@@ -26,50 +26,15 @@
 				]
 			},
 			data: [
-				{
-					firstname: "Dan",
-					lastname: "Marino",
-					floor: 3,
-					room: 300
-				},
-				{
-					firstname: "Cecil",
-					lastname: "Dunston",
-					floor: 3,
-					room: 312
-				},
-				{
-					firstname: "Nick",
-					lastname: "Baker",
-					floor: 4,
-					room: 400
-				},
-				{
-					firstname: "Mariabelen",
-					lastname: "Romero",
-					floor: null,
-					room: null
-				},
-				{
-					firstname: "Byron",
-					lastname: "Stokes",
-					floor: 1,
-					room: null
-				},
-				{
-					firstname: "David",
-					lastname: "Strube",
-					floor: 1,
-					room: 111
-				},
-				{
-					firstname: "Mance",
-					lastname: "Ellenburg",
-					floor: 2,
-					room: 200
-				}
+				["Dan", "Marino", 3, 300],
+				["Cecil", "Dunston", 3, 312],
+				["Nick", "Baker", 4, 400],
+				["Mariabelen", "Romero", null, null],
+				["Byron", "Stokes", 1, null],
+				["David", "Strube", 1, 111],
+				["Mance", "Ellenburg", 2, 200]
 			]
-		}
+		};
 
 		csv.object = {
 			info: {
@@ -80,28 +45,20 @@
 				]
 			},
 			data: [
-				{
-					deadline: "Registration Deadline",
-					begin: null,
-					end: "April 24"
-				},
-				{
-					deadline: "Turn in Paperwork",
-					begin: "April 1",
-					end: "May 24"
-				},
-				{
-					deadline: "Class Add Deadline - Summer",
-					begin: null,
-					end: "July 5"
-				}
+				["Registration Deadline", null, "April 24"],
+				["Turn in Paperwork", "April 1", "May 24"],
+				["Class Add Deadline - Summer", null, "July 5"]
 			]
+		};
+
+		function handle(object){
+			var jsonToString = JSON.stringify(object);
+			var stringToJson = JSON.parse(jsonToString);
+			console.log(jsonToString, stringToJson);
 		}
 
-		var jsonToString = JSON.stringify(csv.object);
-		var stringToJson = JSON.parse(jsonToString);
+		handle(csv.object, csv.oldobject)
 
-		console.log(jsonToString, stringToJson);
 
 
 	// Nick's work:	
