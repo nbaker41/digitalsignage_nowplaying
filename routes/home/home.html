@@ -6,16 +6,35 @@
 			class="player"
 			ng-repeat="y in x.players"
 			ui-sref="screen({customer: x.name_short, player: y.player_id})">
-			<div>
-				<h4>{{y.name_long}}</h4>
-				<p>Url: {{x.name_short + "/" + y.player_id}}</p>
+			<div
+				class="touch-indicator"
+				ng-if ="y.touch_enabled == true">
+				TOUCH
 			</div>
-			<div>
-				<span>
-					0 media
+			<div
+				class="player-name">
+				<h3>{{y.name_long}}</h4>
+				<p>url: ".../{{x.name_short + "/" + y.player_id}}"</p>
+			</div>
+			<div
+				class="player-playlists-count">
+				<span
+					ng-if="y.playlists.lengths.media > 0">
+					{{y.playlists.lengths.media}} media
 				</span>
-				<span>
-					, 0 directories
+				<span
+					ng-if="y.playlists.lengths.directories > 0">
+					<span>
+						{{y.playlists.lengths.directories}} director
+					</span>
+					<span
+						ng-if="y.playlists.lengths.directories == 1">
+						y
+					</span>
+					<span
+						ng-if="y.playlists.lengths.directories > 1">
+						ies
+					</span>
 				</span>
 			</div>
 		</div>

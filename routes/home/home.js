@@ -31,7 +31,6 @@
 			$get.players({customer_id: null}, function(){
 				var allC = $rootScope.data.allCustomers;
 				var allP = $rootScope.data.allPlayers;
-			// get sort players by customer_id....
 				for (var i = 0; i < allC.length; i++){
 					allC[i].players = [];
 					let cid = allC[i].customer_id;
@@ -56,23 +55,23 @@
 				var M = $rootScope.data.allPlaylists.mediaPlaylists;
 				var D = $rootScope.data.allPlaylists.directoryPlaylists;
 				var allPl = M.concat(D);
-				// console.log(allPl);
 			// match playlists to players...
 				for (var i = 0; i < allP.length; i++){
 					var id = allP[i].player_id;
-					// console.log(id, allP[i].name_short, allP[i].name_long);
 					for(var j = 0; j < allPl.length; j++){
 						var plid = allPl[j].player_id;
-						// console.log(allPl[j]);
 						if (plid == id){
-								// allP[i].playlists.media.push(allPl[j]);
-
 							if (allPl[j].type == "media"){
 								allP[i].playlists.media.push(allPl[j]);
 							} else {
 								allP[i].playlists.directories.push(allPl[j]);
 							}
 						}
+					}
+				// count the number of each type of playlist
+					allP[i].playlists.lengths = {
+						media: allP[i].playlists.media.length,
+						directories: allP[i].playlists.directories.length,
 					}
 				}
 			})
