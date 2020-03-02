@@ -1,16 +1,75 @@
 body.home{
-	// background: blue!important;
+	// background: purple!important;
 }
 
+$basesize: 2.5rem;
 header {
 	display: block;
-	// clear: both;
 	margin: 0;
-	// background: green;
-	height: 2.5rem;
+	height: $basesize;
+	width: 100%;
 	background: $techgold;
+	position: fixed;
+	z-index: 1000;
 	.line-pos{
-		// background: purple;
+		display: none;
+		.ctn-logo{
+			display: none;
+		}
+	}
+	#menu{
+		// background: $blue;
+		width: 100%;
+		z-index: 1000;
+		.menu-top{
+			@include flex(row, align-center, space-between);
+			// background: purple;
+			#gt-logo{
+				opacity: .7;
+				// display: none;
+				// background: blue;
+				height: 1.5rem;
+				margin-left: .75rem;
+			}
+			.hamburger{
+				opacity: .6;
+				height: $basesize;
+				width: $basesize;
+				// background: yellow;
+				@include flex(row, align-center, space-around);
+				div{
+					// background: orange;
+					position: relative;
+					width: .8rem;
+					height: .8rem;
+					@include flex(column, align-center, space-between);
+					span{
+						background: black;
+						display: block;
+						width: 100%;
+						height: 4px;
+						border-radius: 2px;
+					}
+				}
+			}
+		}
+		.menu-body{
+			background: $techgold;
+			position: fixed;
+			width: 100%;
+			height: 0;
+			transition: 1s;
+			overflow-y: scroll;
+			ul{
+				margin: 0;
+			}
+		}
+		&.open{
+			.menu-body{
+				height: calc(100% - 2.5rem);
+				// background: blue!important;
+			}
+		}
 	}
 }
 

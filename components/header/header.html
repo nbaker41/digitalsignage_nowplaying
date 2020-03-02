@@ -1,106 +1,43 @@
+<div class="line-pos">
+	<div 
+		ng-repeat="x in header.lines.get(header.lines.number) track by $index"
+		class="lines">
+	</div>
+	<img 
+		class="ctn-logo" 
+		src="components/header/img/creating_the_next_gold.svg" 
+		alt="creating the next">
+</div>
+
 <div
-	class="line-pos"
-	>
-	<div class="lines"></div>
-	<div class="lines"></div>
-	<div class="lines"></div>
-	<div class="lines"></div>
-	<div class="lines"></div>
-	<div class="lines"></div>
-	<div class="lines"></div>
-	<div class="lines"></div>
-	<div class="lines"></div>
-	<div class="lines"></div>
-	<div class="lines"></div>
-	<div class="lines"></div>
-	<div class="lines"></div>
-	<div class="lines"></div>
-	<div class="lines"></div>
-	<div class="lines"></div>
-	<div class="lines"></div>
-	<div class="lines"></div>
-	<div class="lines"></div>
-	<div class="lines"></div>
-	<div class="lines"></div>
-	<div class="lines"></div>
-	<div class="lines"></div>
-	<div class="lines"></div>
-	<div class="lines"></div>
-	<div class="lines"></div>
-	<div class="lines"></div>
-	<div class="lines"></div>
-	<div class="lines"></div>
-	<div class="lines"></div>
-	<div class="lines"></div>
-	<div class="lines"></div>
-	<div class="lines"></div>
-	<div class="lines"></div>
-	<div class="lines"></div>
-	<div class="lines"></div>
-	<div class="lines"></div>
-	<div class="lines"></div>
-	<div class="lines"></div>
-	<div class="lines"></div>
-	<div class="lines"></div>
-	<div class="lines"></div>
-	<div class="lines"></div>
-	<div class="lines"></div>
-	<div class="lines"></div>
-	<div class="lines"></div>
-	<div class="lines"></div>
-	<div class="lines"></div>
-	<div class="lines"></div>
-	<div class="lines"></div>
-	<div class="lines"></div>
-	<div class="lines"></div>
-	<div class="lines"></div>
-	<div class="lines"></div>
-	<div class="lines"></div>
-	<div class="lines"></div>
-	<div class="lines"></div>
-	<div class="lines"></div>
-	<div class="lines"></div>
-	<div class="lines"></div>
-	<div class="lines"></div>
-	<div class="lines"></div>
-	<div class="lines"></div>
-	<div class="lines"></div>
-	<div class="lines"></div>
-	<div class="lines"></div>
-	<div class="lines"></div>
-	<div class="lines"></div>
-	<div class="lines"></div>
-	<div class="lines"></div>
-	<div class="lines"></div>
-	<div class="lines"></div>
-	<div class="lines"></div>
-	<div class="lines"></div>
-	<div class="lines"></div>
-	<div class="lines"></div>
-	<div class="lines"></div>
-	<div class="lines"></div>
-	<div class="lines"></div>
-	<div class="lines"></div>
-	<div class="lines"></div>
-	<div class="lines"></div>
-	<div class="lines"></div>
-	<div class="lines"></div>
-	<div class="lines"></div>
-	<div class="lines"></div>
-	<div class="lines"></div>
-	<div class="lines"></div>
-	<div class="lines"></div>
-	<div class="lines"></div>
-	<div class="lines"></div>
-	<div class="lines"></div>
-	<div class="lines"></div>
-	<div class="lines"></div>
-	<div class="lines"></div>
-	<div class="lines"></div>
-	<div class="lines"></div>
-	<div class="lines"></div>
-	<img class="ctn-logo" src="components/header/img/creating_the_next_gold.svg" alt="creating the next"
-		width="280px;">
+	id="menu"
+	class=""
+	ng-class="{open: header.menu.isOpen}">
+	<div class="menu-top">
+		<img 
+			id="gt-logo"
+			src="components/header/img/gt-logo.svg" 
+			alt="Georgia Tech Logo">
+		<div 
+			class="hamburger"
+			ng-click="header.menu.toggle()">
+			<div>
+				<span></span>
+				<span></span>
+				<span></span>
+			</div>
+		</div>
+	</div>
+	<div class="menu-body">
+		<ul>
+			<li>Menu Item!!</li>
+			<li>Menu Item!!</li>
+			<li>Menu Item!!</li>
+			<li>Menu Item!!</li>
+			<li>Menu Item!!</li>
+			<li>Menu Item!!</li>
+		</ul>
+	</div>
 </div>
 
 <!-- <div id="head">
