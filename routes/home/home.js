@@ -28,7 +28,7 @@
 	// get all customers...
 		function getAllPlayers(){
 		// get all players...
-			$get.players({customer_id: null}, function(){
+			$get.players({customer_id: "null"}, function(){
 				var allC = $rootScope.data.allCustomers;
 				var allP = $rootScope.data.allPlayers;
 				for (var i = 0; i < allC.length; i++){
@@ -48,7 +48,7 @@
 					}
 				}
 			});
-			$get.playlists({player_id: null}, function(){
+			$get.playlists({player_id: "null"}, function(){
 			// grab all players...
 				var allP = $rootScope.data.allPlayers;
 			// add media and dir playlists into one array.

@@ -2,10 +2,10 @@
 
 // who's the customer?
 
-if (empty($player_id)){
+$player_id = $_GET['player_id'];
+
+if ($player_id == "null"){
 	$player_id = null;
-} else {
-	$player_id = $_GET['player_id'];
 }
 
 // include database handler
@@ -17,6 +17,7 @@ if (empty($player_id)){
      unset($db);
 
 // return results
+//      echo json_encode($player_id);
      echo json_encode($result);
 
 ?>

@@ -1,25 +1,93 @@
+
+
 body.home{
-	background: yellow;
+	// background: yellow;
+	background: rgb(236, 236, 236);
+
+	header{
+		height: 2rem;
+		width: 100%;
+		background: yellow;
+	}
+
 	ui-view{
-		& > section{
-			background: red;
-			padding: 20px;
+		& > section.customer{
+			padding: 40px 20px;
+			border-bottom: 1px solid rgb(200, 200, 200);
+			h1{
+				margin-bottom: 20px;
+			}
 			.player-list{
-				background: purple;
+				// background: purple;
 				.player{
-					padding: 20px 40px;
-					background: yellow;
+					padding: 32px 32px;
+					margin: 0 0 .75rem 0;
+					background: white;
+					position: relative;
+					border-radius: 4px;
+					&:last-of-type{
+						margin-bottom: 0;
+					}
+					.touch-indicator{
+						width: 12px;
+						height: 12px;
+						background: lime;
+						border-radius: 50%;
+						position: absolute;
+						right: 32px;
+						top: 40px;
+					}
+					.player-name{
+						&:first-of-type{
+							h3{
+								width: unset;
+							}
+						}
+						h3{
+							width: calc(100% - 24px);
+							// margin-bottom: 12px;
+						}
+						p{
+							font-style: italic;
+							color: rgb(175, 175, 175);
+							font-size: 16px;
+							letter-spacing: .05em;
+						}
+					}
+					.player-playlists-count{
+						margin-top: .5rem;
+						letter-spacing: 0;
+						span{
+							font-size: 16px;
+							color: rgb(136, 136, 136);
+							&.players-playlists-media{
+								margin-right: 12px;
+							}
+							&.players-playlists-directories{
+								letter-spacing: 0;
+							}
+						}
+					}
+					&.empty{
+						background: rgb(221, 221, 221);
+						.player-name{
+							h6{
+								color: gray;
+							}
+						}
+					}
 				}
 			}
 			hr{
-				margin-top: 32px;
+				// margin-top: 32px;
 			}
 		}
 	}
+
 @include breakpoint(sm){ // > 600
 	background: red;
 	ui-view{
-		& > section{
+		& > section.customer{
 			background: purple;
 			.player-list{
 				background: blue;
@@ -36,10 +104,11 @@ body.home{
 		}
 	}
 }
+
 @include breakpoint(md){ // > 1000
 	background: pink;
 	ui-view{
-		& > section{
+		& > section.customer{
 			background: rgb(161, 78, 161);
 			.player-list{
 				background: cyan;

@@ -1,28 +1,45 @@
+<!-- <h1>The Office of Admissions at Georgia Institute of Technology</h1>
+<h2>The Office of Admissions at Georgia Institute of Technology</h2>
+<h3>The Office of Admissions at Georgia Institute of Technology</h3>
+<h4>The Office of Admissions at Georgia Institute of Technology</h4>
+<h5>The Office of Admissions at Georgia Institute of Technology</h5>
+<h6>The Office of Admissions at Georgia Institute of Technology</h6>
+<p>Until recently, the prevailing view assumed lorem ipsum was born as a nonsense text. “It's not Latin, though it looks like it, and it actually says nothing,” Before & After magazine answered a curious reader, “Its ‘words’ loosely approximate the frequency with which letters occur in English, which is why at a glance it looks pretty real."</p>
+<p>The placeholder text, beginning with the line “Lorem ipsum dolor sit amet, consectetur adipiscing elit”, looks like Latin because in its youth, centuries ago, it was Latin.</p>
+<p>As Cicero would put it, “Um, not so fast.”</p> -->
+<header>
+</header>
+
+
 <section
+	class="customer"
 	ng-repeat="x in home.app.data.allCustomers">
-	<h1>{{x.customer_id + ": " + x.name_long}}</h1>
+	<h1>{{x.name_long}}</h1>
 	<div class="player-list">
 		<div
 			class="player"
 			ng-repeat="y in x.players"
-			ui-sref="screen({customer: x.name_short, player: y.player_id})">
+			ui-sref="screen({customer: x.name_short, player: y.player_id})"
+			ng-class="{empty: y.playlists.lengths.media == 0 && y.playlists.lengths.directories == 0}">
 			<div
 				class="touch-indicator"
 				ng-if ="y.touch_enabled == true">
-				TOUCH
 			</div>
 			<div
 				class="player-name">
-				<h3>{{y.name_long}}</h4>
-				<p>url: ".../{{x.name_short + "/" + y.player_id}}"</p>
+				<h6>{{y.name_long}}</h6>
+				<p>{{x.name_short + "/" + y.player_id}}</p>
+				<!-- <p>url: ".../{{x.name_short + "/" + y.player_id}}"</p> -->
 			</div>
 			<div
 				class="player-playlists-count">
 				<span
+					class="players-playlists-media"
 					ng-if="y.playlists.lengths.media > 0">
 					{{y.playlists.lengths.media}} media
 				</span>
 				<span
+					class="players-playlists-media"
 					ng-if="y.playlists.lengths.directories > 0">
 					<span>
 						{{y.playlists.lengths.directories}} director
@@ -36,11 +53,15 @@
 						ies
 					</span>
 				</span>
+				<span
+					ng-if="y.playlists.lengths.media == 0 && y.playlists.lengths.directories == 0">
+					This screen has no playlists.
+				</span>
 			</div>
 		</div>
 	</div>
-	<hr>
 </section>
+
 
 
 

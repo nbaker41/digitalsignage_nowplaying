@@ -59,6 +59,7 @@
 				'../routes/screen/get_playlists.php',
 				params,
 				function (response) {
+					// console.log(response);
 					// sort by type.
 					for (var i = 0; i < response.length; i++) {
 						if (response[i].type == "media") {

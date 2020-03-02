@@ -25,45 +25,14 @@
 
 <body class="{{app.route.to}}">
 
+
+
 	<ui-view>
 		<!-- routes/customer/customer.html -->
-	     </ui-view>
+	</ui-view>
 	
 		<!-- <button ng-if="app.route.to == 'home'" ui-sref="csvtest">CSV TEST</button> -->
 
-     <div
-	ng-hide="true"
-          ng-if="app.route.to == 'home'">
-          <h2>Admissions</h2>
-          <button
-               ui-sref="screen({customer: 'admissions', player: null})">
-               /admissions
-          </button>
-          <button
-               ui-sref="screen({customer: 'admissions', player: 1})">
-               /admissions/1 (1 media 1 dir)
-          </button>
-          <button
-               ui-sref="screen({customer: 'admissions', player: 3})">
-               /admissions/3 (0 media 1 dir)
-          </button>
-          <button
-               ui-sref="screen({customer: 'admissions', player: 44})">
-               /admissions/44 (player does not exist)
-          </button>
-          <hr>
-          <h2>Architecture</h2>
-          <button
-               ui-sref="screen({customer: 'arch', player: 2})">
-               /arch/2 (2 media, 0 dir)
-          </button>
-          <hr>
-          <h2>No Customer</h2>
-          <button
-               ui-sref="screen({customer: 'crc', player: 6})">
-               /crc/6 (customer does not exist)
-          </button>
-     </div>
 
      <div
           ng-if="app.errormessage"
