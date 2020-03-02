@@ -17,34 +17,31 @@
 	var home = this;
 	home.app = $scope.$parent.app
 
-		// Find customer and player.
-		// Execute chained list of queries starting with customers...
+	// Find all customers... 
+	// Execute chained list of queries starting with customers...
 		$get.customers(function(){
 			findThisCustomer();
 			home.app.data = $rootScope.data;
-			// console.log(screen.app.data);
 			console.log(home.app.data);
 		});
 		
-	// thisCustomer
+	// get all customers...
 		function findThisCustomer(){
-			// var allC = $rootScope.data.allCustomers;
-		// cycle through all customers to see if one shortname matches the stateparams.customer...
-			// for (var i = 0; i < allC.length; i++){
-			// 	if (allC[i].name_short == $stateParams.customer){
-			// 		$rootScope.data.thisCustomer = allC[i];
-			// 	}
-			// }
-		// if no shortname exists that matches url, do something...
-			// if ($rootScope.data.thisCustomer == undefined){
-			// 	$state.go("home");
-			// }
-		// get player...
+		// get all players...
 			$get.players({customer_id: null}, function(response){
-				alert("hello");
-				// console.log(response)
-				// findThisPlayer();
-				// console.log();
+				var allC = $rootScope.data.allCustomers;
+				var allP = $rootScope.data.allPlayers;
+			// get sort players by customer_id....
+				for (var i = 0; i < allC.length; i++){
+					allC[i].players = [];
+					let cid = allC[i].customer_id;
+					for (var j = 0; j < allP.length; j++){
+						var pid = allP[j].customer_id;
+						if (pid == cid){
+							allC[i].players.push(allP[j]);
+						}
+					}
+				}
 			});
 		}
 		

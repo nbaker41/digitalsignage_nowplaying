@@ -46,7 +46,7 @@
 				params,
 				function (response) {
 					$rootScope.data.allPlayers = response;
-					console.log(response);
+					// console.log(response);
 					if (typeof callback === "function") {
 						callback(response);
 					};
