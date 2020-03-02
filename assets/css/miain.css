@@ -428,55 +428,7 @@ ticker > div div.bn-news ul li a {
 }
 
 body.home {
-  background: yellow;
-}
-body.home ui-view > section {
   background: red;
-  padding: 20px;
-}
-body.home ui-view > section .player-list {
-  background: purple;
-}
-body.home ui-view > section .player-list .player {
-  padding: 20px 40px;
-  background: yellow;
-}
-body.home ui-view > section hr {
-  margin-top: 32px;
-}
-@media (min-width: 600px) {
-  body.home {
-    background: red;
-  }
-  body.home ui-view > section {
-    background: purple;
-  }
-  body.home ui-view > section .player-list {
-    background: blue;
-  }
-  body.home ui-view > section .player-list .player {
-    background: green;
-    display: inline-block;
-    height: 120px;
-    margin: 0 20px 0 0;
-  }
-}
-@media (min-width: 1000px) {
-  body.home {
-    background: pink;
-  }
-  body.home ui-view > section {
-    background: #a14ea1;
-  }
-  body.home ui-view > section .player-list {
-    background: cyan;
-  }
-  body.home ui-view > section .player-list .player {
-    background: lime;
-    display: inline-block;
-    height: 120px;
-    margin: 0 20px 0 0;
-  }
 }
 
-/*# sourceMappingURL=main.css.map */
+/*# sourceMappingURL=miain.css.map */

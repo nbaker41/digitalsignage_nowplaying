@@ -1,7 +1,12 @@
 <?php
 
 // who's the customer?
-     $player_id = $_GET['player_id'];
+
+if (empty($player_id)){
+	$player_id = null;
+} else {
+	$player_id = $_GET['player_id'];
+}
 
 // include database handler
      include("../../database/db_handler.php");

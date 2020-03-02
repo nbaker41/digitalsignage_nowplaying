@@ -1,0 +1,58 @@
+body.home{
+	background: yellow;
+	ui-view{
+		& > section{
+			background: red;
+			padding: 20px;
+			.player-list{
+				background: purple;
+				.player{
+					padding: 20px 40px;
+					background: yellow;
+				}
+			}
+			hr{
+				margin-top: 32px;
+			}
+		}
+	}
+@include breakpoint(sm){ // > 600
+	background: red;
+	ui-view{
+		& > section{
+			background: purple;
+			.player-list{
+				background: blue;
+				.player{
+					background: green;
+					display: inline-block;
+					height: 120px;
+					margin: 0 20px 0 0;
+				}
+			}
+			hr{
+	
+			}
+		}
+	}
+}
+@include breakpoint(md){ // > 1000
+	background: pink;
+	ui-view{
+		& > section{
+			background: rgb(161, 78, 161);
+			.player-list{
+				background: cyan;
+				.player{
+					background: lime;
+					display: inline-block;
+					height: 120px;
+					margin: 0 20px 0 0;
+				}
+			}
+			hr{
+	
+			}
+		}
+	}
+}}

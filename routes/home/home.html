@@ -1,4 +1,34 @@
-<div ng-if="home.app.route.params.customer == undefined">
+<section
+	ng-repeat="x in home.app.data.allCustomers">
+	<h1>{{x.customer_id + ": " + x.name_long}}</h1>
+	<div class="player-list">
+		<div
+			class="player"
+			ng-repeat="y in x.players"
+			ui-sref="screen({customer: x.name_short, player: y.player_id})">
+			<div>
+				<h4>{{y.name_long}}</h4>
+				<p>Url: {{x.name_short + "/" + y.player_id}}</p>
+			</div>
+			<div>
+				<span>
+					0 media
+				</span>
+				<span>
+					, 0 directories
+				</span>
+			</div>
+		</div>
+	</div>
+	<hr>
+</section>
+
+
+
+
+
+
+<!-- <div ng-if="home.app.route.params.customer == undefined">
      <h1>This directory does not belong to a specific program or screen.</h1>
      <a href="http://digitalsignage.gatech.edu">Return home</a>
      <hr>
@@ -7,4 +37,4 @@
           {{home.app.data}}
      </pre>
 </div>
-
+ -->

@@ -83,22 +83,43 @@
           // create connection to a db.
                $conn = $this->db->connect();
           // write SQL query
-               $query = "               
-                    SELECT
-                         players_playlists.player_id,
-                         players_playlists.playlist_id,
-                         players_playlists.order,
-                         playlists.name,
-                         playlists.type,
-                         playlists.description
-                    FROM players_playlists
-                    JOIN playlists
-                    ON playlists.playlist_id = players_playlists.playlist_id
-                    WHERE players_playlists.player_id = 
-               "
-               .$player_id
-               ." ORDER BY players_playlists.order ASC;";
-               $result = $conn->query($query) or die($conn->error.__LINE__);
+		if ($player_id == null){
+			$query = "               
+				SELECT
+					players_playlists.player_id,
+					players_playlists.playlist_id,
+					players_playlists.order,
+					playlists.name,
+					playlists.customer_id,
+					playlists.user_id,
+					playlists.created,
+					playlists.type,
+					playlists.description
+				FROM players_playlists
+				JOIN playlists
+				ON playlists.playlist_id = players_playlists.playlist_id
+			";
+		} else {
+			$query = "               
+				SELECT
+					players_playlists.player_id,
+					players_playlists.playlist_id,
+					players_playlists.order,
+					playlists.name,
+					playlists.customer_id,
+					playlists.user_id,
+					playlists.created,
+					playlists.type,
+					playlists.description
+				FROM players_playlists
+				JOIN playlists
+				ON playlists.playlist_id = players_playlists.playlist_id
+				WHERE players_playlists.player_id = 
+			"
+			.$player_id
+			." ORDER BY players_playlists.order ASC;";
+		}
+		$result = $conn->query($query) or die($conn->error.__LINE__);
           // create array container
                $data = array();
           // fill array with result data

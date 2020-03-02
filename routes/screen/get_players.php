@@ -9,7 +9,6 @@ if (empty($customer_id)){
 	$customer_id = $_GET['customer_id'];
 }
 
-
 // include database handler
      include("../../database/db_handler.php");
 

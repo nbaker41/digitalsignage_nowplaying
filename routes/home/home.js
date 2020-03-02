@@ -20,15 +20,15 @@
 	// Find all customers... 
 	// Execute chained list of queries starting with customers...
 		$get.customers(function(){
-			findThisCustomer();
+			getAllPlayers();
 			home.app.data = $rootScope.data;
 			console.log(home.app.data);
 		});
 		
 	// get all customers...
-		function findThisCustomer(){
+		function getAllPlayers(){
 		// get all players...
-			$get.players({customer_id: null}, function(response){
+			$get.players({customer_id: null}, function(){
 				var allC = $rootScope.data.allCustomers;
 				var allP = $rootScope.data.allPlayers;
 			// get sort players by customer_id....
@@ -36,6 +36,12 @@
 					allC[i].players = [];
 					let cid = allC[i].customer_id;
 					for (var j = 0; j < allP.length; j++){
+					// attach empty playlist fields to each player obj...
+						allP[j].playlists = {
+							media: [],
+							directories: []
+						}
+					// match players to customers
 						var pid = allP[j].customer_id;
 						if (pid == cid){
 							allC[i].players.push(allP[j]);
@@ -43,6 +49,33 @@
 					}
 				}
 			});
+			$get.playlists({player_id: null}, function(){
+			// grab all players...
+				var allP = $rootScope.data.allPlayers;
+			// add media and dir playlists into one array.
+				var M = $rootScope.data.allPlaylists.mediaPlaylists;
+				var D = $rootScope.data.allPlaylists.directoryPlaylists;
+				var allPl = M.concat(D);
+				// console.log(allPl);
+			// match playlists to players...
+				for (var i = 0; i < allP.length; i++){
+					var id = allP[i].player_id;
+					// console.log(id, allP[i].name_short, allP[i].name_long);
+					for(var j = 0; j < allPl.length; j++){
+						var plid = allPl[j].player_id;
+						// console.log(allPl[j]);
+						if (plid == id){
+								// allP[i].playlists.media.push(allPl[j]);
+
+							if (allPl[j].type == "media"){
+								allP[i].playlists.media.push(allPl[j]);
+							} else {
+								allP[i].playlists.directories.push(allPl[j]);
+							}
+						}
+					}
+				}
+			})
 		}
 		
 	// // thisPlayer

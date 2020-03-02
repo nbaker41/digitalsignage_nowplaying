@@ -1,20 +1,20 @@
 @mixin breakpoint($screenWidth) {
 // mobile 
-     @if ($screenWidth == xs or $screenWidth == v) {
+     @if ($screenWidth == xs) {
           @media (max-width:400px) { @content; }
      }	// 320, 360
 // tablet
-     @if ($screenWidth == sm or $screenWidth == v) {
+     @if ($screenWidth == sm) {
           @media (min-width:400px) { @content; }
      }	// 414, 768
 // desktop
-     @if ($screenWidth == md or $screenWidth == v) {
+     @if ($screenWidth == md) {
           @media (min-width:1000px) { @content; }
      }	// 1024, 1080, 1280 
-     @if ($screenWidth == lg or $screenWidth == v) {
+     @if ($screenWidth == lg) {
           @media (min-width:1360px) { @content; }
      }	// 1366, 1440, 1536, 1600
-     @if ($screenWidth == xl or $screenWidth == h) {
+     @if ($screenWidth == xl) {
           @media (min-width:1900px) { @content; }
      }	// 1920
 }

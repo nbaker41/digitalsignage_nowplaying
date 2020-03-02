@@ -25,9 +25,14 @@
 
 <body class="{{app.route.to}}">
 
-	<button ng-if="app.route.to == 'home'" ui-sref="csvtest">CSV TEST</button>
+	<ui-view>
+		<!-- routes/customer/customer.html -->
+	     </ui-view>
+	
+		<!-- <button ng-if="app.route.to == 'home'" ui-sref="csvtest">CSV TEST</button> -->
 
      <div
+	ng-hide="true"
           ng-if="app.route.to == 'home'">
           <h2>Admissions</h2>
           <button
@@ -64,10 +69,6 @@
           ng-if="app.errormessage"
           ng-bind-html="app.errormessage">
      </div>
-
-     <ui-view>
-          <!-- routes/customer/customer.html -->
-     </ui-view>
 
 </body>
 
