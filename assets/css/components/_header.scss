@@ -1,8 +1,17 @@
+body.home{
+	// background: blue!important;
+}
+
 header {
-	clear: both;
+	display: block;
+	// clear: both;
 	margin: 0;
 	// background: green;
-	height: 140px;
+	height: 2.5rem;
+	background: $techgold;
+	.line-pos{
+		// background: purple;
+	}
 }
 
 

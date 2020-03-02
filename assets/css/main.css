@@ -76,11 +76,11 @@ body:not(.home) ui-view {
 }
 
 header {
-  clear: both;
+  display: block;
   margin: 0;
-  height: 140px;
+  height: 2.5rem;
+  background: #b3a369;
 }
-
 #main {
   display: -webkit-box;
   display: -moz-box;
@@ -375,11 +375,6 @@ ticker > div div.bn-news ul li a {
 
 body.home {
   background: #ececec;
-}
-body.home header {
-  height: 2rem;
-  width: 100%;
-  background: yellow;
 }
 body.home ui-view > section.customer {
   padding: 40px 20px;

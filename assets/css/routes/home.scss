@@ -4,12 +4,6 @@ body.home{
 	// background: yellow;
 	background: rgb(236, 236, 236);
 
-	header{
-		height: 2rem;
-		width: 100%;
-		background: yellow;
-	}
-
 	ui-view{
 		& > section.customer{
 			padding: 40px 20px;
