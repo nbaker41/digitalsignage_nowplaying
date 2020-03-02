@@ -14,51 +14,54 @@
 <section
 	class="customer"
 	ng-repeat="x in home.app.data.allCustomers">
-	<h1>{{x.name_long}}</h1>
-	<div class="player-list">
-		<div
-			class="player"
-			ng-repeat="y in x.players"
-			ui-sref="screen({customer: x.name_short, player: y.player_id})"
-			ng-class="{empty: y.playlists.lengths.media == 0 && y.playlists.lengths.directories == 0}">
+	<div class="container">
+		<h1>{{x.name_long}}</h1>
+		<div class="player-list">
 			<div
-				class="touch-indicator"
-				ng-if ="y.touch_enabled == true">
-			</div>
-			<div
-				class="player-name">
-				<h6>{{y.name_long}}</h6>
-				<p>{{"/" + x.name_short + "/" + y.player_id}}</p>
-				<!-- <p>url: ".../{{x.name_short + "/" + y.player_id}}"</p> -->
-			</div>
-			<div
-				class="player-playlists-count">
-				<span
-					class="players-playlists-media"
-					ng-if="y.playlists.lengths.media > 0">
-					{{y.playlists.lengths.media}} media
-				</span>
-				<span
-					class="players-playlists-media"
-					ng-if="y.playlists.lengths.directories > 0">
-					<span>
-						{{y.playlists.lengths.directories}} director
+				class="player"
+				ng-repeat="y in x.players"
+				ui-sref="screen({customer: x.name_short, player: y.player_id})"
+				ng-class="{empty: y.playlists.lengths.media == 0 && y.playlists.lengths.directories == 0}">
+				<div
+					class="touch-indicator"
+					ng-if ="y.touch_enabled == true">
+				</div>
+				<div
+					class="player-name">
+					<h6>{{y.name_long}}</h6>
+					<p>{{"/" + x.name_short + "/" + y.player_id}}</p>
+					<!-- <p>url: ".../{{x.name_short + "/" + y.player_id}}"</p> -->
+				</div>
+				<div
+					class="player-playlists-count">
+					<span
+						class="players-playlists-media"
+						ng-if="y.playlists.lengths.media > 0">
+						{{y.playlists.lengths.media}} media
 					</span>
 					<span
-						ng-if="y.playlists.lengths.directories == 1">
-						y
+						class="players-playlists-media"
+						ng-if="y.playlists.lengths.directories > 0">
+						<span>
+							{{y.playlists.lengths.directories}} director
+						</span>
+						<span
+							ng-if="y.playlists.lengths.directories == 1">
+							y
+						</span>
+						<span
+							ng-if="y.playlists.lengths.directories > 1">
+							ies
+						</span>
 					</span>
 					<span
-						ng-if="y.playlists.lengths.directories > 1">
-						ies
+						ng-if="y.playlists.lengths.media == 0 && y.playlists.lengths.directories == 0">
+						This screen has no playlists.
 					</span>
-				</span>
-				<span
-					ng-if="y.playlists.lengths.media == 0 && y.playlists.lengths.directories == 0">
-					This screen has no playlists.
-				</span>
+				</div>
 			</div>
 		</div>
+
 	</div>
 </section>
 

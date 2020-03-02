@@ -1,8 +1,5 @@
-body.home{
-	// background: purple!important;
-}
-
 $basesize: 2.5rem;
+
 header {
 	display: block;
 	margin: 0;
@@ -18,7 +15,7 @@ header {
 		}
 	}
 	#menu{
-		// background: $blue;
+		// background: green;
 		width: 100%;
 		z-index: 1000;
 		.menu-top{
@@ -73,4 +70,21 @@ header {
 	}
 }
 
+@include breakpoint(lg){ // > 1360
+	header{
+		#menu{
+			.menu-top{
+				max-width: 1320px;
+				margin: 0 auto;
+			}
+			.menu-body{
+				> *,
+				> ul{
+					max-width: 1320px;
+					margin: 0px auto;
+				}
+			}
+		}
+	}
+}
 

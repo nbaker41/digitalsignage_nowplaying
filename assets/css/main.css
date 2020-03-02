@@ -1,3 +1,7 @@
+body {
+  background: #ececec;
+}
+
 html,
 body {
   font-family: "Roboto", sans-serif;
@@ -157,6 +161,17 @@ header #menu.open .menu-body {
   height: calc(100% - 2.5rem);
 }
 
+@media (min-width: 1360px) {
+  header #menu .menu-top {
+    max-width: 1320px;
+    margin: 0 auto;
+  }
+  header #menu .menu-body > *,
+header #menu .menu-body > ul {
+    max-width: 1320px;
+    margin: 0px auto;
+  }
+}
 #main {
   display: -webkit-box;
   display: -moz-box;
@@ -449,18 +464,14 @@ ticker > div div.bn-news ul li a {
   left: 0;
 }
 
-body.home {
-  background: #ececec;
-}
 body.home ui-view {
   padding-top: 4rem;
 }
 body.home ui-view > section.customer {
-  padding: 40px 20px;
-  border-bottom: 1px solid #c8c8c8;
+  padding: 1.33rem 0.66rem 2rem;
 }
 body.home ui-view > section.customer h1 {
-  margin-bottom: 20px;
+  margin-bottom: 1rem;
 }
 body.home ui-view > section.customer .player-list .player {
   padding: 32px 32px 24px 32px;
@@ -478,8 +489,8 @@ body.home ui-view > section.customer .player-list .player .touch-indicator {
   background: lime;
   border-radius: 50%;
   position: absolute;
-  right: 32px;
-  top: 40px;
+  right: 1rem;
+  top: 1rem;
 }
 body.home ui-view > section.customer .player-list .player .player-name:first-of-type h6 {
   width: unset;
@@ -499,6 +510,7 @@ body.home ui-view > section.customer .player-list .player .player-playlists-coun
   letter-spacing: 0;
 }
 body.home ui-view > section.customer .player-list .player .player-playlists-count span {
+  margin-top: 0;
   font-size: 16px;
   color: #999999;
 }
@@ -515,37 +527,48 @@ body.home ui-view > section.customer .player-list .player.empty .player-name h6 
   color: gray;
 }
 @media (min-width: 600px) {
-  body.home {
-    background: red;
-  }
   body.home ui-view > section.customer {
-    background: purple;
+    padding-bottom: 1rem;
   }
   body.home ui-view > section.customer .player-list {
-    background: blue;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    flex-wrap: wrap;
   }
   body.home ui-view > section.customer .player-list .player {
-    background: green;
+    width: calc(50% - 74px);
     display: inline-block;
-    height: 120px;
-    margin: 0 20px 0 0;
+    height: 180px;
+    margin: 0 0.66rem 0.66rem 0;
+  }
+  body.home ui-view > section.customer .player-list .player:nth-of-type(even) {
+    margin-right: 0;
+  }
+  body.home ui-view > section.customer .player-list .player .player-playlists-count {
+    position: absolute;
+    bottom: 1rem;
+    left: 1rem;
   }
 }
 @media (min-width: 1000px) {
-  body.home {
-    background: pink;
-  }
-  body.home ui-view > section.customer {
-    background: #a14ea1;
-  }
-  body.home ui-view > section.customer .player-list {
-    background: cyan;
-  }
   body.home ui-view > section.customer .player-list .player {
-    background: lime;
-    display: inline-block;
-    height: 120px;
-    margin: 0 20px 0 0;
+    width: calc(33.33% - 79px);
+    margin: 0 0.66rem 0.66rem 0;
+  }
+  body.home ui-view > section.customer .player-list .player:nth-of-type(even) {
+    margin-right: 0.66rem;
+  }
+  body.home ui-view > section.customer .player-list .player:nth-of-type(3n+0) {
+    margin-right: 0;
+  }
+}
+@media (min-width: 1360px) {
+  body.home ui-view > section.customer .container {
+    max-width: 1320px;
+    margin: 0 auto;
   }
 }
 

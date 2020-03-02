@@ -1,19 +1,14 @@
-
-
 body.home{
-	// background: yellow;
-	background: rgb(236, 236, 236);
+	// background: blue;
 
 	ui-view{
 		padding-top: 4rem;
 		& > section.customer{
-			padding: 40px 20px;
-			border-bottom: 1px solid rgb(200, 200, 200);
+			padding: 1.33rem .66rem 2rem;
 			h1{
-				margin-bottom: 20px;
+				margin-bottom: 1rem;
 			}
 			.player-list{
-				// background: purple;
 				.player{
 					padding: 32px 32px 24px 32px;
 					margin: 0 0 .75rem 0;
@@ -29,8 +24,8 @@ body.home{
 						background: lime;
 						border-radius: 50%;
 						position: absolute;
-						right: 32px;
-						top: 40px;
+						right: 1rem;
+						top: 1rem;
 					}
 					.player-name{
 						&:first-of-type{
@@ -54,6 +49,7 @@ body.home{
 						margin-top: .5rem;
 						letter-spacing: 0;
 						span{
+							margin-top: 0;
 							font-size: 16px;
 							color: rgb(153, 153, 153);
 							&.players-playlists-media{
@@ -74,49 +70,66 @@ body.home{
 					}
 				}
 			}
-			hr{
-				// margin-top: 32px;
-			}
 		}
 	}
 
 @include breakpoint(sm){ // > 600
-	background: red;
 	ui-view{
 		& > section.customer{
-			background: purple;
+			padding-bottom: 1rem;
 			.player-list{
-				background: blue;
+				@include flex();
+				flex-wrap: wrap;
 				.player{
-					background: green;
+					width: calc(50% - 74px);
 					display: inline-block;
-					height: 120px;
-					margin: 0 20px 0 0;
+					height: 180px;
+					margin: 0 .66rem .66rem 0;
+					&:nth-of-type(even){
+						margin-right: 0;
+					}
+					.player-playlists-count{
+						position: absolute;
+						bottom: 1rem;
+						left: 1rem;
+					}
 				}
-			}
-			hr{
-	
 			}
 		}
 	}
 }
 
 @include breakpoint(md){ // > 1000
-	background: pink;
 	ui-view{
 		& > section.customer{
-			background: rgb(161, 78, 161);
 			.player-list{
-				background: cyan;
 				.player{
-					background: lime;
-					display: inline-block;
-					height: 120px;
-					margin: 0 20px 0 0;
+					width: calc(33.33% - 79px);
+					margin: 0 .66rem .66rem 0;
+					&:nth-of-type(even){
+						margin-right: .66rem;
+					}
+					&:nth-of-type(3n+0){
+						margin-right: 0;
+					}
 				}
 			}
-			hr{
-	
+		}
+	}
+}
+
+
+@include breakpoint(lg){ // > 1360
+	ui-view{
+		& > section.customer{
+			.container{
+				// background: blue;
+				max-width: 1320px;
+				margin: 0 auto;
+				.player-list{
+					.player{
+					}
+				}
 			}
 		}
 	}
