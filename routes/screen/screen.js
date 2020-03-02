@@ -16,10 +16,10 @@
 	screen.app = $scope.$parent.app;
 
 	// what happens if you specify a customer but no player?
-		if ($stateParams.player == undefined){
-			$rootScope.errormessage = "You are in " + $stateParams.customer + " but you have not specified a player.";
-			alert($rootScope.errormessage);
-		}
+		// if ($stateParams.player == undefined){
+		// 	$rootScope.errormessage = "You are in " + $stateParams.customer + " but you have not specified a player.";
+		// 	alert($rootScope.errormessage);
+		// }
 
 	// Find customer and player.
 	// Execute chained list of queries starting with customers...

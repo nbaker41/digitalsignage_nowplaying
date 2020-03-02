@@ -38,7 +38,7 @@
                if($result->num_rows > 0){
                     while($row = $result->fetch_assoc()){
                          $data[] = $row;
-                    }
+		}
                }
           // close connection
                $conn->close();
@@ -50,13 +50,21 @@
           // create connection to a db.
                $conn = $this->db->connect();
           // write SQL query
-               $query = "               
-                    SELECT
-                         *
-                    FROM players
-                    WHERE customer_id = 
-               ".$customer_id;
-               $result = $conn->query($query) or die($conn->error.__LINE__);
+		if ($customer_id == null){
+			$query = "               
+				SELECT
+				     *
+				FROM players
+			";
+		} else {
+			$query = "               
+				SELECT
+					*
+				FROM players
+				WHERE customer_id = 
+			".$customer_id;
+		}
+		$result = $conn->query($query) or die($conn->error.__LINE__);
           // create array container
                $data = array();
           // fill array with result data

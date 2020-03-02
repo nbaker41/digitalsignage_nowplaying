@@ -14,8 +14,6 @@
      this.app = $scope.$parent.app;
      let leftsection = this;
 
-          leftsection.text = "Left Section";
-          console.log(leftsection.app);
 
      });
 
