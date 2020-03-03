@@ -7,6 +7,7 @@
 		// routes
 		"home",
 		"screen",
+		"screen-item",
 		"csvtest", // test
 		// components
 		"header",
@@ -32,13 +33,9 @@
 		$urlRouterProvider.otherwise("/");
 	});
 
-	nowPlaying.run(function ($get, $rootScope, $stateParams, $state) {
-		// alert("hey");
-	});
-
 	nowPlaying.controller(
 	"appCtrl",
-	function ($scope, $transitions, $get) {
+	function ($scope, $transitions, $get, $state) {
 	let app = this;
 
 	// transitions
@@ -49,12 +46,32 @@
 				params: {
 					customer: $transition.params().customer,
 					player: $transition.params().player,
-					// playlist: $transition.params().playlist,
+					playlist: $transition.params().playlist,
 				}
 			};
+			console.log(app.route);
 			$get.clearRootScope();
 			app.breakpoints(window.innerWidth);
 		});
+
+	// go to a screen
+		app.goToScreen = function(x, y){
+			// console.log(x, y);
+			if (app.view.device == "mobile" || app.view.device == "tablet"){
+				console.log("screen-item");
+				$state.go("screen-item", {
+					customer: x.name_short,
+					player: y.player_id,
+					playlist: "all"
+				});
+			} else{
+				console.log("screen");
+				$state.go("screen", {
+					customer: x.name_short,
+					player: y.player_id
+				});
+			}
+		}
 
 	// breakpoints
 		app.breakpoints = function(w){
@@ -62,22 +79,29 @@
 			if( w <= 600 ){
 				app.view.size = "xs";
 				app.view.type = "v";
+				app.view.device = "mobile";
 			} else if( 600 <= w && w <= 1000 ){
 				app.view.size = "sm";
 				app.view.type = "v";
+				app.view.device = "tablet";
 			} else if( 1000 <= w && w <= 1360 ){
 				app.view.size = "md";
 				app.view.type = "v";
+				app.view.device = "laptop"
 			} else if( 1360 <= w && w <= 1900 ){
 				app.view.size = "lg";
 				app.view.type = "v";
+				app.view.device = "laptop";
 			} else if( w >= 1900 ){
 				app.view.size = "xl";
 				app.view.type = "h";
+				app.view.device = "desktop";
 			} else{
 				app.view.size = undefined;
 				app.view.type = undefined;
+				app.view.device = undefined;
 			}
+			console.log(app.view);
 			return app.view
 		}
 		window.addEventListener('resize', function () {

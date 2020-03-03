@@ -32,14 +32,6 @@
 	<ui-view>
 		<!-- routes/customer/customer.html -->
 	</ui-view>
-	
-		<!-- <button ng-if="app.route.to == 'home'" ui-sref="csvtest">CSV TEST</button> -->
-
-
-     <div
-          ng-if="app.errormessage"
-          ng-bind-html="app.errormessage">
-     </div>
 
 </body>
 
@@ -48,9 +40,10 @@
      <script src="app.js"></script>
      <script src="components/ticker/breaking-news-ticker.min.js"></script>
      <!-- ROUTES -->
-          <script src="routes/home/home.js"></script>
-          <script src="routes/screen/screen.js"></script>
-          <script src="routes/csvtest/csv.js"></script>
+     <script src="routes/home/home.js"></script>
+     <script src="routes/csvtest/csv.js"></script>
+     <script src="routes/screen/screen.js"></script>
+     <script src="routes/screen-item/screen-item.js"></script>
      <!-- COMPONENTS -->
           <script src="components/header/header.js"></script>
           <script src="components/ticker/ticker.js"></script>

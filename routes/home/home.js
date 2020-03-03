@@ -22,7 +22,6 @@
 		$get.customers(function(){
 			getAllPlayers();
 			home.app.data = $rootScope.data;
-			console.log(home.app.data);
 		});
 		
 	// get all customers...

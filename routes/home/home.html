@@ -20,8 +20,9 @@
 			<div
 				class="player"
 				ng-repeat="y in x.players"
-				ui-sref="screen({customer: x.name_short, player: y.player_id})"
+				ng-click="home.app.goToScreen(x, y)"
 				ng-class="{empty: y.playlists.lengths.media == 0 && y.playlists.lengths.directories == 0}">
+				<!-- ui-sref="screen({customer: x.name_short, player: y.player_id})" -->
 				<div
 					class="touch-indicator"
 					ng-if ="y.touch_enabled == true">
