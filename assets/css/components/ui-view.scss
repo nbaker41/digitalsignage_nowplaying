@@ -5,9 +5,10 @@ body {
 		padding-top: 4rem;
 	}
 // now playing screen styles
-	&.screen,
-	&.screen-item {
+	&.screen{
+	// &.screen-item {
 		ui-view {
+			padding-top: 0;
 			@include flex(column);
 			height: 100%;
 		}

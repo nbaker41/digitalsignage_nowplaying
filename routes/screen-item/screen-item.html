@@ -1,16 +1,46 @@
-<article
-	ng-if="item.app.route.params.playlist == 'all'">
-	HELLOOOOOOOOO
-	HELLOOOOOOOOO
-	HELLOOOOOOOOO
-	HELLOOOOOOOOO
-	HELLOOOOOOOOO
-	HELLOOOOOOOOO
-	HELLOOOOOOOOO
-	<h1>This Customer's name: {{item.app.data.thisCustomer.name_short}}</h1>
-	<h2>This Player's id: {{item.app.data.thisPlayer.player_id}}</h2>
-</article>
+<div ng-if="item.app.route.params.playlist == 'all'">
+	
+	<section>
+		<div class="container">
+			<h1>{{item.app.data.thisPlayer.name_long}}</h1>
+		</div>
+	</section>
 
+	<section ng-if="item.app.data.allPlaylists.mediaPlaylists.length > 0">
+		<div class="container">
+			<h3>Slideshows</h3>
+			<div class="box-list">
+				<div class="box">
+					<div class="box-bottom">
+						<h6>One</h6>
+						<p>Some stuff about one.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section ng-if="item.app.data.allPlaylists.directoryPlaylists.length > 0">
+		<div class="container">
+			<h3>Directories</h3>
+			<div class="box-list">
+
+			</div>
+		</div>
+	</section>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+<!-- Below is the stuff for if it's a certain screen's playlist playing... -->
 <article 
 	id="main"
 	ng-if="item.app.route.params.playlist !== 'all'">

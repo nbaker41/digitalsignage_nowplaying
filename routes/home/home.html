@@ -11,30 +11,28 @@
 </header> -->
 
 
-<section
-	class="customer"
-	ng-repeat="x in home.app.data.allCustomers">
+<section ng-repeat="x in home.app.data.allCustomers">
 	<div class="container">
 		<h1>{{x.name_long}}</h1>
-		<div class="player-list">
+		<div class="box-list">
 			<div
-				class="player"
+				class="box"
 				ng-repeat="y in x.players"
 				ng-click="home.app.goToScreen(x, y)"
 				ng-class="{empty: y.playlists.lengths.media == 0 && y.playlists.lengths.directories == 0}">
 				<!-- ui-sref="screen({customer: x.name_short, player: y.player_id})" -->
 				<div
-					class="touch-indicator"
+					class="indicator"
 					ng-if ="y.touch_enabled == true">
 				</div>
 				<div
-					class="player-name">
+					class="box-top">
 					<h6>{{y.name_long}}</h6>
 					<p>{{"/" + x.name_short + "/" + y.player_id}}</p>
 					<!-- <p>url: ".../{{x.name_short + "/" + y.player_id}}"</p> -->
 				</div>
 				<div
-					class="player-playlists-count">
+					class="box-bottom">
 					<span
 						class="players-playlists-media"
 						ng-if="y.playlists.lengths.media > 0">

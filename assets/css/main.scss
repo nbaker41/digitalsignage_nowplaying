@@ -6,15 +6,16 @@
 @import //     styles
 
 'styles/breakpoints()',
-'styles/dom',
+'styles/containers',
 'styles/flex()',
 'styles/structure';
 
 @import //     components
 
 'components/ui-view',
+'components/boxes',
 	'components/header',
-		'components/main/main',
+	'components/main/main',
 		'components/main/events',
 		'components/main/leftsection',
 			'components/main/playlists/playlists',

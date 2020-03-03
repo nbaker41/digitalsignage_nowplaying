@@ -25,6 +25,10 @@ html h1,
 body h1 {
   margin-bottom: 1rem;
 }
+html h6,
+body h6 {
+  margin-bottom: 0.15rem;
+}
 html p,
 html span,
 body p,
@@ -89,7 +93,8 @@ body ui-view {
   display: block;
   padding-top: 4rem;
 }
-body.screen ui-view, body.screen-item ui-view {
+body.screen ui-view {
+  padding-top: 0;
   display: -webkit-box;
   display: -moz-box;
   display: -webkit-flex;
@@ -97,6 +102,94 @@ body.screen ui-view, body.screen-item ui-view {
   display: flex;
   flex-direction: column;
   height: 100%;
+}
+
+.box-list .box {
+  padding: 32px 32px 24px 32px;
+  margin: 0 0 0.75rem 0;
+  background: white;
+  position: relative;
+  border-radius: 4px;
+}
+.box-list .box:last-of-type {
+  margin-bottom: 0;
+}
+.box-list .box p {
+  font-style: italic;
+  color: #afafaf;
+  font-size: 16px;
+  letter-spacing: 0.05em;
+}
+.box-list .box .indicator {
+  width: 12px;
+  height: 12px;
+  background: lime;
+  border-radius: 50%;
+  position: absolute;
+  right: 1rem;
+  top: 1rem;
+}
+.box-list .box .box-top:first-of-type h6 {
+  width: unset;
+}
+.box-list .box .box-top h6 {
+  width: calc(100% - 24px);
+}
+.box-list .box .box-bottom {
+  letter-spacing: 0;
+}
+.box-list .box .box-bottom span {
+  margin-top: 0;
+  font-size: 16px;
+  color: #999999;
+}
+.box-list .box .box-bottom span.players-playlists-media {
+  margin-right: 12px;
+}
+.box-list .box .box-bottom span.players-playlists-directories {
+  letter-spacing: 0;
+}
+.box-list .box.empty {
+  background: #dddddd;
+}
+.box-list .box.empty .player-name h6 {
+  color: gray;
+}
+@media (min-width: 600px) {
+  .box-list {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .box-list .box {
+    width: calc(50% - 74px);
+    display: inline-block;
+    height: 180px;
+    margin: 0 0.66rem 0.66rem 0;
+  }
+  .box-list .box:nth-of-type(even) {
+    margin-right: 0;
+  }
+  .box-list .box .box-bottom {
+    position: absolute;
+    bottom: 1rem;
+    left: 1rem;
+  }
+}
+@media (min-width: 1000px) {
+  .box-list .box {
+    width: calc(33.33% - 79px);
+    margin: 0 0.66rem 0.66rem 0;
+  }
+  .box-list .box:nth-of-type(even) {
+    margin-right: 0.66rem;
+  }
+  .box-list .box:nth-of-type(3n+0) {
+    margin-right: 0;
+  }
 }
 
 header {
@@ -482,96 +575,6 @@ ticker > div div.bn-news ul li a {
 .animate-switch-container .animate-switch.ng-enter.ng-enter-active {
   z-index: 1;
   left: 0;
-}
-
-body.home .player-list .player {
-  padding: 32px 32px 24px 32px;
-  margin: 0 0 0.75rem 0;
-  background: white;
-  position: relative;
-  border-radius: 4px;
-}
-body.home .player-list .player:last-of-type {
-  margin-bottom: 0;
-}
-body.home .player-list .player .touch-indicator {
-  width: 12px;
-  height: 12px;
-  background: lime;
-  border-radius: 50%;
-  position: absolute;
-  right: 1rem;
-  top: 1rem;
-}
-body.home .player-list .player .player-name:first-of-type h6 {
-  width: unset;
-}
-body.home .player-list .player .player-name h6 {
-  width: calc(100% - 24px);
-  margin-bottom: 0.15rem;
-}
-body.home .player-list .player .player-name p {
-  font-style: italic;
-  color: #afafaf;
-  font-size: 16px;
-  letter-spacing: 0.05em;
-}
-body.home .player-list .player .player-playlists-count {
-  margin-top: 0.5rem;
-  letter-spacing: 0;
-}
-body.home .player-list .player .player-playlists-count span {
-  margin-top: 0;
-  font-size: 16px;
-  color: #999999;
-}
-body.home .player-list .player .player-playlists-count span.players-playlists-media {
-  margin-right: 12px;
-}
-body.home .player-list .player .player-playlists-count span.players-playlists-directories {
-  letter-spacing: 0;
-}
-body.home .player-list .player.empty {
-  background: #dddddd;
-}
-body.home .player-list .player.empty .player-name h6 {
-  color: gray;
-}
-@media (min-width: 600px) {
-  body.home .player-list {
-    display: -webkit-box;
-    display: -moz-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    flex-wrap: wrap;
-  }
-  body.home .player-list .player {
-    width: calc(50% - 74px);
-    display: inline-block;
-    height: 180px;
-    margin: 0 0.66rem 0.66rem 0;
-  }
-  body.home .player-list .player:nth-of-type(even) {
-    margin-right: 0;
-  }
-  body.home .player-list .player .player-playlists-count {
-    position: absolute;
-    bottom: 1rem;
-    left: 1rem;
-  }
-}
-@media (min-width: 1000px) {
-  body.home .player-list .player {
-    width: calc(33.33% - 79px);
-    margin: 0 0.66rem 0.66rem 0;
-  }
-  body.home .player-list .player:nth-of-type(even) {
-    margin-right: 0.66rem;
-  }
-  body.home .player-list .player:nth-of-type(3n+0) {
-    margin-right: 0;
-  }
 }
 
 /*# sourceMappingURL=main.css.map */
