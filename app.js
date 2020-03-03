@@ -101,7 +101,6 @@
 				app.view.type = undefined;
 				app.view.device = undefined;
 			}
-			console.log(app.view);
 			return app.view
 		}
 		window.addEventListener('resize', function () {

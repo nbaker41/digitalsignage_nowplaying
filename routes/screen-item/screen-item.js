@@ -15,6 +15,14 @@
 	var item = this;
 	item.app = $scope.$parent.app;
 
+	// attach rootscope data to item.info after requests for customer and player.
+		function setData(){
+			item.info = {
+				customer: $rootScope.data.thisCustomer.name_short,
+				player: $rootScope.data.thisPlayer.player_id
+			}
+			console.log(item.info.player);
+		}
 
 
 	// Find customer and player.
@@ -23,10 +31,6 @@
 			findThisCustomer();
 			item.app.data = $rootScope.data;
 			// console.log(screen.app.data);
-			item.info = {
-				customer: $rootScope.data,
-				player: $rootScope.data
-			}
 		});
 
 		
@@ -117,6 +121,7 @@
 				);
 			}
 			// console.log($rootScope.data.allPlaylists);
+			setData();
 		}
 
 

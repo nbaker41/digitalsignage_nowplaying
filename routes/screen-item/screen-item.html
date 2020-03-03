@@ -1,17 +1,17 @@
 <article
 	ng-if="item.app.route.params.playlist == 'all'">
 	HELLOOOOOOOOO
-	{{item.sample}}
-	<h1>This Customer's name: {{item.info.customer}}</h1>
-	<h2>This Player's id: {{item.info.player}}</h2>
-</article>
-<article>
+	HELLOOOOOOOOO
+	HELLOOOOOOOOO
+	HELLOOOOOOOOO
+	HELLOOOOOOOOO
+	HELLOOOOOOOOO
 	HELLOOOOOOOOO
 	{{item.sample}}
-	<h1>This Customer's name: {{item.info.customer}}</h1>
-	<h2>This Player's id: {{item.info.player}}</h2>
+	<h1>This Customer's name: {{item.app.data.thisCustomer.name_short}}</h1>
+	<h2>This Player's id: {{item.app.data.thisPlayer.player_id}}</h2>
+	<p>Item Info Object: {{item.info}}</p>
 </article>
-
 
 <article 
 	id="main"
