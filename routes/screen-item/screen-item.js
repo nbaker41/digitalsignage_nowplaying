@@ -21,7 +21,7 @@
 				customer: $rootScope.data.thisCustomer.name_short,
 				player: $rootScope.data.thisPlayer.player_id
 			}
-			console.log(item.info.player);
+			// console.log(item.info.player);
 		}
 
 

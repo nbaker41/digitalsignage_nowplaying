@@ -21,6 +21,10 @@ body h6 {
   margin-bottom: 1rem;
   line-height: 1em;
 }
+html h1,
+body h1 {
+  margin-bottom: 1rem;
+}
 html p,
 html span,
 body p,
@@ -41,6 +45,21 @@ body span {
 }
 body:before {
   display: none;
+}
+
+body section {
+  padding: 1.33rem 0.66rem 2rem;
+}
+@media (min-width: 600px) {
+  body section {
+    padding-bottom: 1rem;
+  }
+}
+@media (min-width: 1360px) {
+  body section .container {
+    max-width: 1320px;
+    margin: 0 auto;
+  }
 }
 
 :root {
@@ -68,8 +87,9 @@ p {
 body ui-view {
   height: 100vh;
   display: block;
+  padding-top: 4rem;
 }
-body:not(.home) ui-view {
+body.screen ui-view, body.screen-item ui-view {
   display: -webkit-box;
   display: -moz-box;
   display: -webkit-flex;
@@ -464,26 +484,17 @@ ticker > div div.bn-news ul li a {
   left: 0;
 }
 
-body.home ui-view {
-  padding-top: 4rem;
-}
-body.home ui-view > section.customer {
-  padding: 1.33rem 0.66rem 2rem;
-}
-body.home ui-view > section.customer h1 {
-  margin-bottom: 1rem;
-}
-body.home ui-view > section.customer .player-list .player {
+body.home .player-list .player {
   padding: 32px 32px 24px 32px;
   margin: 0 0 0.75rem 0;
   background: white;
   position: relative;
   border-radius: 4px;
 }
-body.home ui-view > section.customer .player-list .player:last-of-type {
+body.home .player-list .player:last-of-type {
   margin-bottom: 0;
 }
-body.home ui-view > section.customer .player-list .player .touch-indicator {
+body.home .player-list .player .touch-indicator {
   width: 12px;
   height: 12px;
   background: lime;
@@ -492,45 +503,42 @@ body.home ui-view > section.customer .player-list .player .touch-indicator {
   right: 1rem;
   top: 1rem;
 }
-body.home ui-view > section.customer .player-list .player .player-name:first-of-type h6 {
+body.home .player-list .player .player-name:first-of-type h6 {
   width: unset;
 }
-body.home ui-view > section.customer .player-list .player .player-name h6 {
+body.home .player-list .player .player-name h6 {
   width: calc(100% - 24px);
   margin-bottom: 0.15rem;
 }
-body.home ui-view > section.customer .player-list .player .player-name p {
+body.home .player-list .player .player-name p {
   font-style: italic;
   color: #afafaf;
   font-size: 16px;
   letter-spacing: 0.05em;
 }
-body.home ui-view > section.customer .player-list .player .player-playlists-count {
+body.home .player-list .player .player-playlists-count {
   margin-top: 0.5rem;
   letter-spacing: 0;
 }
-body.home ui-view > section.customer .player-list .player .player-playlists-count span {
+body.home .player-list .player .player-playlists-count span {
   margin-top: 0;
   font-size: 16px;
   color: #999999;
 }
-body.home ui-view > section.customer .player-list .player .player-playlists-count span.players-playlists-media {
+body.home .player-list .player .player-playlists-count span.players-playlists-media {
   margin-right: 12px;
 }
-body.home ui-view > section.customer .player-list .player .player-playlists-count span.players-playlists-directories {
+body.home .player-list .player .player-playlists-count span.players-playlists-directories {
   letter-spacing: 0;
 }
-body.home ui-view > section.customer .player-list .player.empty {
+body.home .player-list .player.empty {
   background: #dddddd;
 }
-body.home ui-view > section.customer .player-list .player.empty .player-name h6 {
+body.home .player-list .player.empty .player-name h6 {
   color: gray;
 }
 @media (min-width: 600px) {
-  body.home ui-view > section.customer {
-    padding-bottom: 1rem;
-  }
-  body.home ui-view > section.customer .player-list {
+  body.home .player-list {
     display: -webkit-box;
     display: -moz-box;
     display: -webkit-flex;
@@ -538,37 +546,31 @@ body.home ui-view > section.customer .player-list .player.empty .player-name h6 
     display: flex;
     flex-wrap: wrap;
   }
-  body.home ui-view > section.customer .player-list .player {
+  body.home .player-list .player {
     width: calc(50% - 74px);
     display: inline-block;
     height: 180px;
     margin: 0 0.66rem 0.66rem 0;
   }
-  body.home ui-view > section.customer .player-list .player:nth-of-type(even) {
+  body.home .player-list .player:nth-of-type(even) {
     margin-right: 0;
   }
-  body.home ui-view > section.customer .player-list .player .player-playlists-count {
+  body.home .player-list .player .player-playlists-count {
     position: absolute;
     bottom: 1rem;
     left: 1rem;
   }
 }
 @media (min-width: 1000px) {
-  body.home ui-view > section.customer .player-list .player {
+  body.home .player-list .player {
     width: calc(33.33% - 79px);
     margin: 0 0.66rem 0.66rem 0;
   }
-  body.home ui-view > section.customer .player-list .player:nth-of-type(even) {
+  body.home .player-list .player:nth-of-type(even) {
     margin-right: 0.66rem;
   }
-  body.home ui-view > section.customer .player-list .player:nth-of-type(3n+0) {
+  body.home .player-list .player:nth-of-type(3n+0) {
     margin-right: 0;
-  }
-}
-@media (min-width: 1360px) {
-  body.home ui-view > section.customer .container {
-    max-width: 1320px;
-    margin: 0 auto;
   }
 }
 

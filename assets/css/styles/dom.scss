@@ -1,0 +1,14 @@
+body{
+	section{
+		padding: 1.33rem .66rem 2rem;
+	@include breakpoint(sm){ // > 600
+		padding-bottom: 1rem;
+	}
+	@include breakpoint(lg){ // > 1360
+		.container{
+			// background: blue;
+			max-width: 1320px;
+			margin: 0 auto;
+		}
+	}}
+}

@@ -1,13 +1,15 @@
-body{
-	ui-view{
-	     height: 100vh;
-	     display: block;
-	//      background: green;
+body {
+	ui-view {
+		height: 100vh;
+		display: block;
+		padding-top: 4rem;
 	}
-	&:not(.home){
-	     ui-view{
-		@include flex(column);
-		height: 100%;
-	     }
+// now playing screen styles
+	&.screen,
+	&.screen-item {
+		ui-view {
+			@include flex(column);
+			height: 100%;
+		}
 	}
-     }
+}
