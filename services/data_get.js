@@ -7,6 +7,25 @@
 	function ($http, $rootScope, $sce) {
 	var get = this;
 
+		get.clearRootScope = function(){
+			$rootScope.data = {
+			// customers
+				allCustomers: null,
+				thisCustomer: null,
+			// players
+				allPlayers: null,
+				thisPlayer: null,
+			// playlists
+				allPlaylists: {
+					mediaPlaylists: [],
+					directoryPlaylists: []
+				}
+				// buildings/floors?
+				// schools/depts?
+			};
+			console.log($rootScope.data);
+		}
+
 		get.request = function (url, params, callback, secondCallback) {
 			$http({
 				method: 'GET',

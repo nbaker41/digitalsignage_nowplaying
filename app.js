@@ -37,46 +37,59 @@
 	});
 
 	nowPlaying.controller(
-		"appCtrl",
-		function ($scope, $transitions, $http, $sce, $rootScope) {
-			let app = this;
+	"appCtrl",
+	function ($scope, $transitions, $get) {
+	let app = this;
 
-			// transitions
-			$transitions.onSuccess({}, function ($transition) {
-				// gather route info...
-				app.route = {
-					from: $transition.$from().name,
-					to: $transition.$to().name,
-					params: {
-						customer: $transition.params().customer,
-						player: $transition.params().player,
-					}
-				};
-				$rootScope.data = {
-					// customers
-					allCustomers: null,
-					thisCustomer: null,
-					// players
-					allPlayers: null,
-					thisPlayer: null,
-					// playlists
-					allPlaylists: {
-						mediaPlaylists: [],
-						directoryPlaylists: []
-					}
-					// buildings/floors?
-					// schools/depts?
-				};
-				// clear the rootscope..
-				// app.data = JSON.stringify($rootScope.data, null, 4);
-			});
-
-			// clock
-			app.tick = setInterval(function () {
-				app.currentTime = new Date();
-				$scope.$apply();
-			}, 1000);
-
+	// transitions
+		$transitions.onSuccess({}, function ($transition) {
+			app.route = {
+				from: $transition.$from().name,
+				to: $transition.$to().name,
+				params: {
+					customer: $transition.params().customer,
+					player: $transition.params().player,
+					// playlist: $transition.params().playlist,
+				}
+			};
+			$get.clearRootScope();
+			app.breakpoints(window.innerWidth);
 		});
+
+	// breakpoints
+		app.breakpoints = function(w){
+			app.view = {};
+			if( w <= 600 ){
+				app.view.size = "xs";
+				app.view.type = "v";
+			} else if( 600 <= w && w <= 1000 ){
+				app.view.size = "sm";
+				app.view.type = "v";
+			} else if( 1000 <= w && w <= 1360 ){
+				app.view.size = "md";
+				app.view.type = "v";
+			} else if( 1360 <= w && w <= 1900 ){
+				app.view.size = "lg";
+				app.view.type = "v";
+			} else if( w >= 1900 ){
+				app.view.size = "xl";
+				app.view.type = "h";
+			} else{
+				app.view.size = undefined;
+				app.view.type = undefined;
+			}
+			return app.view
+		}
+		window.addEventListener('resize', function () {
+			app.breakpoints(window.innerWidth);
+		}, false);
+
+	// clock
+		app.tick = setInterval(function () {
+			app.currentTime = new Date();
+			$scope.$apply();
+		}, 1000);
+
+	});
 
 })();

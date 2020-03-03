@@ -14,6 +14,7 @@
 	this.app = $scope.$parent.app;
 	let header = this;
 
+	// generate lines in header design
 		header.lines = {
 			number: 98,
 			get: function(x){
@@ -34,7 +35,6 @@
 					this.isOpen = true;
 				}
 			}
-			
 		}
 
 	});
