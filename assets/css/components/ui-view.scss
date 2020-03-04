@@ -2,8 +2,13 @@ body {
 	ui-view {
 		height: 100vh;
 		display: block;
-		padding-top: 4rem;
+		padding-top: 3rem;
+	@include breakpoint(sm){ // 600
+		padding-top: 3rem;
 	}
+	@include breakpoint(md){ // 1000
+		padding-top: 4rem;
+	}}
 // now playing screen styles
 	&.screen{
 	// &.screen-item {

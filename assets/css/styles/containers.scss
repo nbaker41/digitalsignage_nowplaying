@@ -1,8 +1,8 @@
 body{
 	section{
-		padding: 1.33rem .66rem 2rem;
+		padding: 1rem .66rem .75rem;
 	@include breakpoint(sm){ // > 600
-		padding-bottom: 1rem;
+		// padding-bottom: .75rem;
 	}
 	@include breakpoint(lg){ // > 1360
 		.container{

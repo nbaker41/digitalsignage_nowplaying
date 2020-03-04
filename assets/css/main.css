@@ -66,12 +66,7 @@ body:before {
 }
 
 body section {
-  padding: 1.33rem 0.66rem 2rem;
-}
-@media (min-width: 600px) {
-  body section {
-    padding-bottom: 1rem;
-  }
+  padding: 1rem 0.66rem 0.75rem;
 }
 @media (min-width: 1360px) {
   body section .container {
@@ -105,7 +100,17 @@ p {
 body ui-view {
   height: 100vh;
   display: block;
-  padding-top: 4rem;
+  padding-top: 3rem;
+}
+@media (min-width: 600px) {
+  body ui-view {
+    padding-top: 3rem;
+  }
+}
+@media (min-width: 1000px) {
+  body ui-view {
+    padding-top: 4rem;
+  }
 }
 body.screen ui-view {
   padding-top: 0;
