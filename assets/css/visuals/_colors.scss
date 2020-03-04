@@ -18,6 +18,12 @@ body{
 	// .box-list{
 		.box{
 			background: $mgray!important;
-		}
+		&.empty{
+			background: $black!important;
+			.box-top,
+			.box-bottom{
+				opacity: .7;
+			}
+		}}
 	// }
 }}

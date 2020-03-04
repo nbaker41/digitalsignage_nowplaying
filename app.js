@@ -56,22 +56,22 @@
 		});
 
 	// go to a screen
-		app.goToScreen = function(x, y){
-			// console.log(x, y);
-			if (app.view.device == "mobile" || app.view.device == "tablet"){
-				console.log("screen-item");
+		app.goToScreen = function(x, y, z){
+			// console.log($event);
+			// if (app.view.device == "mobile" || app.view.device == "tablet" || z == "exp"){
+			// 	console.log("screen-item");
 				$state.go("screen-item", {
 					customer: x.name_short,
 					player: y.player_id,
 					playlist: "all"
 				});
-			} else{
-				console.log("screen");
-				$state.go("screen", {
-					customer: x.name_short,
-					player: y.player_id
-				});
-			}
+			// } else{
+			// 	console.log("screen");
+			// 	$state.go("screen", {
+			// 		customer: x.name_short,
+			// 		player: y.player_id
+			// 	});
+			// }
 		}
 
 	// breakpoints

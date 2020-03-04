@@ -8,6 +8,13 @@ body.darkmode {
 body.darkmode .box {
   background: #272727 !important;
 }
+body.darkmode .box.empty {
+  background: black !important;
+}
+body.darkmode .box.empty .box-top,
+body.darkmode .box.empty .box-bottom {
+  opacity: 0.7;
+}
 
 html,
 body {
@@ -117,6 +124,7 @@ body.screen ui-view {
   background: white;
   position: relative;
   border-radius: 4px;
+  overflow: hidden;
 }
 .box-list .box:last-of-type {
   margin-bottom: 0;
@@ -156,10 +164,29 @@ body.screen ui-view {
 .box-list .box .box-bottom span.players-playlists-directories {
   letter-spacing: 0;
 }
+.box-list .box .viewmore {
+  position: absolute;
+  width: 2rem;
+  height: 2rem;
+  bottom: 0;
+  right: 0;
+}
+.box-list .box .viewmore span {
+  display: block;
+  line-height: 1.2rem;
+  text-align: center;
+  font-size: 1rem;
+  margin: 0;
+  background: #ececec;
+  color: darkgray;
+  width: 1.25rem;
+  height: 1.25rem;
+  border-radius: 50%;
+}
 .box-list .box.empty {
   background: #dddddd;
 }
-.box-list .box.empty .player-name h6 {
+.box-list .box.empty .box-top h6 {
   color: gray;
 }
 @media (min-width: 600px) {
@@ -226,12 +253,12 @@ header #menu .menu-top {
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: space-between;
 }
 header #menu .menu-top #gt-logo {
   opacity: 0.7;
   height: 1.5rem;
   margin-left: 0.75rem;
+  margin-right: auto;
 }
 header #menu .menu-top .hamburger {
   opacity: 0.6;
@@ -265,6 +292,11 @@ header #menu .menu-top .hamburger div span {
   width: 100%;
   height: 4px;
   border-radius: 2px;
+}
+header #menu .menu-top .hamburger.variable-width {
+  width: auto;
+  padding: 0 1rem;
+  background: rgba(0, 0, 0, 0.187);
 }
 header #menu .menu-body {
   background: #b3a369;

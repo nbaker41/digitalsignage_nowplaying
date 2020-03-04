@@ -18,7 +18,7 @@
 			<div
 				class="box"
 				ng-repeat="y in x.players"
-				ng-click="home.app.goToScreen(x, y)"
+				ng-click="home.app.goToScreen(x, y, 'exp')"
 				ng-class="{empty: y.playlists.lengths.media == 0 && y.playlists.lengths.directories == 0}">
 				<!-- ui-sref="screen({customer: x.name_short, player: y.player_id})" -->
 				<div
@@ -58,6 +58,11 @@
 						This screen has no playlists.
 					</span>
 				</div>
+				<!-- <div 
+					class="viewmore"
+					ng-click="home.app.goToScreen(, x, y, 'exp')">
+					<span>+</span>
+				</div> -->
 			</div>
 		</div>
 

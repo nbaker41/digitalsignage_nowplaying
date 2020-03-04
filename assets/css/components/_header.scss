@@ -19,7 +19,7 @@ header {
 		width: 100%;
 		z-index: 1000;
 		.menu-top{
-			@include flex(row, align-center, space-between);
+			@include flex(row, align-center);
 			// background: purple;
 			#gt-logo{
 				opacity: .7;
@@ -27,6 +27,7 @@ header {
 				// background: blue;
 				height: 1.5rem;
 				margin-left: .75rem;
+				margin-right: auto;
 			}
 			.hamburger{
 				opacity: .6;
@@ -47,6 +48,11 @@ header {
 						height: 4px;
 						border-radius: 2px;
 					}
+				}
+				&.variable-width{
+					width: auto;
+					padding: 0 1rem;
+					background: rgba(0, 0, 0, 0.187);
 				}
 			}
 		}
