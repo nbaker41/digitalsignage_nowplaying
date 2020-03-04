@@ -1,6 +1,13 @@
 body {
   background: #ececec;
 }
+body.darkmode {
+  background: #161616;
+  color: white !important;
+}
+body.darkmode .box {
+  background: #272727 !important;
+}
 
 html,
 body {

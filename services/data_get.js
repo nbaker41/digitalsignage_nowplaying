@@ -8,21 +8,42 @@
 	var get = this;
 
 		get.clearRootScope = function(){
-			$rootScope.data = {
-			// customers
-				allCustomers: null,
-				thisCustomer: null,
-			// players
-				allPlayers: null,
-				thisPlayer: null,
-			// playlists
-				allPlaylists: {
-					mediaPlaylists: [],
-					directoryPlaylists: []
-				}
-				// buildings/floors?
-				// schools/depts?
-			};
+		// try to make dark mode persist until I write it into db...
+			// if ($rootScope.data.darkmode == true){
+				$rootScope.data = {
+				// customers
+					allCustomers: null,
+					thisCustomer: null,
+				// players
+					allPlayers: null,
+					thisPlayer: null,
+				// playlists
+					allPlaylists: {
+						mediaPlaylists: [],
+						directoryPlaylists: []
+					},
+					darkmode: true
+					// buildings/floors?
+					// schools/depts?
+				};
+			// } else {
+			// 	$rootScope.data = {
+			// 	// customers
+			// 		allCustomers: null,
+			// 		thisCustomer: null,
+			// 	// players
+			// 		allPlayers: null,
+			// 		thisPlayer: null,
+			// 	// playlists
+			// 		allPlaylists: {
+			// 			mediaPlaylists: [],
+			// 			directoryPlaylists: []
+			// 		},
+			// 		darkmode: false
+			// 		// buildings/floors?
+			// 		// schools/depts?
+			// 	};
+			// }
 			console.log($rootScope.data);
 		}
 

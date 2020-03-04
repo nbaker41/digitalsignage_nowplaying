@@ -35,7 +35,7 @@
 
 	nowPlaying.controller(
 	"appCtrl",
-	function ($scope, $transitions, $get, $state) {
+	function ($scope, $transitions, $get, $state, $rootScope) {
 	let app = this;
 
 	// transitions
@@ -51,6 +51,7 @@
 			};
 			console.log(app.route);
 			$get.clearRootScope();
+			app.darkmode.set();
 			app.breakpoints(window.innerWidth);
 		});
 
@@ -112,6 +113,26 @@
 			app.currentTime = new Date();
 			$scope.$apply();
 		}, 1000);
+
+	// dark mode
+		app.darkmode = {
+			isOn: false,
+			toggle: function(){
+				if(this.isOn == false){
+					$rootScope.data.darkmode = true;
+					this.set();
+				} else {
+					$rootScope.data.darkmode = false;
+					this.set();
+				}
+			},
+			set: function(){
+				this.isOn = $rootScope.data.darkmode;
+				console.log(this.isOn);
+			}
+		}
+		// app.darkmode.toggle();
+		// app.darkmode.set();
 
 	});
 
