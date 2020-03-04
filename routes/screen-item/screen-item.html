@@ -10,10 +10,12 @@
 		<div class="container">
 			<h3>Slideshows</h3>
 			<div class="box-list">
-				<div class="box">
+				<div 
+					ng-repeat="x in item.app.data.allPlaylists.mediaPlaylists"
+					class="box">
 					<div class="box-bottom">
-						<h6>One</h6>
-						<p>Some stuff about one.</p>
+						<h6>{{x.name}}</h6>
+						<p>{{x.description}}</p>
 					</div>
 				</div>
 			</div>
@@ -24,7 +26,14 @@
 		<div class="container">
 			<h3>Directories</h3>
 			<div class="box-list">
-
+				<div 
+					ng-repeat="x in item.app.data.allPlaylists.directoryPlaylists"
+					class="box">
+					<div class="box-bottom">
+						<h6>{{x.name}}</h6>
+						<p>{{x.description}}</p>
+					</div>
+				</div>
 			</div>
 		</div>
 	</section>
