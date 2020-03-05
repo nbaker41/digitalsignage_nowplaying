@@ -10,6 +10,14 @@ body {
 	h6{
 		margin-bottom: 1rem;
 		line-height: 1em;
+		span{
+			font-size: inherit;
+			opacity: .4;
+			margin: .25rem;
+		}
+		&:only-child{
+			margin: 0;
+		}
 	}
 	h1{
 		margin-bottom: 1rem;

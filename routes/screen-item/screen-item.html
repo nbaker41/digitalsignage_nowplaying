@@ -8,15 +8,19 @@
 
 	<section ng-if="item.app.data.allPlaylists.mediaPlaylists.length > 0">
 		<div class="container">
-			<h3>Slideshows</h3>
+			<h3>Slideshows <span>{{item.app.data.thisPlayer.lengths.media}}</span></h3>
 			<div class="box-list">
 				<div 
 					ui-sref="screen({customer: item.app.data.thisCustomer.name_short, player: item.app.data.thisPlayer.player_id})"
 					ng-repeat="x in item.app.data.allPlaylists.mediaPlaylists"
-					class="box">
-					<div class="box-bottom">
-						<h6>{{x.name}}</h6>
-						<p>{{x.description}}</p>
+					class="box bg-img"
+					style="background-image: url({{item.imageUrl + x.items[x.coverItem].file_name}})!important;">
+					<div class="box-container">
+						<div class="box-bottom">
+							<h6>{{x.name}}</h6>
+							<p>{{x.description}}</p>
+							<span>{{x.totalItems}} Image</span><span ng-if="x.totalItems > 1">s</span>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -25,15 +29,20 @@
 
 	<section ng-if="item.app.data.allPlaylists.directoryPlaylists.length > 0">
 		<div class="container">
-			<h3>Directories</h3>
+			<h3>Directories <span>{{item.app.data.thisPlayer.lengths.directories}}</span></h3>
 			<div class="box-list">
 				<div 
 					ui-sref="screen({customer: item.app.data.thisCustomer.name_short, player: item.app.data.thisPlayer.player_id})"
 					ng-repeat="x in item.app.data.allPlaylists.directoryPlaylists"
 					class="box">
-					<div class="box-bottom">
-						<h6>{{x.name}}</h6>
-						<p>{{x.description}}</p>
+					<div class="box-container">
+						<div class="box-top">
+							<h6>{{x.name}}</h6>
+							<p>{{x.description}}</p>
+						</div>
+						<div class="box-bottom">
+							<span>{{x.totalItems}} Table</span><span ng-if="x.totalItems > 1">s</span>
+						</div>
 					</div>
 				</div>
 			</div>

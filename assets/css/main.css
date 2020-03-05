@@ -35,6 +35,36 @@ body h6 {
   margin-bottom: 1rem;
   line-height: 1em;
 }
+html h1 span,
+html h2 span,
+html h3 span,
+html h4 span,
+html h5 span,
+html h6 span,
+body h1 span,
+body h2 span,
+body h3 span,
+body h4 span,
+body h5 span,
+body h6 span {
+  font-size: inherit;
+  opacity: 0.4;
+  margin: 0.25rem;
+}
+html h1:only-child,
+html h2:only-child,
+html h3:only-child,
+html h4:only-child,
+html h5:only-child,
+html h6:only-child,
+body h1:only-child,
+body h2:only-child,
+body h3:only-child,
+body h4:only-child,
+body h5:only-child,
+body h6:only-child {
+  margin: 0;
+}
 html h1,
 body h1 {
   margin-bottom: 1rem;
@@ -130,6 +160,7 @@ body.screen ui-view {
   position: relative;
   border-radius: 4px;
   overflow: hidden;
+  background-size: cover !important;
 }
 .box-list .box:last-of-type {
   margin-bottom: 0;
@@ -140,7 +171,19 @@ body.screen ui-view {
   font-size: 16px;
   letter-spacing: 0.05em;
 }
-.box-list .box .indicator {
+.box-list .box .box-container {
+  height: 100%;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  flex-direction: column;
+}
+.box-list .box .box-container > *:not(.indicator) {
+  z-index: 500;
+}
+.box-list .box .box-container .indicator {
   width: 12px;
   height: 12px;
   background: lime;
@@ -148,25 +191,31 @@ body.screen ui-view {
   position: absolute;
   right: 1rem;
   top: 1rem;
+  z-index: 1;
 }
-.box-list .box .box-top:first-of-type h6 {
+.box-list .box .box-container .box-top {
+  position: relative;
+}
+.box-list .box .box-container .box-top:first-of-type h6 {
   width: unset;
 }
-.box-list .box .box-top h6 {
+.box-list .box .box-container .box-top h6 {
   width: calc(100% - 24px);
 }
-.box-list .box .box-bottom {
+.box-list .box .box-container .box-bottom {
+  margin-top: auto;
+  position: relative;
   letter-spacing: 0;
 }
-.box-list .box .box-bottom span {
+.box-list .box .box-container .box-bottom span {
   margin-top: 0;
   font-size: 16px;
   color: #999999;
 }
-.box-list .box .box-bottom span.players-playlists-media {
+.box-list .box .box-container .box-bottom span.players-playlists-media {
   margin-right: 12px;
 }
-.box-list .box .box-bottom span.players-playlists-directories {
+.box-list .box .box-container .box-bottom span.players-playlists-directories {
   letter-spacing: 0;
 }
 .box-list .box .viewmore {
@@ -187,6 +236,30 @@ body.screen ui-view {
   width: 1.25rem;
   height: 1.25rem;
   border-radius: 50%;
+}
+.box-list .box.bg-img {
+  background-size: cover !important;
+  height: 240px;
+}
+.box-list .box.bg-img .box-top *,
+.box-list .box.bg-img .box-bottom * {
+  color: white;
+}
+.box-list .box.bg-img::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(-170deg, rgba(0, 0, 0, 0.35), black);
+  z-index: 1;
+}
+.box-list .box.collapsed {
+  height: 100px;
+}
+.box-list .box.collapsed .box-bottom {
+  margin-top: 0;
 }
 .box-list .box.empty {
   background: #dddddd;
@@ -211,11 +284,6 @@ body.screen ui-view {
   }
   .box-list .box:nth-of-type(even) {
     margin-right: 0;
-  }
-  .box-list .box .box-bottom {
-    position: absolute;
-    bottom: 1rem;
-    left: 1rem;
   }
 }
 @media (min-width: 1000px) {

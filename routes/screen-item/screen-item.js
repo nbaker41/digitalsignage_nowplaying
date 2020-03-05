@@ -15,37 +15,15 @@
 	var item = this;
 	item.app = $scope.$parent.app;
 
-	// attach rootscope data to item.info after requests for customer and player.
-		function setData(){
-			item.info = {
-				customer: $rootScope.data.thisCustomer.name_short,
-				player: $rootScope.data.thisPlayer.player_id
-			}
-			// console.log(item.info.player);
-		}
-
-
 	// Find customer and player.
 	// Execute chained list of queries starting with customers...
 		$get.customers(function(){
 			findThisCustomer();
 			item.app.data = $rootScope.data;
 			// console.log(screen.app.data);
+			item.imageUrl = '../../files/customers/' + item.app.data.thisCustomer.name_short + '/media/';
 		});
-
 		
-		// what happens if you specify a customer but no player?
-		// item.sample = "wassupwiddit";
-		
-		// get the customer and player 
-		// item.info = {
-		// 	customer: info.app.data.thisCustomer.name_short,
-		// 	player: info.app.data.thisPlayer.player_id
-		// };
-
-		
-		console.log(item);
-
 	// thisCustomer
 		function findThisCustomer(){
 			var allC = $rootScope.data.allCustomers;
@@ -101,6 +79,13 @@
 						for (var i = 0; i < response.length; i++){
 							thisM.items.push(response[i])
 						}
+						thisM.totalItems = thisM.items.length;
+					// pick which image to show on the slideshow...
+						if (thisM.totalItems > 1){
+							thisM.coverItem = 1;
+						} else {
+							thisM.coverItem = 0;
+						}
 					}
 				);
 			}
@@ -117,13 +102,16 @@
 						for (var i = 0; i < response.length; i++){
 							thisD.items.push(response[i])
 						}
+						thisD.totalItems = thisD.items.length;
 					}
 				);
 			}
-			// console.log($rootScope.data.allPlaylists);
-			setData();
+		// count the number of each type of playlist
+			$rootScope.data.thisPlayer.lengths = {
+				media: M.length,
+				directories: D.length
+			}
 		}
-
 
 	});
 

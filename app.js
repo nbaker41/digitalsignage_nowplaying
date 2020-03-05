@@ -49,7 +49,6 @@
 					playlist: $transition.params().playlist,
 				}
 			};
-			console.log(app.route);
 			$get.clearRootScope();
 			app.darkmode.set();
 			app.breakpoints(window.innerWidth);
@@ -128,12 +127,12 @@
 			},
 			set: function(){
 				this.isOn = $rootScope.data.darkmode;
-				console.log(this.isOn);
+				if (this.isOn == true){
+					console.log("Dark Mode is turned on.");
+				} else {
+					console.log("Light Mode is turned on.");
+				};
 			}
 		}
-		// app.darkmode.toggle();
-		// app.darkmode.set();
-
 	});
-
 })();

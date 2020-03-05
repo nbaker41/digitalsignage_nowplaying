@@ -21,42 +21,44 @@
 				ng-click="home.app.goToScreen(x, y, 'exp')"
 				ng-class="{empty: y.playlists.lengths.media == 0 && y.playlists.lengths.directories == 0}">
 				<!-- ui-sref="screen({customer: x.name_short, player: y.player_id})" -->
-				<div
-					class="indicator"
-					ng-if ="y.touch_enabled == true">
-				</div>
-				<div
-					class="box-top">
-					<h6>{{y.name_long}}</h6>
-					<p>{{"/" + x.name_short + "/" + y.player_id}}</p>
-					<!-- <p>url: ".../{{x.name_short + "/" + y.player_id}}"</p> -->
-				</div>
-				<div
-					class="box-bottom">
-					<span
-						class="players-playlists-media"
-						ng-if="y.playlists.lengths.media > 0">
-						{{y.playlists.lengths.media}} media
-					</span>
-					<span
-						class="players-playlists-media"
-						ng-if="y.playlists.lengths.directories > 0">
-						<span>
-							{{y.playlists.lengths.directories}}
+				<div class="box-container">
+					<div
+						class="indicator"
+						ng-if ="y.touch_enabled == true">
+					</div>
+					<div
+						class="box-top">
+						<h6>{{y.name_long}}</h6>
+						<p>{{"/" + x.name_short + "/" + y.player_id}}</p>
+						<!-- <p>url: ".../{{x.name_short + "/" + y.player_id}}"</p> -->
+					</div>
+					<div
+						class="box-bottom">
+						<span
+							class="players-playlists-media"
+							ng-if="y.playlists.lengths.media > 0">
+							{{y.playlists.lengths.media}} media
 						</span>
 						<span
-							ng-if="y.playlists.lengths.directories == 1">
-							directory
+							class="players-playlists-media"
+							ng-if="y.playlists.lengths.directories > 0">
+							<span>
+								{{y.playlists.lengths.directories}}
+							</span>
+							<span
+								ng-if="y.playlists.lengths.directories == 1">
+								directory
+							</span>
+							<span
+								ng-if="y.playlists.lengths.directories > 1">
+								directories
+							</span>
 						</span>
 						<span
-							ng-if="y.playlists.lengths.directories > 1">
-							directories
+							ng-if="y.playlists.lengths.media == 0 && y.playlists.lengths.directories == 0">
+							This screen has no playlists.
 						</span>
-					</span>
-					<span
-						ng-if="y.playlists.lengths.media == 0 && y.playlists.lengths.directories == 0">
-						This screen has no playlists.
-					</span>
+					</div>
 				</div>
 				<!-- <div 
 					class="viewmore"
