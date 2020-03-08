@@ -4,7 +4,7 @@
 
 	data.service(
 	'$get',
-	function ($http, $rootScope, $sce) {
+	function ($http, $rootScope, $sce, $notify) {
 	var get = this;
 
 		get.clearRootScope = function(){
@@ -54,16 +54,20 @@
 				params: params
 			}).then(function (response) {
 				if (response.data[0] == "<") {
-					$rootScope.errormessage = $sce.trustAsHtml(response.data);
+					$rootScope.errormessage = response.data;
+					$notify.alert("ALERT", $rootScope.errormessage);
+					
 				} else {
 					if (typeof callback === "function") {
 						callback(response.data, secondCallback);
 					};
 				}
 			}, function (error) {
-				$rootScope.errormessage = $sce.trustAsHtml(error.data);
+				$rootScope.errormessage = error.data;
+				$notify.alert("ALERT", $rootScope.errormessage);
 			});
-			// trigger a way to push errormessage into view via app object...
+		// trigger a way to push errormessage into view via app object...
+			// function 
 		}
 
 		get.customers = function (callback) {

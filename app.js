@@ -21,6 +21,7 @@
 		"directory",
 		// services
 		"data_get",
+		"notify",
 		//wp,
 		//web scraper,
 		//weather,
