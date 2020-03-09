@@ -1,4 +1,9 @@
-<!-- notes from the meeting -->
+APIS:
+
+	Weather:
+		- Open Weather Map
+			- API Key (ddst_users): cd456980578f6de1595b49e1cacb6abd
+
 
 Mance Comments
 
