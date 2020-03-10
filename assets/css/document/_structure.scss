@@ -20,6 +20,19 @@ p{
 }
 
 body{
+
+	ui-view {
+		// height: 100vh;
+		display: block;
+		padding-top: 3rem;
+	@include breakpoint(sm){ // 600
+		padding-top: 3rem;
+	}
+	@include breakpoint(md){ // 1000
+		padding-top: 4rem;
+	}}
+
+	
 	section{
 		padding: 1rem .66rem .75rem;
 	@include breakpoint(sm){ // > 600

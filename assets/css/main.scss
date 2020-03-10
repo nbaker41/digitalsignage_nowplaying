@@ -6,7 +6,8 @@
 @import //     brand
 
 	'brand/colors',
-	'brand/typography';
+	'brand/typography',
+	'brand/animations';  // ddst styles... ?
 
 @import //     document
 
@@ -24,11 +25,10 @@
 	'components/main/playlists/slideshow',
 	'components/main/playlists/directory',
 // other components
-	'components/ui-view',
 	'components/ticker',
-	'components/keyboard',
-	'components/nganimate';  // ddst styles... ?
+	'components/keyboard';
 
 @import //     routes
 
-	'routes/home';
+	'routes/home',
+	'routes/screen';

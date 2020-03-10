@@ -95,6 +95,33 @@ body span {
   line-height: 1.75em;
 }
 
+.animate-switch-container {
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+.animate-switch-container .animate-switch.ng-animate {
+  transition: left 0.75s;
+  position: absolute;
+}
+.animate-switch-container .animate-switch.ng-leave.ng-leave-active {
+  z-index: 0;
+  right: 100vw;
+}
+.animate-switch-container .animate-switch.ng-enter {
+  z-index: 1;
+  left: -100vw;
+}
+.animate-switch-container .animate-switch.ng-leave {
+  left: 0;
+  z-index: 0;
+}
+.animate-switch-container .animate-switch.ng-enter.ng-enter-active {
+  z-index: 1;
+  left: 0;
+}
+
 :root {
   font-size: 30px !important;
 }
@@ -117,6 +144,20 @@ p {
   margin: 0;
 }
 
+body ui-view {
+  display: block;
+  padding-top: 3rem;
+}
+@media (min-width: 600px) {
+  body ui-view {
+    padding-top: 3rem;
+  }
+}
+@media (min-width: 1000px) {
+  body ui-view {
+    padding-top: 4rem;
+  }
+}
 body section {
   padding: 1rem 0.66rem 0.75rem;
 }
@@ -561,32 +602,6 @@ directory table tbody tr:nth-of-type(odd) {
   background: #1f1f1f;
 }
 
-body ui-view {
-  height: 100vh;
-  display: block;
-  padding-top: 3rem;
-}
-@media (min-width: 600px) {
-  body ui-view {
-    padding-top: 3rem;
-  }
-}
-@media (min-width: 1000px) {
-  body ui-view {
-    padding-top: 4rem;
-  }
-}
-body.screen ui-view {
-  padding-top: 0;
-  display: -webkit-box;
-  display: -moz-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-}
-
 ticker {
   background: #b3a369;
   height: 75px;
@@ -662,31 +677,15 @@ ticker > div div.bn-news ul li a {
   background: red;
 }
 
-.animate-switch-container {
-  overflow: hidden;
-  width: 100%;
+body.screen ui-view {
+  padding-top: 0;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  flex-direction: column;
   height: 100%;
-  position: relative;
-}
-.animate-switch-container .animate-switch.ng-animate {
-  transition: left 0.75s;
-  position: absolute;
-}
-.animate-switch-container .animate-switch.ng-leave.ng-leave-active {
-  z-index: 0;
-  right: 100vw;
-}
-.animate-switch-container .animate-switch.ng-enter {
-  z-index: 1;
-  left: -100vw;
-}
-.animate-switch-container .animate-switch.ng-leave {
-  left: 0;
-  z-index: 0;
-}
-.animate-switch-container .animate-switch.ng-enter.ng-enter-active {
-  z-index: 1;
-  left: 0;
 }
 
 /*# sourceMappingURL=main.css.map */
