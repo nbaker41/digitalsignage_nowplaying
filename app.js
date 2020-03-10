@@ -1,31 +1,28 @@
 (function () {
 
 	let nowPlaying = angular.module("now-playing", [
-		// Google modules
+	// Google modules
 		"ui.router",
 		"ngAnimate",
-		// routes
+	// routes
 		"home",
 		"screen",
 		"screen-item",
-		"csvtest", // test
-		// components
-		"header",
+		"csvtest", // test  // merge with portal
+	// components
+		"header", // portal has its own "header" component
 		"ticker",
 		"keyboard",
 		//main
-		"leftsection",
-		"events",
-		"playlists",
-		"slideshow",
-		"directory",
-		// services
+			"leftsection",
+			"events",
+			"playlists",
+			"slideshow",
+			"directory",
+	// services
 		"data_get",
-		"notify",
-		//wp,
-		//web scraper,
-		//weather,
-		// directives
+		"notify", // add to portal  // merge with portal
+	// directives
 		"draggableModule"
 	]);
 
