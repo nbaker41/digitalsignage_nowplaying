@@ -1,29 +1,33 @@
-@import //     visuals
+@import //     mixins
 
-'visuals/colors',
-'visuals/typography';
+	'mixins/breakpoints()',
+	'mixins/flex()';
 
-@import //     styles
+@import //     brand
 
-'styles/breakpoints()',
-'styles/containers',
-'styles/flex()',
-'styles/structure';
+	'brand/colors',
+	'brand/typography';
+
+@import //     document
+
+	'document/structure',
+	'document/boxes', // ddst styles...
+	'document/header'; // ddst styles... ?
 
 @import //     components
-
-'components/ui-view',
-'components/boxes',
-	'components/header',
+//main
 	'components/main/main',
-		'components/main/events',
-		'components/main/leftsection',
-			'components/main/playlists/playlists',
-			'components/main/playlists/slideshow',
-			'components/main/playlists/directory',
+	'components/main/events',
+	'components/main/leftsection',
+// main  ->  playlists
+	'components/main/playlists/playlists',
+	'components/main/playlists/slideshow',
+	'components/main/playlists/directory',
+// other components
+	'components/ui-view',
 	'components/ticker',
 	'components/keyboard',
-	'components/nganimate';
+	'components/nganimate';  // ddst styles... ?
 
 @import //     routes
 
