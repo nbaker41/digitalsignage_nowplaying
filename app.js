@@ -111,6 +111,22 @@
 			$scope.$apply();
 		}, 1000);
 
+	// errors and notify
+		app.error = {
+			on: false,
+			message: null,
+			check: function(){
+				alert("hey");
+				if ($rootScope.errormessage){
+					this.message = $rootScope.errormessage;
+					this.on = true;
+				}
+				else{
+					this.on = false;
+				}
+			}
+		}
+
 	// dark mode
 		app.darkmode = {
 			isOn: false,
