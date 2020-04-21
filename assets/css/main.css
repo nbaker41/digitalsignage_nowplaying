@@ -677,6 +677,10 @@ ticker > div div.bn-news ul li a {
   background: red;
 }
 
+body #modal-main * {
+  color: black;
+}
+
 body.screen ui-view {
   padding-top: 0;
   display: -webkit-box;
