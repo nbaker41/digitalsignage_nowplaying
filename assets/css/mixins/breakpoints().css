@@ -1,0 +1,16 @@
+@media (max-width: 1900px) {
+  body:before {
+    content: "v";
+  }
+}
+
+@media (min-width: 1900px) {
+  body:before {
+    content: "h";
+  }
+}
+
+body:before {
+  display: none;
+}
+/*# sourceMappingURL=breakpoints().css.map */

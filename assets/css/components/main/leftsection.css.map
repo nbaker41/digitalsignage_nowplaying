@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,WAAW,CAAC;EACP,UAAU,EAAE,MAAM;EAClB,IAAI,EAAE,GAAG;CACb",
+    "sources": [
+        "leftsection.scss"
+    ],
+    "names": [],
+    "file": "leftsection.css"
+}
